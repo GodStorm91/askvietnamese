@@ -1,4 +1,8 @@
 /bootstrap/compiled.php
+*/storage/
+*/vendor/
+*/install_files/
+*/bower_components/
 /vendor
 composer.phar
 .DS_Store
