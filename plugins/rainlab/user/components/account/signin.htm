@@ -1,4 +1,4 @@
-<form
+<!-- <form
     data-request="onSignin">
     <div class="form-group">
         <label for="userSigninLogin">{{ loginAttributeLabel }}</label>
@@ -19,6 +19,28 @@
             id="userSigninPassword"
             placeholder="Enter your password" />
     </div>
+
+    <button type="submit" class="btn btn-default">Sign in</button>
+</form> -->
+
+<form id="login" data-request="onSignin">
+    <div class="form-group">
+        <label for="userSigninEmail">Email</label>
+        <input name="email" type="email" class="form-control" id="userSigninEmail" placeholder="Enter your email">
+    </div>
+
+    <div class="form-group">
+        <label for="userSigninPassword">Password</label>
+        <input name="password" type="password" class="form-control" id="userSigninPassword" placeholder="Enter your password">
+    </div>
+
+    <p align="right">
+        or sign in with
+        
+        {% for name, link in social_login_links %}
+            <a href="{{ link }}" class='login {{ name|lower }}'>{{name}}<i class="fa fa-2 fa-{{ name|lower }}"></i></a>
+        {% endfor %}
+    </p>
 
     <button type="submit" class="btn btn-default">Sign in</button>
 </form>
