@@ -7,7 +7,7 @@ security = "all"
 <html>
     <head>
         <meta charset="utf-8">
-        <title>October CMS - {{ this.page.title }}</title>
+        <title>Ask Vietnamese - {{ this.page.title }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
         <meta name="author" content="October CMS">
@@ -44,6 +44,8 @@ security = "all"
                         <ul class="nav navbar-nav navbar-right">
                             {% if user %}
                                 <li><a href="#" data-request="onLogout">Logout</a></li>
+                            {% else %}
+                                <li><a href="{{ 'account'|page }}">Login or Signup</a></li>
                             {% endif %}
                         </ul>
                     </div>
