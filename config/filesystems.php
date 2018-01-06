@@ -50,10 +50,10 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key'    => 'your-key',
-            'secret' => 'your-secret',
-            'region' => 'your-region',
-            'bucket' => 'your-bucket',
+            'key'    => 'AKIAJGM7F7G46YN46OVA',
+            'secret' => 't7wDy4a71TmyXdudu8f69rpl2fY2e2plLkS5HQ6h',
+            'region' => 'ap-northeast-1',
+            'bucket' => 'askvietnamese',
         ],
 
         'rackspace' => [

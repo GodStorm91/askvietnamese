@@ -43,7 +43,7 @@ security = "all"
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             {% if user %}
-                                <li><a href="#" data-request="onLogout">Logout</a></li>
+                                <li>Hello {{ user.name }},<a href="#" data-request="onLogout">Logout</a></li>
                             {% else %}
                                 <li><a href="{{ 'account'|page }}">Login or Signup</a></li>
                             {% endif %}

@@ -263,9 +263,9 @@ return [
         ],
 
         'media' => [
-            'disk'   => 'local',
+            'disk'   => 's3',
             'folder' => 'media',
-            'path'   => '/storage/app/media',
+            'path'   => 'https://s3-ap-northeast-1.amazonaws.com/askvietnamese/media/',
         ],
 
     ],
