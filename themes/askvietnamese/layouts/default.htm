@@ -1,0 +1,405 @@
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="description" content=""/>
+	<meta name="author" content=""/>
+	<link rel="shortcut icon" href="#"/>
+
+	<title>ASKVIETNAM</title>
+	{% styles %}
+	<link href="{{ 'assets/css/bootstrap.min.css'|theme }}" rel="stylesheet"/>
+	<link href="{{ 'assets/css/font-awesome.css'|theme }}" rel="stylesheet"/>
+
+	<link href="{{ 'assets/css/font-awesome.css'|theme }}" rel="stylesheet"/>
+	<link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet"/>
+	<link href="{{ 'assets/css/responsive.css'|theme }}" rel="stylesheet"/>
+	<link href="{{ 'assets/css/animate.css'|theme }}" rel="stylesheet"/>
+
+	<link href="https://fonts.googleapis.com/css?family=Kanit:200,300i,400,400i,600" rel="stylesheet">
+	<script>
+	</script>
+</head>
+<body>
+	<section class="firstpage">
+		<div class="left-page">
+			<div class="tit-top">It’s time to Ask Vietnamese</div>
+			<div class="list-choose">
+				<ul>
+					<li data-wow-delay="0.1s" class="wow fadeInDown animated"><a href="#" title="">Wh-quéstion</a></li>
+					<li data-wow-delay="0.3s" class="wow fadeInDown animated"><a href="#" title="">Who we are</a></li>
+					<li data-wow-delay="0.5s"class="wow fadeInDown animated"><a href="#" title="">Support center</a></li>
+					<li data-wow-delay="0.7s" class="wow fadeInDown animated"><a href="#" title="">Tell vietnamese</a></li>
+				</ul>
+
+			</div>
+		</div>
+		<div data-wow-delay="0.1s" class="right-page wow fadeInRight animated">
+			<div class="logohome"><a href="#" title=""><img src="images/logohome.png" class="img-responsive" alt=""/></a></div>
+			<div class="ask-non"><img src="images/non.png" class="img-responsive" alt=""/></div>
+			<div class="loginhome">
+				<!-- Button trigger modal -->
+				<button type="button" class="btnlogin btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal-home">
+					Login
+				</button>
+
+				<!-- Modal -->
+				<div class="frlogin modal fade" id="myModal-home" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+
+							<div class="modal-body">
+								<div class="img-frlogin"><img src="images/logo2.png" class="img-responsive" alt=""/></div>
+								<div class="bg-form">
+									<p class="sloganfr">Login to Ask Vietnamese or create an account</p>
+									<form action="" method="POST" class="form-login">
+										<input type="text" name="name" class="form-control" placeholder="Username" />        
+										<input type="text" name="email" class="form-control" placeholder="Password" />
+										<div class="btn-login">
+											<button type="submit" class="sentlogin">Login</button>
+										</div>
+										<div class="ab-fot">
+											<p><input type="checkbox" name="" value=""/>Remember me</p>
+											<a href="#" title="">Forgot password?</a>  
+										</div>
+									</form>
+								</div><!--bg-form-->    
+								<div class="fr-more-lg">
+									<p><span>continue with</span></p>
+									<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+									<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> 
+								</div>
+
+
+							</div>
+
+						</div>
+					</div>
+				</div><!--modal-->
+			</div><!--loginhome-->
+		</div>
+		<div class="godown"><img src="images/godown.png" class="img-responsive" alt=""/></div>
+		<script>
+
+		</script>
+	</section><!--firstpage-->
+	<div class="clearfix"></div>
+	<div class="header pagehome">
+
+		<div class="container contentmenu">
+			<div class="row">
+
+				<div class="logo col-lg-2 col-md-2 col-sm-2 col-xs-12">
+					<a href="#" title=""><img src="images/logohome.png" class="img-responsive" alt=""/></a>
+				</div>
+				<div class="search-login col-md-8 col-sm-8 col-xs-12">
+					<div class="searh col-md-9 col-sm-9 col-xs-12">
+						<span class="icon-search"><i class="fa fa-search" aria-hidden="true"></i></span>
+						<div class="form_moblie_search">
+							<form method="post" id="idf" action="" name="form_timkiem_sp">
+								<div class="artseed-search">
+									<input value="" class="top_input" type="text" placeholder="Guide to Better Choice, please ask us" name="block_name_search" />
+
+								</div>
+
+								<a href="javascript:void()" class="nut_searh" onclick="javascript:$('#idf').submit();">  <i class="fa animated fa-search search-icon"></i></a>
+							</form>
+						</div>
+					</div>
+
+					<script>
+					</script>
+					<div class="logintop col-md-3 col-sm-3 col-xs-12">
+						<!-- Button trigger modal -->
+						<button type="button" class="btnlogin btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+							Login
+						</button>
+
+						<!-- Modal -->
+						<div class="frlogin modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+
+									<div class="modal-body">
+										<div class="img-frlogin"><img src="images/logo2.png" class="img-responsive" alt=""/></div>
+										<div class="bg-form">
+											<p class="sloganfr">Login to Ask Vietnamese or create an account</p>
+											<form action="" method="POST" class="form-login">
+												<input type="text" name="name" class="form-control" placeholder="Username" />        
+												<input type="text" name="email" class="form-control" placeholder="Password" />
+												<div class="btn-login">
+													<button type="submit" class="sentlogin">Login</button>
+												</div>
+												<div class="ab-fot">
+													<p><input type="checkbox" name="" value=""/>Remember me</p>
+													<a href="#" title="">Forgot password?</a>  
+												</div>
+											</form>
+										</div><!--bg-form-->    
+										<div class="fr-more-lg">
+											<p><span>continue with</span></p>
+											<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+											<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> 
+										</div>
+
+
+									</div>
+
+								</div>
+							</div>
+						</div><!--modal-->
+					</div><!--login-->
+					<div class="menu">
+						<nav class="menutop">
+							<input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle mobile-menu-toggle-button">
+							<ul class="sky-mega-menu scale-effect mobile-toggleable-menu mobile-left">
+								<li><a class="active" href="#" >wh-question</a>
+									<div class="submenu">
+
+										<div class="list_mn">
+											<ul>
+												<li><a href="#" title="">where to visit?</a>
+													<div class="list-dm-thumb">
+														<ul>
+															<li>
+																<div class="wrap-sec-dm">
+																	<div class="thumb-dm"><a href="#" title=""><img src="images/img1.jpg" class="img-responsive" alt=""/></a></div>
+																	<div class="name-mn-con">
+																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
+																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+																	</div>
+																</div>
+															</li>
+
+															<li>
+																<div class="wrap-sec-dm">
+																	<div class="thumb-dm"><a href="#" title=""><img src="images/img1.jpg" class="img-responsive" alt=""/></a></div>
+																	<div class="name-mn-con">
+																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
+																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+																	</div>
+																</div>
+															</li>
+
+															<li>
+																<div class="wrap-sec-dm">
+																	<div class="thumb-dm"><a href="#" title=""><img src="images/img1.jpg" class="img-responsive" alt=""/></a></div>
+																	<div class="name-mn-con">
+																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
+																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+																	</div>
+																</div>
+															</li>
+														</ul>
+													</div><!--list-dm-thumb-->
+													<i class="fa fa-plus"></i>
+												</li>
+												<li><a href="#" title="">what to eat?</a>
+
+													<div class="list-dm-thumb">
+														<ul>
+															<li>
+																<div class="wrap-sec-dm">
+																	<div class="thumb-dm"><a href="#" title=""><img src="images/img2.jpg" class="img-responsive" alt=""/></a></div>
+																	<div class="name-mn-con">
+																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
+																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+																	</div>
+																</div>
+															</li>
+
+															<li>
+																<div class="wrap-sec-dm">
+																	<div class="thumb-dm"><a href="#" title=""><img src="images/img2.jpg" class="img-responsive" alt=""/></a></div>
+																	<div class="name-mn-con">
+																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
+																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+																	</div>
+																</div>
+															</li>
+
+															<li>
+																<div class="wrap-sec-dm">
+																	<div class="thumb-dm"><a href="#" title=""><img src="images/img2.jpg" class="img-responsive" alt=""/></a></div>
+																	<div class="name-mn-con">
+																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
+																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+																	</div>
+																</div>
+															</li>
+														</ul>
+													</div><!--list-dm-thumb-->
+													<i class="fa fa-plus"></i>
+												</li>
+												<li><a href="#" title="">which festival/event?</a></li>
+												<li><a href="#" title="">how about culture?</a></li>
+												<li><a href="#" title="">how to get ready?</a></li>
+											</ul>
+											<a class="menuall" href="#" title="">all</a>
+										</div><!--list_mn-->
+
+
+									</div><!--sub-menu-->
+									<i class="fa fa-plus"></i>
+								</li>
+								<li><a href="#">who are we</a></li>
+								<li><a href="#">Support center</a></li>
+
+								<li><a href="#">askvietnamese</a></li>
+
+							</ul>
+							<label class="mobile-left mobmenu-toggle" for="mobile-menu-toggle" onClick="menuLeft();"></label>
+						</nav>
+						<a href="javascript:void(0)" onClick="menuLeft();" id="mainHideMenu"></a>
+
+
+
+					</div><!--Menu-->
+
+				</div><!--search-login-->    
+				<div class="social-share col-md-2 col-sm-2 col-xs-12">
+					<a href="#" title=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="#" title=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+					<a href="#" title=""><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+					<a href="#" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				</div>
+
+
+
+			</div><!--row-->
+		</div><!--container-->
+
+
+	</div><!--Header-->               
+	<div class="clearfix"></div>
+
+
+	<script>
+	</script> 
+	<footer>
+		{% partial "footer" %}
+	</footer><!-- /.footer -->
+	<a href="#" class="scrollup"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+	<script type="text/javascript">
+
+
+
+	</script>
+	<!-- Scripts -->
+	<script src="{{ [
+	'assets/javascript/jquery.js',
+	'assets/vendor/bootstrap/js/transition.js',
+	'assets/vendor/bootstrap/js/alert.js',
+	'assets/vendor/bootstrap/js/button.js',
+	'assets/vendor/bootstrap/js/carousel.js',
+	'assets/vendor/bootstrap/js/collapse.js',
+	'assets/vendor/bootstrap/js/dropdown.js',
+	'assets/vendor/bootstrap/js/modal.js',
+	'assets/vendor/bootstrap/js/modal.js',
+	'assets/vendor/bootstrap/js/tooltip.js',
+	'assets/vendor/bootstrap/js/popover.js',
+	'assets/vendor/bootstrap/js/scrollspy.js',
+	'assets/vendor/bootstrap/js/tab.js',
+	'assets/vendor/bootstrap/js/affix.js',
+	'assets/js/wow.js',
+	'assets/js/owl.carousel.min.js',
+	'assets/js/bootstrap.min.js',
+	'assets/javascript/app.js'
+	]|theme }}"></script>
+	{% framework extras %}
+	{% scripts %}
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$(".icon-search").click(function(){
+				$(".form_moblie_search").slideToggle(300);
+			});
+		});
+		$(document).ready(function(){
+
+			$(".godown").click(function(){
+				$(".firstpage").slideToggle(1000);
+				$("html, body").animate({ scrollTop: 0 }, 0);
+			});
+			$('.btnlogin').click(function(){
+				$('body').addClass('blend');
+			});       
+		});
+		$(window).scroll(function(){
+			if ($(this).scrollTop() > 100) {
+				$('.scrollup').fadeIn();
+
+			} else {
+				$('.scrollup').fadeOut();
+			}
+		}); 
+
+		$('.scrollup').click(function(){
+			$("html, body").animate({ scrollTop: 0 }, 600);
+			return false;
+		});
+		$(window).bind('scroll', function() {
+			if ($(window).scrollTop() >0) {
+				$('.header').addClass('fixed');
+			}
+			else {
+				$('.header').removeClass('fixed');
+			}
+		});  
+		$("ul.mobile-left>li>i").click(function(){	
+			if($(this).hasClass("fa-plus")){
+				$(this).removeClass("fa-plus");
+				$(this).addClass("fa-minus");
+			}else{
+				$(this).removeClass("fa-minus");
+				$(this).addClass("fa-plus");
+			}		
+			$(this).parent().children(".submenu").slideToggle();
+		});
+		$("ul.mobile-left li ul li i").click(function(){	
+			if($(this).hasClass("fa-plus")){
+				$(this).removeClass("fa-plus");
+				$(this).addClass("fa-minus");
+			}else{
+				$(this).removeClass("fa-minus");
+				$(this).addClass("fa-plus");
+			}		
+			$(this).parent().children(".list-dm-thumb").slideToggle();
+		});
+
+		menuLeftOnload();
+		function menuLeftOnload(){
+			var checkMneu = document.getElementById("mobile-menu-toggle").checked;
+			if(checkMneu == true){
+				document.getElementById("mobile-menu-toggle").checked=false;
+				document.getElementById('mainHideMenu').style.display= 'none';
+			}	
+		}
+		function menuLeft(){
+			var checkMneu = document.getElementById("mobile-menu-toggle").checked;
+			if(checkMneu == false){
+				document.getElementById('mainHideMenu').style.display= 'block';
+			}
+			else{
+				document.getElementById("mobile-menu-toggle").checked=false;
+				document.getElementById('mainHideMenu').style.display= 'none';
+			}
+		}
+      // WOW effect loading
+      wow = new WOW(
+      {
+      	animateClass: 'animated',
+      	offset:       100,
+      	callback:     function(box) {
+      		console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+      	}
+      }
+      );
+      wow.init();  
+  </script>
+</body>
+</html>
