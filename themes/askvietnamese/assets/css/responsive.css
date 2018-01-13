@@ -1,0 +1,434 @@
+@media (min-width: 1400px) {
+
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1023px;
+    }
+    .social-share {
+    width: 13%;
+}
+
+.search-login {
+    width: 70%;
+}
+
+}
+@media (min-width: 768px)
+{
+  .frlogin .modal-dialog {
+    width: 400px;
+}
+.modal-dialog.popcheck {
+    width: 400px;
+}
+}
+
+@media (min-width: 992px)
+
+{
+  .sky-mega-menu li li:hover .list-dm-thumb {
+    display: block;
+}
+  ul.sky-mega-menu li i {
+    display: none;
+}
+.sky-mega-menu li:hover .submenu
+{
+	display:block
+}
+}
+
+@media (max-width: 1199px) {
+ .box-addtocart a.buynow
+  {
+    float:none;
+    display:inline-block;
+    margin-top:10px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+
+ 
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  
+}
+@media (max-width: 991px) {
+  .filter-event .option-fil
+  {
+    width: 40%;
+    margin-bottom: 5px;
+  }
+  .filter-event
+  {
+    width:70%
+  }
+  .title-home-event h2
+  {
+    width: 30%;
+  }
+  .ask-who-we
+  {
+    padding: 50px 0 0;
+  }
+  .share-writer
+  {
+    margin-top: 15px;
+    margin-left: 0;
+    display: block;
+    float: left;
+  }
+  .info-gel ul li p span
+  {
+    margin-right:5px
+  }
+  .info-gel ul li p
+  {
+    min-height: 66px;
+  }
+  
+  .ask-per-content
+  {
+    width: 95%;
+  }
+  .info-gel ul li p.titin
+  {
+    width:40%
+  }
+  .info-gel ul li p
+  {
+    width:60%
+  }
+  .social-share i
+  {
+    margin:0
+  }
+  
+}
+@media (max-width: 767px) {
+  .mobmenu-toggle
+
+ {
+   top: 31px;
+ }
+ 
+  footer
+  {
+    background:#fff;
+    padding: 4px 0;
+    border-top: none;
+  }
+  .nextpage,.previouspage
+  {
+    display:none;
+  }
+  .form_moblie_search a.nut_searh
+  {
+    right:5px
+  }
+  .form_moblie_search
+  {
+    position:absolute;
+    right:0;
+    top: 3px;
+    background: #fff;
+    padding: 2px 10px;
+    display: none;
+  }
+  .icon-search
+  {
+    display: block !important;
+    position: absolute;
+    right: 0;
+    top: -35px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .ask-stories:nth-child(5), .ask-stories:nth-child(9), .ask-stories:nth-child(14), .ask-stories:nth-child(18)
+  {
+    width:50%
+  }
+  .image-stories p
+  {
+    width:90%;
+    font-size: 37px;
+  }
+  .owl-stories .customNavigation
+  {
+      display:none;
+  }
+  .logintop button
+  {
+    padding-right:0;
+    display: none;
+  }
+  .social-share i
+  {
+    float:right;
+    padding: 4px;
+  }
+  .social-share
+  {
+    position:absolute;
+    right:0;
+    top:0;
+    width: auto;
+    display: none;
+  }
+  .bg-tit-support h1
+  {
+    padding: 10px 0;
+    font-size: 56px;
+  }
+  .main-support ul li a
+  {
+    width:90%
+  }
+  .info-gel ul
+  {
+    border-left:1px solid #000
+  }
+  .info-gel ul li:first-child p.titin, .info-gel ul li:nth-child(4) p.titin
+  {
+    padding-left:10px;
+  }
+  .info-gel ul li:nth-child(3n)
+  {
+    border-right:1px solid #000
+  }
+  .thumb-bloger,.info-bloger,.info-gel ul li
+  {
+    width:50%
+  }
+  .ask-we p.ask-we-slo,.content-parter-bot p,.ask-item-sp p
+  {
+    width:100%
+  }
+  .logo
+  {
+    padding: 5px 0;
+    text-align: center;
+  }
+  .logo img{
+    display:inline-block
+  }
+  .search-login,.menu
+  {
+    border:none;
+  }
+  .searh
+  {
+    /* border:1px solid #eee; */
+    padding: 0 15px;
+    width: 95%;
+    margin: 0 15px;
+  }
+  .menu
+  {
+    position:absolute;
+    top: -75px;
+    width: auto;
+  }
+  .logintop
+  {
+    position:absolute;
+    right:0;
+    top: -63px;
+    text-align: right;
+  }
+  .header
+  {
+  }
+  .ask-ques
+  {
+    padding:20px 0
+  }
+  .social-footer
+  {
+    text-align:left
+  }
+  .copyright
+  {
+    font-size: 7px;
+  }
+  .social-footer,.copyright,.logo-footer
+  {
+    
+    width:33.33333%
+  }
+  .social-footer i
+  {
+    font-size: 12px;
+    margin-right: 6px;
+  }
+ 
+}
+
+@media (max-width: 480px) {
+  .thumb-art-home
+  {
+    height: auto !important;
+  }
+  .tit-artical-home h2
+  {
+    font-size: 21px;
+  }
+  .filter-event
+  {
+    width:100%;
+    float: left;
+    text-align: left;
+    margin-top: 15px;
+  }
+  .title-home-event h2
+  {
+    width:100%
+  }
+  .info-art-home
+  {
+    top:0;
+    bottom:auto;
+    width: 100% !important;
+    position: inherit;
+  }
+  ul.listtwo
+  {
+    margin-left:0;
+    margin-top: 30px;
+    float: left;
+  }
+  
+  .list-art-home ul li,.weather
+  {
+    width: 92.7% !important;
+  }
+  .content-profile
+  {
+    margin-top:20px;
+  }
+  ul.tab-login li a
+  {
+    font-size: 20px;
+  }
+  ul.flowing li
+  {
+    margin:0 10px
+  }
+  .profile-edit a
+  {
+    padding: 5px 20px;
+    font-size: 13px;
+  }
+  .title-who-we
+  {
+    margin-right:0;
+  }
+  .thumb-who-we
+  {
+    float:right;
+    margin-left: 0;
+    width: 130px;
+  }
+  .title-who-we h1
+  {
+    font-size: 26px;
+  }
+  .des-who-we
+  {
+    width:100%
+  }
+
+  .image-stories p
+  {
+    top:30%
+  }
+  .logo-footer
+  {
+    margin-top: 8px;
+  }
+  .title-related h2
+  {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .info-gel ul li p
+  {
+    min-height: 47px;
+  }
+  .ask-item-sp
+  {
+    margin-top:30px
+  }
+  .thumb-bloger,.info-bloger
+  {
+    width:100%;
+    position: relative;
+  }
+  .info-bloger
+  {
+    float:right
+  }
+  .item-colection,.item-persion,.ask-stories,.ask-wt-related,.ask-list-sp,.ask-ques-item,.ask-ques-item:nth-child(7), .ask-ques-item:nth-child(12), .thumb-bloger,.info-bloger,.info-gel ul li
+  {
+    width:100%;
+  }
+  .ask-stories:nth-child(5), .ask-stories:nth-child(9), .ask-stories:nth-child(14), .ask-stories:nth-child(18)
+  {
+    width:100%;
+  }
+  .searh
+  {
+    width: 91%;
+  }
+  .ask-per-content ul li
+  {
+    width: 39%;
+  }
+  .tit-des-we
+  {
+    padding:0;
+    font-size: 30px;
+  }
+  .des-we
+  {
+    text-align:justify
+  }
+  .ask-we-partner-bot,.bannersub,.ask-support
+  {
+    padding:40px 0
+  }
+  .tit-sup-more,.ask-title-support,.main-support ul li a
+  {
+    width:100%
+  }
+  .main-support ul li a
+  {
+    font-size: 53px;
+    padding-bottom: 0;
+  }
+  .bg-tit-support h1
+  {
+    font-size: 25px;
+    width: auto;
+  }
+  .logintop
+  {
+    top: -38px;
+  }
+  .logintop button
+  {
+    padding-right:0
+  }
+  .logo img
+  {
+    max-width: 59%;
+  }
+}
+    
