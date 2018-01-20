@@ -29,60 +29,22 @@ description = "Default layout"
 		<div class="left-page">
 			<div class="tit-top">It’s time to Ask Vietnamese</div>
 			<div class="list-choose">
-				<ul>
-					<li data-wow-delay="0.1s" class="wow fadeInDown animated"><a href="#" title="">Wh-quéstion</a></li>
-					<li data-wow-delay="0.3s" class="wow fadeInDown animated"><a href="#" title="">Who we are</a></li>
-					<li data-wow-delay="0.5s"class="wow fadeInDown animated"><a href="#" title="">Support center</a></li>
-					<li data-wow-delay="0.7s" class="wow fadeInDown animated"><a href="#" title="">Tell vietnamese</a></li>
-				</ul>
-
+				{% partial "five_wh_questions" %}
 			</div>
 		</div>
 		<div data-wow-delay="0.1s" class="right-page wow fadeInRight animated">
-			<div class="logohome"><a href="#" title=""><img src="images/logohome.png" class="img-responsive" alt=""/></a></div>
-			<div class="ask-non"><img src="images/non.png" class="img-responsive" alt=""/></div>
+			<div class="logohome"><a href="#" title=""><img src="{{ 'assets/images/logohome.png'|theme }}" class="img-responsive" alt=""/></a></div>
+			<div class="ask-non"><img src="{{ 'assets/images/non.png'|theme }}" class="img-responsive" alt=""/></div>
 			<div class="loginhome">
 				<!-- Button trigger modal -->
-				<button type="button" class="btnlogin btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal-home">
+				<button type="button" class="btnlogin btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
 					Login
 				</button>
+				{% partial "login_popup" modalId="myModal" %}	
 
-				<!-- Modal -->
-				<div class="frlogin modal fade" id="myModal-home" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-
-							<div class="modal-body">
-								<div class="img-frlogin"><img src="images/logo2.png" class="img-responsive" alt=""/></div>
-								<div class="bg-form">
-									<p class="sloganfr">Login to Ask Vietnamese or create an account</p>
-									<form action="" method="POST" class="form-login">
-										<input type="text" name="name" class="form-control" placeholder="Username" />        
-										<input type="text" name="email" class="form-control" placeholder="Password" />
-										<div class="btn-login">
-											<button type="submit" class="sentlogin">Login</button>
-										</div>
-										<div class="ab-fot">
-											<p><input type="checkbox" name="" value=""/>Remember me</p>
-											<a href="#" title="">Forgot password?</a>  
-										</div>
-									</form>
-								</div><!--bg-form-->    
-								<div class="fr-more-lg">
-									<p><span>continue with</span></p>
-									<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-									<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> 
-								</div>
-
-
-							</div>
-
-						</div>
-					</div>
-				</div><!--modal-->
 			</div><!--loginhome-->
 		</div>
-		<div class="godown"><img src="images/godown.png" class="img-responsive" alt=""/></div>
+		<div class="godown"><img src="{{ 'assets/images/godown.png'|theme }}" class="img-responsive" alt=""/></div>
 		<script>
 
 		</script>
@@ -94,7 +56,7 @@ description = "Default layout"
 			<div class="row">
 
 				<div class="logo col-lg-2 col-md-2 col-sm-2 col-xs-12">
-					<a href="#" title=""><img src="images/logohome.png" class="img-responsive" alt=""/></a>
+					<a href="#" title=""><img src="{{ 'assets/images/logohome.png'|theme }}" class="img-responsive" alt=""/></a>
 				</div>
 				<div class="search-login col-md-8 col-sm-8 col-xs-12">
 					<div class="searh col-md-9 col-sm-9 col-xs-12">
@@ -111,48 +73,13 @@ description = "Default layout"
 						</div>
 					</div>
 
-					<script>
-					</script>
 					<div class="logintop col-md-3 col-sm-3 col-xs-12">
 						<!-- Button trigger modal -->
-						<button type="button" class="btnlogin btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+						<button type="button" class="btnlogin btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal-home">
 							Login
 						</button>
-
-						<!-- Modal -->
-						<div class="frlogin modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-							<div class="modal-dialog" role="document">
-								<div class="modal-content">
-
-									<div class="modal-body">
-										<div class="img-frlogin"><img src="images/logo2.png" class="img-responsive" alt=""/></div>
-										<div class="bg-form">
-											<p class="sloganfr">Login to Ask Vietnamese or create an account</p>
-											<form action="" method="POST" class="form-login">
-												<input type="text" name="name" class="form-control" placeholder="Username" />        
-												<input type="text" name="email" class="form-control" placeholder="Password" />
-												<div class="btn-login">
-													<button type="submit" class="sentlogin">Login</button>
-												</div>
-												<div class="ab-fot">
-													<p><input type="checkbox" name="" value=""/>Remember me</p>
-													<a href="#" title="">Forgot password?</a>  
-												</div>
-											</form>
-										</div><!--bg-form-->    
-										<div class="fr-more-lg">
-											<p><span>continue with</span></p>
-											<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-											<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> 
-										</div>
-
-
-									</div>
-
-								</div>
-							</div>
-						</div><!--modal-->
-					</div><!--login-->
+						{% partial "login_popup" modalId="myModal-home" %}	
+					</div>			
 					<div class="menu">
 						<nav class="menutop">
 							<input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle mobile-menu-toggle-button">
@@ -167,7 +94,7 @@ description = "Default layout"
 														<ul>
 															<li>
 																<div class="wrap-sec-dm">
-																	<div class="thumb-dm"><a href="#" title=""><img src="images/img1.jpg" class="img-responsive" alt=""/></a></div>
+																	<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img1.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
 																	<div class="name-mn-con">
 																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
 																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
@@ -177,7 +104,7 @@ description = "Default layout"
 
 															<li>
 																<div class="wrap-sec-dm">
-																	<div class="thumb-dm"><a href="#" title=""><img src="images/img1.jpg" class="img-responsive" alt=""/></a></div>
+																	<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img1.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
 																	<div class="name-mn-con">
 																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
 																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
@@ -187,7 +114,7 @@ description = "Default layout"
 
 															<li>
 																<div class="wrap-sec-dm">
-																	<div class="thumb-dm"><a href="#" title=""><img src="images/img1.jpg" class="img-responsive" alt=""/></a></div>
+																	<div class="thumb-dm"><a href="#" title=""><img rc="{{ 'assets/images/img1.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
 																	<div class="name-mn-con">
 																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
 																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
@@ -204,7 +131,7 @@ description = "Default layout"
 														<ul>
 															<li>
 																<div class="wrap-sec-dm">
-																	<div class="thumb-dm"><a href="#" title=""><img src="images/img2.jpg" class="img-responsive" alt=""/></a></div>
+																	<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img2.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
 																	<div class="name-mn-con">
 																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
 																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
@@ -214,7 +141,7 @@ description = "Default layout"
 
 															<li>
 																<div class="wrap-sec-dm">
-																	<div class="thumb-dm"><a href="#" title=""><img src="images/img2.jpg" class="img-responsive" alt=""/></a></div>
+																	<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img2.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
 																	<div class="name-mn-con">
 																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
 																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
@@ -224,7 +151,7 @@ description = "Default layout"
 
 															<li>
 																<div class="wrap-sec-dm">
-																	<div class="thumb-dm"><a href="#" title=""><img src="images/img2.jpg" class="img-responsive" alt=""/></a></div>
+																	<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img2.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
 																	<div class="name-mn-con">
 																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
 																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
@@ -313,7 +240,6 @@ description = "Default layout"
 				$("html, body").animate({ scrollTop: 0 }, 0);
 			});
 			$('.btnlogin').click(function(){
-				debugger
 				$('body').addClass('blend');
 			});       
 		});
