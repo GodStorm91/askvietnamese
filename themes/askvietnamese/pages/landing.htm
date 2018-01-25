@@ -1,0 +1,35 @@
+title = "landing"
+url = "/landing"
+layout = "landing_layout"
+description = "landing page"
+is_hidden = 0
+==
+<section class="firstpage">
+		<div class="left-page">
+			<div class="tit-top">It’s time to Ask Vietnamese</div>
+			<div class="list-choose">
+				{% partial "five_wh_questions" %}
+			</div>
+		</div>
+		<div data-wow-delay="0.1s" class="right-page wow fadeInRight animated">
+			<div class="logohome"><a href="#" title=""><img src="{{ 'assets/images/logohome.png'|theme }}" class="img-responsive" alt=""/></a></div>
+			<div class="ask-non"><img src="{{ 'assets/images/non.png'|theme }}" class="img-responsive" alt=""/></div>
+			<div class="loginhome">
+				{% if user %}
+					<button type="button" class="btnlogin btn btn-primary btn-lg">
+						Hello {{ user.name }}
+					</button>
+				{% else %}
+					<!-- Button trigger modal -->
+					<button type="button" class="btnlogin btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+						Login
+					</button>
+					{% partial "login_popup" modalId="myModal" %}	
+				{% endif %}
+			</div><!--loginhome-->
+		</div>
+		<div class="godown"><img src="{{ 'assets/images/godown.png'|theme }}" class="img-responsive" alt=""/></div>
+		<script>
+
+		</script>
+	</section><!--firstpage-->
