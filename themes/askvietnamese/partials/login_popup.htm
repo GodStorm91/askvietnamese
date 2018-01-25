@@ -26,7 +26,7 @@ description = "Login popup pages"
 				<div class="fr-more-lg">
 					<p><span>continue with</span></p>
 			        {% for name, link in social_login_links %}
-			            <a href="{{ link }}" class='login {{ name|lower }}'><i class="fa fa-2 fa-{{ name|lower }}"></i></a>
+			            <a href="{{ link }}?s={{ 'home'|page }}&f={{ 'login'|page }}" class='login {{ name|lower }}'><i class="fa fa-2 fa-{{ name|lower }}"></i></a>
 			        {% endfor %}
 <!-- 					<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 					<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>  -->
