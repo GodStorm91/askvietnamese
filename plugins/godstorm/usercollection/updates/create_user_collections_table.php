@@ -1,4 +1,5 @@
-<?php namespace Godstorm\UserCollection\Updates;
+<?php 
+namespace Godstorm\UserCollection\Updates;
 
 use Schema;
 use October\Rain\Database\Schema\Blueprint;

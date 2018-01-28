@@ -1,0 +1,63 @@
+title = "user"
+url = "/user"
+layout = "default"
+description = "User profile pages  -- Must require that user is validated"
+is_hidden = 0
+
+[session]
+security = "all"
+==
+{% component 'account' %}
+
+<div class="ask-login">
+    <div class="container">
+        <div class="title-member">
+            <span>{{user.name}}</span>
+            <img src="{{user.avatar}}" class="img-responsive" alt=""/>
+        </div>
+        <ul class="flowing">
+            <li>10 following</li>
+            <li>2 collections</li>
+        </ul>
+        <div class="profile-edit">
+            <a href="#" title=""><i class="fa fa-cog" aria-hidden="true"></i> Edit Profile</a>
+            <a href="#" title=""><i class="fa fa-pencil" aria-hidden="true"></i> Contribute</a>
+        </div>
+        <div class="clearfix"></div>
+         <!-- Nav tabs -->
+         <div class="content-profile">
+             <ul class="tab-login nav nav-tabs" role="tablist">
+                <li class="active"><a href="#chanels" role="tab" data-toggle="tab">Chanels</a></li>
+                <li><a href="#collections" role="tab" data-toggle="tab">Collections</a></li>
+             </ul>
+            
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div class="tab-pane " id="chanels">
+                   
+                   
+                </div>
+                <div class="tab-pane active" id="collections">
+                 <div class="item-colection col-md-6 col-sm-6 col-xs-6">
+                        <div class="sub-colect">#food</div>
+                        <img src="images/collection.jpg" class="img-responsive" alt=""/>
+                        <div class="info-collection">
+                            <h3><a href="#" title="">Laure chevalier</a></h3>
+                            <p><i class="fa fa-heart-o" aria-hidden="true"></i> 20</p>
+                        </div>
+                    </div><!--item-colection-->
+                    <div class="item-colection col-md-6 col-sm-6 col-xs-6">
+                        <div class="sub-colect">#saigonplace</div>
+                        <img src="images/collection.jpg" class="img-responsive" alt=""/>
+                        <div class="info-collection">
+                            <h3><a href="#" title="">Ngoc Vo</a></h3>
+                            <p><i class="fa fa-heart-o" aria-hidden="true"></i> 20</p>
+                        </div>
+                    </div><!--item-colection-->
+                </div>
+               
+              </div>
+         </div>
+          
+    </div>
+</div><!--ask-login-->
