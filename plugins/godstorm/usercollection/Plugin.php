@@ -4,6 +4,8 @@ use Backend;
 use System\Classes\PluginBase;
 use Godstorm\UserCollection\Listener\FrontendSocialLoginEventListener;
 use Event;
+use RainLab\User\Models\User;
+use RainLab\User\Controllers\Users as UsersController;
 
 /**
  * UserCollection Plugin Information File
@@ -42,6 +44,11 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
+        //Models extends 
+        User::extend(function($model) {
+            $model->hasMany['godstorm_usercollections'] = ['Godstorm\UserCollection\Models\UserCollection'];
+        });
+        //Event Listener goes here
         Event::listen('flynsarmy.sociallogin.registerUser', 'Godstorm\\UserCollection\\Listener\\FrontEndSocialLoginEventListener');
     }
 
