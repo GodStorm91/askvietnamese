@@ -1,4 +1,6 @@
 description = "header"
+[session]
+security = "all"
 ==
 <div class="header pagehome">
 	<div class="container contentmenu">
@@ -24,129 +26,128 @@ description = "header"
 
 				<div class="logintop col-md-3 col-sm-3 col-xs-12">
 					{% if user %}
-					<button type="submit" class="btnlogin btn btn-primary btn-lg" value="/user" >
-						<a href="#">Hello {{ user.name }}</a>
-					</button>
+						<!-- <button type="button" class="btnlogin btn btn-primary btn-lg" > -->
+						<a class="btnlogin btn btn-primary btn-lg" data-request="onLogout" data-request-data="redirect: '/home'">Logout</a>
+						<!-- </button> -->
 					{% else %}
-					<!-- Button trigger modal -->
-					<button type="button" class="btnlogin btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal-home">
-						Login
-					</button>
-					{% partial "login_popup" modalId="myModal-home" %}	
+						<!-- Button trigger modal -->
+						<button type="button" class="btnlogin btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal-home">
+							Login
+						</button>
+						{% partial "login_popup" modalId="myModal-home" %}	
 					{% endif %}										
-					
-				</div>			
-				<div class="menu">
-					<nav class="menutop">
-						<input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle mobile-menu-toggle-button">
-						<ul class="sky-mega-menu scale-effect mobile-toggleable-menu mobile-left">
-							<li><a class="active" href="#" >wh-question</a>
-								<div class="submenu">
+					</div>			
+					<div class="menu">
+						<nav class="menutop">
+							<input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle mobile-menu-toggle-button">
+							<ul class="sky-mega-menu scale-effect mobile-toggleable-menu mobile-left">
+								<li><a class="active" href="#" >wh-question</a>
+									<div class="submenu">
 
-									<div class="list_mn">
-										<ul>
-											<li><a href="#" title="">where to visit?</a>
-												<div class="list-dm-thumb">
-													<ul>
-														<li>
-															<div class="wrap-sec-dm">
-																<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img1.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
-																<div class="name-mn-con">
-																	<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
-																	<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+										<div class="list_mn">
+											<ul>
+												<li><a href="#" title="">where to visit?</a>
+													<div class="list-dm-thumb">
+														<ul>
+															<li>
+																<div class="wrap-sec-dm">
+																	<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img1.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
+																	<div class="name-mn-con">
+																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
+																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+																	</div>
 																</div>
-															</div>
-														</li>
+															</li>
 
-														<li>
-															<div class="wrap-sec-dm">
-																<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img1.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
-																<div class="name-mn-con">
-																	<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
-																	<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+															<li>
+																<div class="wrap-sec-dm">
+																	<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img1.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
+																	<div class="name-mn-con">
+																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
+																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+																	</div>
 																</div>
-															</div>
-														</li>
+															</li>
 
-														<li>
-															<div class="wrap-sec-dm">
-																<div class="thumb-dm"><a href="#" title=""><img rc="{{ 'assets/images/img1.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
-																<div class="name-mn-con">
-																	<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
-																	<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+															<li>
+																<div class="wrap-sec-dm">
+																	<div class="thumb-dm"><a href="#" title=""><img rc="{{ 'assets/images/img1.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
+																	<div class="name-mn-con">
+																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
+																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+																	</div>
 																</div>
-															</div>
-														</li>
-													</ul>
-												</div><!--list-dm-thumb-->
-												<i class="fa fa-plus"></i>
-											</li>
-											<li><a href="#" title="">what to eat?</a>
+															</li>
+														</ul>
+													</div><!--list-dm-thumb-->
+													<i class="fa fa-plus"></i>
+												</li>
+												<li><a href="#" title="">what to eat?</a>
 
-												<div class="list-dm-thumb">
-													<ul>
-														<li>
-															<div class="wrap-sec-dm">
-																<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img2.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
-																<div class="name-mn-con">
-																	<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
-																	<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+													<div class="list-dm-thumb">
+														<ul>
+															<li>
+																<div class="wrap-sec-dm">
+																	<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img2.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
+																	<div class="name-mn-con">
+																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
+																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+																	</div>
 																</div>
-															</div>
-														</li>
+															</li>
 
-														<li>
-															<div class="wrap-sec-dm">
-																<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img2.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
-																<div class="name-mn-con">
-																	<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
-																	<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+															<li>
+																<div class="wrap-sec-dm">
+																	<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img2.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
+																	<div class="name-mn-con">
+																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
+																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+																	</div>
 																</div>
-															</div>
-														</li>
+															</li>
 
-														<li>
-															<div class="wrap-sec-dm">
-																<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img2.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
-																<div class="name-mn-con">
-																	<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
-																	<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+															<li>
+																<div class="wrap-sec-dm">
+																	<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img2.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
+																	<div class="name-mn-con">
+																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
+																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+																	</div>
 																</div>
-															</div>
-														</li>
-													</ul>
-												</div><!--list-dm-thumb-->
-												<i class="fa fa-plus"></i>
-											</li>
-											<li><a href="#" title="">which festival/event?</a></li>
-											<li><a href="#" title="">how about culture?</a></li>
-											<li><a href="#" title="">how to get ready?</a></li>
-										</ul>
-										<a class="menuall" href="#" title="">all</a>
-									</div><!--list_mn-->
+															</li>
+														</ul>
+													</div><!--list-dm-thumb-->
+													<i class="fa fa-plus"></i>
+												</li>
+												<li><a href="#" title="">which festival/event?</a></li>
+												<li><a href="#" title="">how about culture?</a></li>
+												<li><a href="#" title="">how to get ready?</a></li>
+											</ul>
+											<a class="menuall" href="#" title="">all</a>
+										</div><!--list_mn-->
 
 
-								</div><!--sub-menu-->
-								<i class="fa fa-plus"></i>
-							</li>
-							<li><a href="#">who are we</a></li>
-							<li><a href="#">Support center</a></li>
+									</div><!--sub-menu-->
+									<i class="fa fa-plus"></i>
+								</li>
+								<li><a href="#">who are we</a></li>
+								<li><a href="#">Support center</a></li>
 
-							<li><a href="#">askvietnamese</a></li>
+								<li><a href="#">askvietnamese</a></li>
 
-						</ul>
-						<label class="mobile-left mobmenu-toggle" for="mobile-menu-toggle" onClick="menuLeft();"></label>
-					</nav>
-					<a href="javascript:void(0)" onClick="menuLeft();" id="mainHideMenu"></a>
-				</div><!--Menu-->
+							</ul>
+							<label class="mobile-left mobmenu-toggle" for="mobile-menu-toggle" onClick="menuLeft();"></label>
+						</nav>
+						<a href="javascript:void(0)" onClick="menuLeft();" id="mainHideMenu"></a>
+					</div><!--Menu-->
 
-			</div><!--search-login-->    
-			<div class="social-share col-md-2 col-sm-2 col-xs-12">
-				<a href="#" title=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
-				<a href="#" title=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
-				<a href="#" title=""><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-				<a href="#" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-			</div>
-		</div><!--row-->
+				</div><!--search-login-->    
+				<div class="social-share col-md-2 col-sm-2 col-xs-12">
+					<a href="#" title=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="#" title=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+					<a href="#" title=""><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+					<a href="#" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				</div>
+			</div><!--row-->
 		</div><!--container-->
-</div>
+	</div>

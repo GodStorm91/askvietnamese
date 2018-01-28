@@ -4,3 +4,6 @@
   - Second version of UserCollection
   - add_avatar_column_to_users.php
   - create_user_collections_table.php
+1.0.3:
+  - Change avatar to avatar_social
+  - change_avatar_to_avatar_social.php

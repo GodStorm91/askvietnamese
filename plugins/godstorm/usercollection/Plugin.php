@@ -2,6 +2,8 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use Godstorm\UserCollection\Listener\FrontendSocialLoginEventListener;
+use Event;
 
 /**
  * UserCollection Plugin Information File
@@ -40,7 +42,7 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-
+        Event::listen('flynsarmy.sociallogin.registerUser', 'Godstorm\\UserCollection\\Listener\\FrontEndSocialLoginEventListener');
     }
 
     /**
