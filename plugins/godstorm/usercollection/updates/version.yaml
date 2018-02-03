@@ -1,1 +1,15 @@
-1.0.1: First version of UserCollection
+1.0.1: 
+  - First version of UserCollection
+1.0.2: 
+  - Second version of UserCollection
+  - add_avatar_column_to_users.php
+  - create_user_collections_table.php
+1.0.3:
+  - Change avatar to avatar_social
+  - change_avatar_to_avatar_social.php
+1.0.4:
+  - Add new table for following users
+  - create_user_followings_table.php
+1.0.5:
+  - Add new table for following users
+  - create_user_followings_table.php

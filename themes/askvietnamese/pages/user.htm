@@ -1,0 +1,42 @@
+title = "user"
+url = "/user"
+layout = "default"
+description = "User profile pages  -- Must require that user is validated"
+is_hidden = 0
+
+[session]
+security = "all"
+==
+{% component 'account' %}
+
+<div class="ask-login">
+    <div class="container">
+        <div class="title-member">
+            <span>{{user.name}}</span>
+            <img src="{{user.avatar_social}}" class="img-responsive" alt=""/>
+        </div>
+        <ul class="flowing">
+            <li>{{user.godstorm_userfollowings.count}} following</li>
+            <li>{{user.godstorm_usercollections.count}} collections</li>
+        </ul>
+        <div class="profile-edit">
+            <a href="#" title=""><i class="fa fa-cog" aria-hidden="true"></i> Edit Profile</a>
+            <a href="#" title=""><i class="fa fa-pencil" aria-hidden="true"></i> Contribute</a>
+        </div>
+        <div class="clearfix"></div>
+         <!-- Nav tabs -->
+         <div class="content-profile">
+             <ul class="tab-login nav nav-tabs" role="tablist">
+                <li class="active"><a href="#chanels" role="tab" data-toggle="tab">Chanels</a></li>
+                <li><a href="#collections" role="tab" data-toggle="tab">Collections</a></li>
+             </ul>
+            
+              <!-- Tab panes -->
+              <div class="tab-content">
+                {% partial "following_pane" followings=user.godstorm_userfollowings%}
+                {% partial "collection_pane" collections=user.godstorm_usercollections%} 
+              </div>
+         </div>
+          
+    </div>
+</div><!--ask-login-->

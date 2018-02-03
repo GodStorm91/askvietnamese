@@ -1,0 +1,17 @@
+==
+<div class="tab-pane active" id="chanels">
+	{% if followings.count > 0 %}
+		{% for following in followings %}
+			<div class="item-colection col-md-6 col-sm-6 col-xs-6">
+				<div class="sub-colect">#food</div>
+				<img src="images/collection.jpg" class="img-responsive" alt=""/>
+				<div class="info-collection">
+					<h3><a href="#" title="">Laure chevalier</a></h3>
+					<p><i class="fa fa-heart-o" aria-hidden="true"></i> 20</p>
+				</div>
+			</div><!--item-colection-->
+		{% endfor %}
+	{% else %}
+		You don't have something to following. Create following now ? 
+	{% endif %}
+</div>

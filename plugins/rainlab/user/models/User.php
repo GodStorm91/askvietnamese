@@ -49,7 +49,8 @@ class User extends UserBase
         'username',
         'email',
         'password',
-        'password_confirmation'
+        'password_confirmation',
+        'avatar_social'
     ];
 
     /**
