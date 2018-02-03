@@ -9,6 +9,7 @@ class CreateUserCollectionsTable extends Migration
 {
     public function up()
     {
+        Schema::dropIfExists('godstorm_usercollection_user_collections');
         Schema::create('godstorm_usercollection_user_collections', function(Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');

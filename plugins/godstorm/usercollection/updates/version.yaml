@@ -7,5 +7,9 @@
 1.0.3:
   - Change avatar to avatar_social
   - change_avatar_to_avatar_social.php
-1.0.4
-  - Add user followings table
+1.0.4:
+  - Add new table for following users
+  - create_user_followings_table.php
+1.0.5:
+  - Add new table for following users
+  - create_user_followings_table.php
