@@ -1,0 +1,119 @@
+description = "askmore"
+==
+<div class="ask-more-event">
+    <div class="container">
+    
+        <div class="title-home-event">
+            <p>Don't miss</p>
+            <h2>Top 10 events near you</h2>
+            <div class="filter-event">
+                <div class="option-fil">
+                    12-1-2-2012
+                </div>
+                <div class="option-fil">
+                    To
+                </div>
+                <div class="option-fil">
+                   <select>
+                      <option value="">Saigon</option>
+                      <option value="">Hanoi</option>
+                      <option value="">Cantho</option>
+                      <option value="">Danang</option>
+                    </select>
+                </div>
+                <div class="option-fil">
+                   Find event
+                </div>
+                
+            </div>
+        </div><!--title-home-event-->
+        <div class="clearfix"></div>
+            <div class="owl-event-home row">
+                <ul class="">
+                    <li>
+                        <div class="item-stories">
+                            <div class="thumb-story">
+                                <a href="#" title=""><img src="images/stori.jpg" class="img-responsive" alt=""/></a>
+                            </div>
+                            <time>10 nov 2017</time>
+                            <div class="cat-tit-stories"><a href="#">where to visit?</a></div>
+                            <h3><a href="#" title="">Meet sheep close on a hike through the forest!</a></h3>
+                            <span>By</span>
+                            <p>The lab saigon</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-stories">
+                            <div class="thumb-story">
+                                <a href="#" title=""><img src="images/stori.jpg" class="img-responsive" alt=""/></a>
+                            </div>
+                            <time>10 nov 2017</time>
+                             <div class="cat-tit-stories"><a href="#">where to visit?</a></div>
+                            <h3><a href="#" title="">Meet sheep close on a hike through the forest!</a></h3>
+                            <span>By</span>
+                            <p>The lab saigon</p>
+                        </div>
+                    </li><li>
+                        <div class="item-stories">
+                            <div class="thumb-story">
+                                <a href="#" title=""><img src="images/stori.jpg" class="img-responsive" alt=""/></a>
+                            </div>
+                            <time>10 nov 2017</time>
+                             <div class="cat-tit-stories"><a href="#">where to visit?</a></div>
+                            <h3><a href="#" title="">Meet sheep close on a hike through the forest!</a></h3>
+                            <span>By</span>
+                            <p>The lab saigon</p>
+                        </div>
+                    </li><li>
+                        <div class="item-stories">
+                            <div class="thumb-story">
+                                <a href="#" title=""><img src="images/stori.jpg" class="img-responsive" alt=""/></a>
+                            </div>
+                            <time>10 nov 2017</time>
+                             <div class="cat-tit-stories"><a href="#">where to visit?</a></div>
+                            <h3><a href="#" title="">Meet sheep close on a hike through the forest!</a></h3>
+                            <span>By</span>
+                            <p>The lab saigon</p>
+                        </div>
+                    </li><li>
+                        <div class="item-stories">
+                            <div class="thumb-story">
+                                <a href="#" title=""><img src="images/stori.jpg" class="img-responsive" alt=""/></a>
+                            </div>
+                            <time>10 nov 2017</time>
+                             <div class="cat-tit-stories"><a href="#">where to visit?</a></div>
+                            <h3><a href="#" title="">Meet sheep close on a hike through the forest!</a></h3>
+                            <span>By</span>
+                            <p>The lab saigon</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="customNavigation">
+                    <a class="btn prevevent"></a>
+                    <a class="btn nextevent"></a>
+                </div>
+            </div><!--owl-event-->
+             <script type="text/javascript">
+                $(document).ready(function() {  
+                      var carouselevent = $(".owl-event-home ul");
+                      carouselevent.owlCarousel({
+                            items : 4,
+                            autoPlay:3000,
+                            itemsCustom : false,
+                            itemsDesktop : [1199,4],
+                            itemsDesktopSmall : [991,3],
+                            itemsTablet: [768,2],
+                            itemsTabletSmall: false,
+                            itemsMobile : [479,1]
+                          });
+                          $(".nextst").click(function(){
+                            carouselevent.trigger('owl.next');
+                          });
+                          $(".prevst").click(function(){
+                            carouselevent.trigger('owl.prev');
+                      
+                      });
+                    });
+            </script>
+    </div>
+</div><!--ask-more-event-->
