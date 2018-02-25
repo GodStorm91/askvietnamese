@@ -8,52 +8,54 @@ function onEnd()
 {
     // Optional - set the page title to the post title
     if ($this->post)
-        $this->page->title = $this->post->title;
+    $this->page->title = $this->post->title;
 }
 ?>
 ==
 {% component 'blogPost' %}
-{% set post = __SELF__.post %
-
+{% set post = blogPost.post %}
+{% if post.featured_images.count %}
+{% for image in post.featured_images %}
 <div class="image-stories">
-   <img src="images/dt-stori1.png" class="img-responsive" alt=""/> 
-        
+   <img
+   data-src="{{ image.filename }}"
+   src="{{ image.path }}"
+   alt="{{ image.description }}"
+   style="max-width: 100%" />
    <div class="title-name-image"></div>
-   <p>One of the best cuis
+   <p>{{image.description}}</p>
+</div><!--bannersub-->    
+{% endfor %}
+{% endif %}
 <div class="ask-main">
     <div class="container">
         <div class="ask-ftn-body">
             <div class="info-gel">
                 <div class="title-gel"><span>detailed information</span></div>
                 <ul>
-                    <li><p class="titin">Artical Name</p><p>Traditional food</p></li>
-                    <li><p class="titin">Category</p><p>research</p></li>
+                    <li><p class="titin">Artical Name</p><p>{{ post.title }}</p></li>
+                    <li><p class="titin">Category</p>  <p>  {% if post.categories.count %}
+                        {% for category in post.categories %}
+                        <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    {% endif %}</p></li>
                     <li><p class="titin">People Love</p><p>75.790</p></li>
-                    <li><p class="titin">Date Published</p><p>01 - Nov - 2017</p></li>
+                    <li><p class="titin">Date Published</p><p>{{ post.published_at|date('M d, Y') }}</p></li>
                     <li><p class="titin">Author</p><p>nguyen van vinh</p></li>
                     <li><p class="titin">Social</p>
                         <p>
-                        <span><i class="fa fa-bookmark-o" aria-hidden="true"></i></span>
-                        <span><img src="images/icon1.png" class="img-responsive" alt=""/></span>
-                        <span><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-                        <span><img src="images/icon2.png" class="img-responsive" alt=""/></span>
+                            <span><i class="fa fa-bookmark-o" aria-hidden="true"></i></span>
+                            <span><img src="images/icon1.png" class="img-responsive" alt=""/></span>
+                            <span><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+                            <span><img src="images/icon2.png" class="img-responsive" alt=""/></span>
                         </p>
                     </li>
                     
                 </ul>
             </div><!--info-gel-->
             <div class="clearfix"></div>
-            <div class="ask-des-we">
-                <div class="row">
-                
-                    <div class="tit-des-we col-md-6 col-sm-6 col-xs-12">"what is out story?"</div>
-                    <div class="des-we col-md-6 col-sm-6 col-xs-12">
-                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                    </div>
-                </div>
-            </div><!--des-we-->
             <div class="content-suport">
-                Noi dung
+                {{post.content_html|raw}}
             </div>
             <div class="clearfix"></div>
             <div class="ask-ctn-writer">
@@ -68,24 +70,24 @@ function onEnd()
                     </div><!--info-writer-->
                 </div>
                 <div class="share-writer">
-                        <p>A story about</p>
-                        <div class="option-writer">
-                            <span>food, Cuisine, Culture, Hanoi</span>
+                    <p>A story about</p>
+                    <div class="option-writer">
+                        <span>food, Cuisine, Culture, Hanoi</span>
+                    </div>
+                    <div class="row10">
+                        <div class="bl-share-wt col-md-3 col-sm-6 col-xs-6">
+                            <span><img src="images/icon1.png" class="img-responsive" alt=""/> join the conversation</span>
                         </div>
-                        <div class="row10">
-                            <div class="bl-share-wt col-md-3 col-sm-6 col-xs-6">
-                                <span><img src="images/icon1.png" class="img-responsive" alt=""/> join the conversation</span>
-                            </div>
-                            <div class="bl-share-wt col-md-3 col-sm-6 col-xs-6">
-                                <span><i class="fa fa-bookmark-o" aria-hidden="true"></i> bookmark this story</span>
-                            </div>
-                            <div class="bl-share-wt col-md-3 col-sm-6 col-xs-6">
-                                <span><i class="fa fa-heart-o" aria-hidden="true"></i> love this story</span>
-                            </div>
-                            <div class="bl-share-wt col-md-3 col-sm-6 col-xs-6">
-                                <span><img src="images/icon2.png" class="img-responsive" alt=""/> share this story</span>
-                            </div>
+                        <div class="bl-share-wt col-md-3 col-sm-6 col-xs-6">
+                            <span><i class="fa fa-bookmark-o" aria-hidden="true"></i> bookmark this story</span>
                         </div>
+                        <div class="bl-share-wt col-md-3 col-sm-6 col-xs-6">
+                            <span><i class="fa fa-heart-o" aria-hidden="true"></i> love this story</span>
+                        </div>
+                        <div class="bl-share-wt col-md-3 col-sm-6 col-xs-6">
+                            <span><img src="images/icon2.png" class="img-responsive" alt=""/> share this story</span>
+                        </div>
+                    </div>
                 </div><!--share-writer-->
                 
             </div><!--ask-ctn-writer-->
@@ -94,29 +96,3 @@ function onEnd()
         </div><!--f-ctn-body-->
     </div>
 </div><!--ask-main-->   
-
-<div class="content">{{ post.content_html|raw }}</div>
-
-{% if post.featured_images.count %}
-    <div class="featured-images text-center">
-        {% for image in post.featured_images %}
-            <p>
-                <img
-                    data-src="{{ image.filename }}"
-                    src="{{ image.path }}"
-                    alt="{{ image.description }}"
-                    style="max-width: 100%" />
-            </p>
-        {% endfor %}
-    </div>
-{% endif %}
-
-<p class="info">
-    Posted
-    {% if post.categories.count %} in
-        {% for category in post.categories %}
-            <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
-        {% endfor %}
-    {% endif %}
-    on {{ post.published_at|date('M d, Y') }}
-</p>
