@@ -1,0 +1,98 @@
+title = "Blog Post"
+url = "/blog/post/:slug"
+layout = "default"
+[blogPost]
+==
+<?php
+function onEnd()
+{
+    // Optional - set the page title to the post title
+    if ($this->post)
+    $this->page->title = $this->post->title;
+}
+?>
+==
+{% component 'blogPost' %}
+{% set post = blogPost.post %}
+{% if post.featured_images.count %}
+{% for image in post.featured_images %}
+<div class="image-stories">
+   <img
+   data-src="{{ image.filename }}"
+   src="{{ image.path }}"
+   alt="{{ image.description }}"
+   style="max-width: 100%" />
+   <div class="title-name-image"></div>
+   <p>{{image.description}}</p>
+</div><!--bannersub-->    
+{% endfor %}
+{% endif %}
+<div class="ask-main">
+    <div class="container">
+        <div class="ask-ftn-body">
+            <div class="info-gel">
+                <div class="title-gel"><span>detailed information</span></div>
+                <ul>
+                    <li><p class="titin">Artical Name</p><p>{{ post.title }}</p></li>
+                    <li><p class="titin">Category</p>  <p>  {% if post.categories.count %}
+                        {% for category in post.categories %}
+                        <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    {% endif %}</p></li>
+                    <li><p class="titin">People Love</p><p>75.790</p></li>
+                    <li><p class="titin">Date Published</p><p>{{ post.published_at|date('M d, Y') }}</p></li>
+                    <li><p class="titin">Author</p><p>nguyen van vinh</p></li>
+                    <li><p class="titin">Social</p>
+                        <p>
+                            <span><i class="fa fa-bookmark-o" aria-hidden="true"></i></span>
+                            <span><img src="images/icon1.png" class="img-responsive" alt=""/></span>
+                            <span><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+                            <span><img src="images/icon2.png" class="img-responsive" alt=""/></span>
+                        </p>
+                    </li>
+                    
+                </ul>
+            </div><!--info-gel-->
+            <div class="clearfix"></div>
+            <div class="content-suport">
+                {{post.content_html|raw}}
+            </div>
+            <div class="clearfix"></div>
+            <div class="ask-ctn-writer">
+                <div class="row">
+                    <div class="thumb-writer col-md-2 col-sm-3 col-xs-4"><img src="images/writer.jpg" class="img-responsive" alt=""/> </div>
+                    <div class="info-writer col-md-10 col-sm-9 col-xs-8">
+                        <p>Written by</p>
+                        <div class="name-writer">Alex</div>
+                        <time>22 september 2017</time>
+                        
+                        
+                    </div><!--info-writer-->
+                </div>
+                <div class="share-writer">
+                    <p>A story about</p>
+                    <div class="option-writer">
+                        <span>food, Cuisine, Culture, Hanoi</span>
+                    </div>
+                    <div class="row10">
+                        <div class="bl-share-wt col-md-3 col-sm-6 col-xs-6">
+                            <span><img src="images/icon1.png" class="img-responsive" alt=""/> join the conversation</span>
+                        </div>
+                        <div class="bl-share-wt col-md-3 col-sm-6 col-xs-6">
+                            <span><i class="fa fa-bookmark-o" aria-hidden="true"></i> bookmark this story</span>
+                        </div>
+                        <div class="bl-share-wt col-md-3 col-sm-6 col-xs-6">
+                            <span><i class="fa fa-heart-o" aria-hidden="true"></i> love this story</span>
+                        </div>
+                        <div class="bl-share-wt col-md-3 col-sm-6 col-xs-6">
+                            <span><img src="images/icon2.png" class="img-responsive" alt=""/> share this story</span>
+                        </div>
+                    </div>
+                </div><!--share-writer-->
+                
+            </div><!--ask-ctn-writer-->
+            
+            
+        </div><!--f-ctn-body-->
+    </div>
+</div><!--ask-main-->   
