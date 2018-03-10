@@ -1,7 +1,11 @@
 title = "Blog Post"
 url = "/blog/post/:slug"
 layout = "default"
+is_hidden = 0
+
 [blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/category"
 ==
 <?php
 function onEnd()
@@ -22,9 +26,10 @@ function onEnd()
    src="{{ image.path }}"
    alt="{{ image.description }}"
    style="max-width: 100%" />
-   <div class="title-name-image"></div>
-   <p>{{image.description}}</p>
-</div><!--bannersub-->    
+   <div class="title-name-image">{{ image.description }}</div>
+      <div class="title-name-image">{{ post.title }}</div>
+   <p>One of the best cuisine in Hanoi that you must taste</p>
+</div><!--bannersub2-->    
 {% endfor %}
 {% endif %}
 <div class="ask-main">
@@ -95,4 +100,4 @@ function onEnd()
             
         </div><!--f-ctn-body-->
     </div>
-</div><!--ask-main-->   
+</div><!--ask-main-->

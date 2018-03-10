@@ -3,10 +3,12 @@ url = "/home"
 layout = "default"
 is_hidden = 0
 [session]
+[blogPosts]
+postsPerPage ="5"
 security = "all"
 ==
 {% component 'account' %}
-
+{% set posts = __SELF__.posts %}
 {% partial "ask_main" %}
 {% partial "ask_more" %}
-{% partial "top_articles" %}
+<!-- {% partial "top_articles" %} -->
