@@ -37,13 +37,23 @@ function onEnd()
       <div class="clearfix"></div>
       <div class="page-fil">
         <ul>
-          <li><a href="#">< Previous</a></li>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-          <li><a href="#">Last ></a></li>
+          {% if posts.lastPage > 1 %}
+              <ul class="pagination">
+                  {% if posts.currentPage > 1 %}
+                      <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
+                  {% endif %}
+
+                  {% for page in 1..posts.lastPage %}
+                      <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                          <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                      </li>
+                  {% endfor %}
+
+                  {% if posts.lastPage > posts.currentPage %}
+                      <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
+                  {% endif %}
+              </ul>
+          {% endif %}
         </ul>
       </div>
     </div><!--ask-ques-content-->

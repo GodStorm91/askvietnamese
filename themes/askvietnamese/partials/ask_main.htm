@@ -17,7 +17,7 @@ description = "ask main"
                                 <div class="sub-cat-stories">
                                     <span>                
                                         {% for category in post.categories %}
-                                            <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                                            <a href="/categories/{{ category.slug }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
                                         {% endfor %}
                                     </span>
                                     <time>{{ post.published_at|date('M d, Y') }}</time>
