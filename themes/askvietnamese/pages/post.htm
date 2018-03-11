@@ -5,7 +5,7 @@ is_hidden = 0
 
 [blogPost]
 slug = "{{ :slug }}"
-categoryPage = "blog/category"
+categoryPage = "categories"
 ==
 <?php
 function onEnd()
@@ -42,7 +42,7 @@ function onEnd()
             <div class="clearfix"></div>
             <div class="ask-ctn-writer">
                 <div class="row">
-                    <div class="thumb-writer col-md-2 col-sm-3 col-xs-4"><img src="{{post.user.avatar}}" class="img-responsive" alt=""/> </div>
+                    <div class="thumb-writer col-md-2 col-sm-3 col-xs-4"><img src="{{post.user.avatar.path}}" class="img-responsive" alt=""/> </div>
                     <div class="info-writer col-md-10 col-sm-9 col-xs-8">
                         <p>Written by</p>
                         <div class="name-writer">{{ post.user.first_name }}</div>

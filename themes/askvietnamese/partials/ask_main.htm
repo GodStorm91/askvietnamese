@@ -9,7 +9,7 @@ description = "ask main"
                 {% for post in posts %}
                     <li data-wow-delay="0.1s" class="wow fadeInUp animated">
                         <div class="ask-item-art-home">
-                            <div class="thumb-art-home"><a href="#" title="">
+                            <div class="thumb-art-home"><a href="blog/post/{{ post.slug }}" title="">
                                 {% if post.featured_images.count %}
                                 <img src="{{ post.featured_images[0].path }}" class="img-responsive" alt=""/></a></div>
                                 {% endif %}
