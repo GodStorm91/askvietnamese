@@ -650,7 +650,7 @@ nav {
         right: 0;
     }
     .mobile-menu-toggle-button:checked + .mobile-toggleable-menu.mobile-left {
-        width: 285px !important;
+        width: 200px !important;
         left: 0;
         top: 0;
         overflow-y: auto;
