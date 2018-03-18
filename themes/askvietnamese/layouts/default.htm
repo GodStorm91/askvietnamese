@@ -1,5 +1,14 @@
 description = "Default layout"
 ==
+<?php
+function onStart() {
+    $this['facebook_link'] = getenv('FACEBOOK_LINK');
+    $this['instagram_link'] = getenv('INSTAGRAM_LINK');
+    $this['youtube_link'] = getenv('YOUTUBE_LINK');
+    $this['twitter_link'] = getenv('TWITTER_LINK');
+} 
+?>
+==
 <!DOCTYPE html>
 <html lang="en">
 <head>
