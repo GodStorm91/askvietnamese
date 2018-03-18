@@ -7,6 +7,7 @@ description = "ask main"
             <div class="list-art-home">
                <ul class="listone">
                 {% for post in posts %}
+                    {% if post.published == 1 %}
                     <li data-wow-delay="0.1s" class="wow fadeInUp animated">
                         <div class="ask-item-art-home">
                             <div class="thumb-art-home"><a href="blog/post/{{ post.slug }}" title="">
@@ -84,6 +85,7 @@ description = "ask main"
                             </div>
                         </div>
                     </li>
+                {% endif %}
                 {% endfor %}
                </ul><!--listone-->
             </div><!--list-art-home-->
