@@ -889,6 +889,10 @@ footer {
 .page-fil ul li a:hover {
     color: #000;
 }
+
+.page-fil ul li a.onClick {
+    color: #8B0000;
+}
 .list-dm-thumb {
     float: left;
     width: 79%;
