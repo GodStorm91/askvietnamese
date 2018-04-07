@@ -6,7 +6,6 @@ is_hidden = 0
 [blogPost]
 slug = "{{ :slug }}"
 categoryPage = "categories"
-
 ==
 <?php
 function onEnd()
@@ -18,7 +17,6 @@ function onEnd()
         $this->post->url = urlencode("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
     }
     
-
 }
 ?>
 ==
@@ -27,14 +25,14 @@ function onEnd()
 {% if post.featured_images.count %}
 {% for image in post.featured_images %}
 <div class="image-stories">
-   <img
-   data-src="{{ image.filename }}"
-   src="{{ image.path }}"
-   alt="{{ image.description }}"
-   style="max-width: 100%" />
-   <div class="title-name-image">{{ image.description }}</div>
-      <div class="title-name-image">{{ post.title }}</div>
-   <!-- <p>One of the best cuisine in Hanoi that you must taste</p> -->
+ <img
+ data-src="{{ image.filename }}"
+ src="{{ image.path }}"
+ alt="{{ image.description }}"
+ style="max-width: 100%" />
+ <div class="title-name-image">{{ image.description }}</div>
+ <div class="title-name-image">{{ post.title }}</div>
+ <!-- <p>One of the best cuisine in Hanoi that you must taste</p> -->
 </div><!--bannersub2-->    
 {% endfor %}
 {% endif %}
@@ -61,7 +59,7 @@ function onEnd()
                     <p>A story about</p>
                     <div class="option-writer">
                         {% for category in post.categories %}
-                            <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                        <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
                         {% endfor %}
                     </div>
                     <div class="row10">
