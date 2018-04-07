@@ -259,7 +259,7 @@ return [
         'uploads' => [
             'disk'   => 's3',
             'folder' => 'uploads',
-            'path'   => 'https://www.askvietnamese.vn.s3.amazonaws.com/storage/app/uploads',
+            'path'   => 'https://www.askvietnamese.vn.s3.amazonaws.com/',
         ],
 
         'media' => [
