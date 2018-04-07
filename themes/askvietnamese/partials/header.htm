@@ -49,39 +49,11 @@ security = "all"
 
 										<div class="list_mn">
 											<ul>
-												<li><a href="/categories/where-to-visit" title="">where to visit?</a>
-													<div class="list-dm-thumb">
-														<ul>
-															<li>
-																<div class="wrap-sec-dm">
-																	<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img1.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
-																	<div class="name-mn-con">
-																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
-																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
-																	</div>
-																</div>
-															</li>
-														</ul>
-													</div><!--list-dm-thumb-->
-													<i class="fa fa-plus"></i>
-												</li>
-												<li><a href="/categories//what-to-eat" title="">what to eat?</a>
-
-													<div class="list-dm-thumb">
-														<ul>
-															<li>
-																<div class="wrap-sec-dm">
-																	<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img2.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
-																	<div class="name-mn-con">
-																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
-																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
-																	</div>
-																</div>
-															</li>
-														</ul>
-													</div><!--list-dm-thumb-->
-													<i class="fa fa-plus"></i>
-												</li>
+												{% partial "what-pages" title="where to visit" category="Places" %}
+												{% partial "what-pages" title="what to eat" category="Food" %}
+												{% partial "what-pages" title="which festival/event" category="Festival/Event" %}	
+												{% partial "what-pages" title="how about culture" category="Culture" %}
+												{% partial "what-pages" title="how to get ready" category="Travel tips" %}
 											</ul>
 											<a class="menuall" href="#" title="">all</a>
 										</div><!--list_mn-->

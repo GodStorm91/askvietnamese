@@ -23,6 +23,7 @@ function onEnd()
       <div class="ask-ques-content">
         <div class="row">
         {% for post in posts %}
+        {% if post.published == 1 %}
          <div class="ask-ques-item col-md-3 col-sm-3 col-xs-6">
            <div class="ques-item">
             <div class="thumb-ques"><a href="/blog/post/{{post.slug}}"><img src="{{post.featured_images[0].path}}" class="img-responsive" alt="#" /></a></div>
@@ -31,6 +32,7 @@ function onEnd()
             <p><span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span> <i class="fa fa-bookmark-o" aria-hidden="true"></i></p>
           </div> 
         </div><!--ask-ques-item-->
+        {% endif %}
         {% endfor %}
 
       </div>
