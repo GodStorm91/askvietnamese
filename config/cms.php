@@ -257,7 +257,7 @@ return [
     'storage' => [
 
         'uploads' => [
-            'disk'   => 'local',
+            'disk'   => 's3',
             'folder' => 'uploads',
             'path'   => '/storage/app/uploads',
         ],
