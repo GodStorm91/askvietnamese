@@ -1,21 +1,24 @@
 description = "header"
 [session]
+[blogPosts]
 security = "all"
 ==
+{% set posts = __SELF__.posts %}
+
 <div class="header pagehome">
 	<div class="container contentmenu">
 		<div class="row">
 
 			<div class="logo col-lg-2 col-md-2 col-sm-2 col-xs-12">
-				<a href="#" title=""><img src="{{ 'assets/images/logohome.png'|theme }}" class="img-responsive" alt=""/></a>
+				<a href="/home" title=""><img src="{{ 'assets/images/logohome.png'|theme }}" class="img-responsive" alt=""/></a>
 			</div>
 			<div class="search-login col-md-8 col-sm-8 col-xs-12">
 				<div class="searh col-md-9 col-sm-9 col-xs-12">
 					<span class="icon-search"><i class="fa fa-search" aria-hidden="true"></i></span>
 					<div class="form_moblie_search">
-						<form method="post" id="idf" action="" name="form_timkiem_sp">
+						<form method="get" id="idf" action="/blog/search" name="form_timkiem_sp">
 							<div class="artseed-search">
-								<input value="" class="top_input" type="text" placeholder="Guide to Better Choice, please ask us" name="block_name_search" />
+								<input value="" class="top_input" type="text" placeholder="Guide to Better Choice, please ask us" name="search" />
 
 							</div>
 
@@ -46,32 +49,12 @@ security = "all"
 
 										<div class="list_mn">
 											<ul>
-												<li><a href="#" title="">where to visit?</a>
+												<li><a href="/categories/where-to-visit" title="">where to visit?</a>
 													<div class="list-dm-thumb">
 														<ul>
 															<li>
 																<div class="wrap-sec-dm">
 																	<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img1.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
-																	<div class="name-mn-con">
-																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
-																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
-																	</div>
-																</div>
-															</li>
-
-															<li>
-																<div class="wrap-sec-dm">
-																	<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img1.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
-																	<div class="name-mn-con">
-																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
-																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
-																	</div>
-																</div>
-															</li>
-
-															<li>
-																<div class="wrap-sec-dm">
-																	<div class="thumb-dm"><a href="#" title=""><img rc="{{ 'assets/images/img1.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
 																	<div class="name-mn-con">
 																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
 																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
@@ -82,30 +65,10 @@ security = "all"
 													</div><!--list-dm-thumb-->
 													<i class="fa fa-plus"></i>
 												</li>
-												<li><a href="#" title="">what to eat?</a>
+												<li><a href="/categories//what-to-eat" title="">what to eat?</a>
 
 													<div class="list-dm-thumb">
 														<ul>
-															<li>
-																<div class="wrap-sec-dm">
-																	<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img2.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
-																	<div class="name-mn-con">
-																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
-																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
-																	</div>
-																</div>
-															</li>
-
-															<li>
-																<div class="wrap-sec-dm">
-																	<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img2.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
-																	<div class="name-mn-con">
-																		<h3><a href="#" title="">Beautiful Place to Explore in Pho Co Hoi An</a></h3>
-																		<p>Publish 1 day ago <span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
-																	</div>
-																</div>
-															</li>
-
 															<li>
 																<div class="wrap-sec-dm">
 																	<div class="thumb-dm"><a href="#" title=""><img src="{{ 'assets/images/img2.jpg'|theme }}" class="img-responsive" alt=""/></a></div>
@@ -119,9 +82,6 @@ security = "all"
 													</div><!--list-dm-thumb-->
 													<i class="fa fa-plus"></i>
 												</li>
-												<li><a href="#" title="">which festival/event?</a></li>
-												<li><a href="#" title="">how about culture?</a></li>
-												<li><a href="#" title="">how to get ready?</a></li>
 											</ul>
 											<a class="menuall" href="#" title="">all</a>
 										</div><!--list_mn-->
@@ -130,8 +90,8 @@ security = "all"
 									</div><!--sub-menu-->
 									<i class="fa fa-plus"></i>
 								</li>
-								<li><a href="#">who are we</a></li>
-								<li><a href="#">Support center</a></li>
+								<li><a href="/whoweare">who are we</a></li>
+								<li><a href="/support">Support center</a></li>
 
 								<li><a href="#">askvietnamese</a></li>
 
@@ -143,10 +103,10 @@ security = "all"
 
 				</div><!--search-login-->    
 				<div class="social-share col-md-2 col-sm-2 col-xs-12">
-					<a href="#" title=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
-					<a href="#" title=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
-					<a href="#" title=""><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-					<a href="#" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a href="{{ facebook_link }}" title="" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="{{ instagram_link }}" title="" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+					<a href="{{ youtube_link }}" title=""><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+					<a href="{{ twitter_link }}" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
 				</div>
 			</div><!--row-->
 		</div><!--container-->

@@ -1,0 +1,24 @@
+title = "blog_search"
+url = "/blog/search/:search?/:page?"
+layout = "default"
+description = "blog search result page"
+is_hidden = 0
+
+[searchResult]
+searchTerm = "{{ :search }}"
+pageNumber = "{{ :page }}"
+hightlight = 0
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog"
+postPage = "blog/posts"
+
+[searchForm]
+resultPage = "blog/search"
+categoryFilter = 0
+==
+
+{% component 'account' %}
+{% set posts = __SELF__.posts %}
+{% partial "ask_main" %}

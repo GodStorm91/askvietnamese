@@ -1,5 +1,14 @@
 description = "Default layout"
 ==
+<?php
+function onStart() {
+    $this['facebook_link'] = getenv('FACEBOOK_LINK');
+    $this['instagram_link'] = getenv('INSTAGRAM_LINK');
+    $this['youtube_link'] = getenv('YOUTUBE_LINK');
+    $this['twitter_link'] = getenv('TWITTER_LINK');
+} 
+?>
+==
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +19,7 @@ description = "Default layout"
 	<meta name="author" content=""/>
 	<link rel="shortcut icon" href="#"/>
 
-	<title>ASKVIETNAM</title>
+	<title>{{ this.page.title }}</title>
 	{% styles %}
 	<link href="{{ 'assets/css/bootstrap.min.css'|theme }}" rel="stylesheet"/>
 	<link href="{{ 'assets/css/font-awesome.css'|theme }}" rel="stylesheet"/>
