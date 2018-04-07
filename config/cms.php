@@ -259,13 +259,13 @@ return [
         'uploads' => [
             'disk'   => 's3',
             'folder' => 'uploads',
-            'path'   => 'https://s3-ap-northeast-1.amazonaws.com/www.askvietnamese.vn/storage/app/uploads',
+            'path'   => ' https://s3-ap-southeast-1.amazonaws.com/www.askvietnamese.vn/storage/app/uploads/',
         ],
 
         'media' => [
             'disk'   => 's3',
             'folder' => 'media',
-            'path'   => 'https://s3-ap-northeast-1.amazonaws.com/www.askvietnamese.vn/media/',
+            'path'   => ' https://s3-ap-southeast-1.amazonaws.com/www.askvietnamese.vn/media/',
         ],
 
     ],
