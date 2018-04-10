@@ -2,11 +2,27 @@ title = "home"
 url = "/home/:page?"
 layout = "default"
 is_hidden = 0
+
 [session]
-[blogPosts]
-postsPerPage ="5"
 security = "all"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 5
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+
+[topPosts]
+period = 2
+category = 0
+postPerPage = 1
+postPage = "blog/post"
+slug = "{{ :slug }}"
 ==
 {% component 'account' %}
 {% set posts = __SELF__.posts %}
+{% set mostVisitedPosts = __SELF__.mostVisitedPosts %}
 {% partial "ask_main" %}
+{% partial "top_articles" %}

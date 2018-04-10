@@ -6,6 +6,8 @@ is_hidden = 0
 [blogPost]
 slug = "{{ :slug }}"
 categoryPage = "categories"
+
+[registerVisit]
 ==
 <?php
 function onEnd()
@@ -39,6 +41,25 @@ function onEnd()
 <div class="ask-main">
     <div class="container">
         <div class="ask-ftn-body">
+            <div class="info-gel">
+                <div class="title-gel"><span>detailed information</span></div>
+                <ul>
+                    <li><p class="titin">Artical Name</p><p>{{ post.title }}</p></li>
+                    <li><p class="titin">Category</p><p>{{ post.categories[0].name }}</p></li>
+                    <li><p class="titin">People Love</p><p>{{ random(100) }}</p></li>
+                    <li><p class="titin">Date Published</p><p>{{ post.published_at|date('M d, Y') }}</p></li>
+                    <li><p class="titin">Author</p><p>{{ post.user.first_name }}</p></li>
+                    <li><p class="titin">Social</p>
+                        <p>
+                        <span><i class="fa fa-bookmark-o" aria-hidden="true"></i></span>
+                        <span><img src="images/icon1.png" class="img-responsive" alt=""/></span>
+                        <span><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+                        <span><img src="images/icon2.png" class="img-responsive" alt=""/></span>
+                        </p>
+                    </li>
+                    
+                </ul>
+            </div><!--info-gel-->
             <div class="clearfix"></div>
             <div class="content-suport">
                 {{post.content_html|raw}}

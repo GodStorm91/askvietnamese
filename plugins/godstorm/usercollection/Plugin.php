@@ -52,7 +52,7 @@ class Plugin extends PluginBase
             $model->hasMany['godstorm_userfollowings'] = ['Godstorm\UserCollection\Models\UserFollowing'];
         });
         //Event Listener goes here
-        Event::listen('flynsarmy.sociallogin.registerUser', 'Godstorm\\UserCollection\\Listener\\FrontEndSocialLoginEventListener');
+        Event::listen('flynsarmy.sociallogin.registerUser', 'Godstorm\\UserCollection\\Listener\\FrontendSocialLoginEventListener');
     }
 
     /**

@@ -1,0 +1,30 @@
+description = "what pages"
+==
+<li><a href="/categories/{{ category }}" title="">{{ title }}</a>
+	<div class="list-dm-thumb">
+		<ul>
+			{% for post in posts %}
+			{% if post.published == 1 %}
+			{% for cat in post.categories %}
+			{% if cat.name == category %}
+			<li>
+				<div class="wrap-sec-dm">
+					{% if post.featured_images.count %}
+					{% for image in post.featured_images %}
+					<div class="thumb-dm"><a href="#" title=""><img data-src="{{ image.filename }}" src="{{ image.path }}" class="img-responsive" alt=""/></a></div>
+					{% endfor %}
+					{% endif %}
+					<div class="name-mn-con">
+						<h3><a href="#" title="">{{ post.title }}</a></h3>
+						<p>{{ post.published_at|date('M d, Y') }}<span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+					</div>
+				</div>
+			</li>
+			{% endif %}
+			{% endfor %}
+			{% endif %}
+			{% endfor %}
+		</ul>
+	</div><!--list-dm-thumb-->
+	<i class="fa fa-plus"></i>
+</li>
