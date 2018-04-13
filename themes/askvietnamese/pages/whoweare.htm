@@ -2,8 +2,14 @@ title = "whoweare"
 url = "/whoweare"
 layout = "default"
 is_hidden = 0
+
 [blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/category"
+
+[googleTracker]
 ==
+{% component 'googleTracker' %}
 {% set posts = __SELF__.posts %}
 <div class="ask-main">
     <div class="container">

@@ -17,8 +17,10 @@ postPage = "blog/posts"
 [searchForm]
 resultPage = "blog/search"
 categoryFilter = 0
-==
 
+[googleTracker]
+==
+{% component 'googleTracker' %}
 {% component 'account' %}
 {% set posts = __SELF__.posts %}
 {% partial "ask_main" %}

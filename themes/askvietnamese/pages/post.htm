@@ -8,6 +8,8 @@ slug = "{{ :slug }}"
 categoryPage = "categories"
 
 [registerVisit]
+
+[googleTracker]
 ==
 <?php
 function onEnd()
@@ -22,6 +24,7 @@ function onEnd()
 }
 ?>
 ==
+{% component 'googleTracker' %}
 {% component 'blogPost' %}
 {% set post = blogPost.post %}
 {% if post.featured_images.count %}
