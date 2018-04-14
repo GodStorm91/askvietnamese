@@ -14,9 +14,10 @@ is_hidden = 0
 				{% partial "five_wh_questions" %}
 			</div>
 		</div>
-		<div data-wow-delay="0.1s" class="right-page wow fadeInRight animated">
-			<div class="logohome"><a href="#" title=""><img src="{{ 'assets/images/logohome.png'|theme }}" class="img-responsive" alt=""/></a></div>
-			<div class="ask-non"><img src="{{ 'assets/images/non.png'|theme }}" class="img-responsive" alt=""/></div>
+		<div data-wow-delay="0.1s" class="right-page wow fadeInRight animated jquery-background-video-wrapper">
+			<video id="bg-vid" class="jquery-background-video" autoplay poster="{{ 'assets/img/bg-vid.jpg'|theme }}">
+            	<source src="{{'mobile720p.mp4'|media}}" type="video/mp4">
+        	</video>
 			<div class="loginhome">
 				{% if user %}
 					<button type="button" class="btnlogin btn btn-primary btn-lg">
@@ -32,7 +33,40 @@ is_hidden = 0
 			</div><!--loginhome-->
 		</div>
 		<div class="godown"><a href="/home"><img src="{{ 'assets/images/godown.png'|theme }}" class="img-responsive" alt=""/></a></div>
-		<script>
-
-		</script>
 </section><!--firstpage-->
+<script>
+    var $bgVid = $('#bg-vid');
+    var $btnMute = $('.btn-mute');
+    $(document).ready(function() {
+        $bgVid.bgVideo({ showPausePlay: false });
+        
+        var i = null;
+        setTimeout(function() {
+            $(".intro-wrapper").fadeOut(1000);
+        }, 2000);
+        $("body").mousemove(function(event) {
+            clearTimeout(i);
+            $(".intro-wrapper").fadeIn(1000);
+            i = setTimeout(function() {
+                $(".intro-wrapper").fadeOut(1000);
+            }, 2000);
+        });
+
+        if($bgVid[0].muted) {
+            $btnMute.addClass("muted");
+        } else {
+            $btnMute.removeClass("muted");
+        }
+        $btnMute.on('click', function() {
+            if($bgVid[0].muted) {
+                $bgVid[0].muted = false;
+                $btnMute.removeClass("muted");
+                console.log("Unmuted");
+            } else {
+                $bgVid[0].muted = true;
+                $btnMute.addClass("muted");
+                console.log("Muted");
+            }
+        });
+    });
+</script>
