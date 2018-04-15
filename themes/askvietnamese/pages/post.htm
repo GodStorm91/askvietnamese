@@ -104,7 +104,7 @@ function onEnd()
                             <span><i class="fa fa-bookmark-o" aria-hidden="true"></i> bookmark this story</span>
                         </div>
                         <div class="bl-share-wt col-md-3 col-sm-6 col-xs-6">
-                            <a data-request="onLikePost" data-request-data="post_id: {{post.id}}"><span class="{{ likedClass }}"><i class="fa fa-heart-o" aria-hidden="true"></i>love this story</span></a>
+                            <a data-request="onLikePost" data-request-data="post_id: {{post.id}}"><span class="{{ likedClass }}"><i class="fa fa-heart-o" aria-hidden="true"></i>{{ likedLabel }}</span></a>
                         </div>
                         <a class="sharing-button" href="https://www.facebook.com/sharer/sharer.php?u={{post.url}}" target="_blank">
                             <div class="bl-share-wt col-md-3 col-sm-6 col-xs-6">
