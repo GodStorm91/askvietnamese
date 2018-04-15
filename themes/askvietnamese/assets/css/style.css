@@ -1744,6 +1744,10 @@ p.des-sup:before {
 .bl-share-wt span:hover {
     color: #de4048;
 }
+
+.post_span_active {
+    color: #de4048 !important;
+}
 .share-writer {
     clear: both;
     margin-left: 18%;

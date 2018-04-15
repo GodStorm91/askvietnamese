@@ -13,3 +13,6 @@
 1.0.5:
   - Add new table for following users
   - create_user_followings_table.php
+1.0.6:
+  - Add like table for users
+  - create_user_likes_table.php
