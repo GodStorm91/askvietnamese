@@ -29,10 +29,10 @@
 
 .jquery-background-video {
   position: absolute;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+  min-width: 150%;
+  min-height: 150%;
+  width: 150%;
+  height: 150%;
   top: 50%;
   left: 50%;
   -o-object-fit: fill !important;
@@ -2171,6 +2171,7 @@ span.icon-search {
     float: left;
     width: 30%;
     padding: 35px;
+    overflow: hidden;
 }
 .list-choose ul li a {
     font-size: 45px;
