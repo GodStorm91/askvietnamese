@@ -7,6 +7,7 @@ use PluginTestCase;
 
 class UserCollectionTest extends PluginTestCase
 {
+	//User should the list of Liked collection
 	public function testGetListUsersCollection()
 	{
 		$user = new User();
@@ -14,5 +15,5 @@ class UserCollectionTest extends PluginTestCase
 		$listCollections = $userHelper->getListCollections($user);
 		$this->assertEquals(count($listCollections), 0);
 
-	}
+	}	
 }
