@@ -15,5 +15,5 @@ class UserCollectionTest extends PluginTestCase
 		$listCollections = $userHelper->getListCollections($user);
 		$this->assertEquals(count($listCollections), 0);
 
-	}
+	}	
 }

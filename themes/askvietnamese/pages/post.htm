@@ -17,7 +17,7 @@ function onEnd()
     // Optional - set the page title to the post title
     if ($this->post)
     {
-        $this->page->title = $this->post->title;
+        $this->page->title = "AskVietnamse|" . $this->post->title;
         $this->post->url = urlencode("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
     }
     
