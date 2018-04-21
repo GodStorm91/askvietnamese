@@ -24,6 +24,6 @@ class UserLike extends Model
 
     public $belongsTo = [
         'user' => ['RainLab\User\Models\User'],
-        'post' => ['RainLab\Blog\Post']
+        'post' => ['RainLab\Blog\Models\Post']
     ];
 }

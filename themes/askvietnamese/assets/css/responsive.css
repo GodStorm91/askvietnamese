@@ -164,10 +164,15 @@
   {
       display:none;
   }
+  .logintop ul.dropdown-menu 
+  {
+    right: 0 !important;
+    float: right !important;
+  }
   .logintop button
   {
     padding-right:0;
-    display: none;
+    display: block !important;
   }
   .social-share i
   {
@@ -240,7 +245,7 @@
   {
     position:absolute;
     right:0;
-    top: -63px;
+    top: -53px;
     text-align: right;
   }
   .header
@@ -424,7 +429,8 @@
   }
   .logintop button
   {
-    padding-right:0
+    padding-right:0;
+    display: block !important;
   }
   .logo img
   {
