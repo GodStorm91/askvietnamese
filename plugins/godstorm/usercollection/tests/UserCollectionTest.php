@@ -8,6 +8,7 @@ use PluginTestCase;
 
 class UserCollectionTest extends PluginTestCase
 {
+	//User should the list of Liked collection
 	public function testGetListUsersCollection()
 	{
 		$user = new User();
