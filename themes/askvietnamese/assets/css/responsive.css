@@ -424,7 +424,8 @@
   }
   .logintop button
   {
-    padding-right:0
+    padding-right:0;
+    float: right;
   }
   .logo img
   {
