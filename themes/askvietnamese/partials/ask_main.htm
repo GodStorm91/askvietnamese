@@ -5,10 +5,10 @@ description = "ask main"
     <div class="container">
         <div class="row">
             <div class="list-art-home">
-             <ul class="listone">
+             <ul class="listone" data-infinite-scroll='{ "path": ".pagination_next", "append": ".listone", "history": false }'>
                 {% for post in posts %}
                 {% if post.published == 1 %}
-                <li data-wow-delay="0.1s" class="wow fadeInUp animated">
+                <li data-wow-delay="0.1s" class="wow fadeInUp animated" >
                     <div class="ask-item-art-home">
                         <div class="thumb-art-home"><a href="/blog/post/{{ post.slug }}" title="">
                             {% if post.featured_images.count %}
@@ -104,7 +104,7 @@ description = "ask main"
             {% endfor %}
 
             {% if posts.lastPage > posts.currentPage %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &gt;</a></li>
+            <li><a class="pagination_next" href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &gt;</a></li>
             {% endif %}
         </ul>
     </div>
