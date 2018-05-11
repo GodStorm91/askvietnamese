@@ -8,7 +8,7 @@ description = "ask main"
              <ul class="listone">
                 {% for post in posts %}
                 {% if post.published == 1 %}
-                <li data-wow-delay="0.1s" class="wow fadeInUp animated">
+                <li data-wow-delay="0.1s" class="wow fadeInUp animated" >
                     <div class="ask-item-art-home">
                         <div class="thumb-art-home"><a href="/blog/post/{{ post.slug }}" title="">
                             {% if post.featured_images.count %}
@@ -104,7 +104,7 @@ description = "ask main"
             {% endfor %}
 
             {% if posts.lastPage > posts.currentPage %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &gt;</a></li>
+            <li><a class="pagination_next" href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &gt;</a></li>
             {% endif %}
         </ul>
     </div>
@@ -116,3 +116,16 @@ description = "ask main"
 </div>
 </div>
 </div><!--ask-main-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.listone').infiniteScroll({
+            path: function() {
+                return '/home_infinite/' + (this.loadCount + 2);
+            },
+            append: '.listone',
+            checkLastPage: '.pagination_next',
+            history: false
+            // options...
+        });
+    });
+</script>
