@@ -5,7 +5,7 @@ description = "ask main"
     <div class="container">
         <div class="row">
             <div class="list-art-home">
-             <ul class="listone" data-infinite-scroll='{ "path": ".pagination_next", "append": ".listone", "history": false }'>
+             <ul class="listone">
                 {% for post in posts %}
                 {% if post.published == 1 %}
                 <li data-wow-delay="0.1s" class="wow fadeInUp animated" >
@@ -116,3 +116,16 @@ description = "ask main"
 </div>
 </div>
 </div><!--ask-main-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.listone').infiniteScroll({
+            path: function() {
+                return '/home_infinite/' + (this.loadCount + 1);
+            },
+            append: '.listone',
+            checkLastPage: '.pagination_next',
+            history: false
+            // options...
+        });
+    });
+</script>
