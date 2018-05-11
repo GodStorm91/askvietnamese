@@ -120,7 +120,8 @@ description = "ask main"
     $(document).ready(function(){
         $('.listone').infiniteScroll({
             path: function() {
-                return '/home_infinite/' + (this.loadCount + 1);
+                var loadPage = this.loadCount == 0 ? 2 : this.loadCount + 1;
+                return '/home_infinite/' + loadPage;
             },
             append: '.listone',
             checkLastPage: '.pagination_next',
