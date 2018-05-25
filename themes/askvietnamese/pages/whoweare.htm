@@ -9,7 +9,7 @@ robot_follow = "follow"
 
 [blogPosts]
 pageNumber = "{{ :page }}"
-postsPerPage = 10
+postsPerPage = 1000
 noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 categoryPage = "blog/category"
@@ -23,7 +23,7 @@ postPage = "blog/post"
                 <div class="title-gel"><span>general information</span></div>
                 <ul>
                     <li><p class="titin">Brand name</p><p>Ask Vietnamese</p></li>
-                    <li><p class="titin">Stories</p><p>{{ dump(__SELF__) }}</p></li>
+                    <li><p class="titin">Stories</p><p>{{ posts|length }}</p></li>
                     <li><p class="titin">Bloger</p><p>100</p></li>
                     <li><p class="titin">Established</p><p>01 - Nov - 2017</p></li>
                     <li><p class="titin">Members</p><p>15</p></li>
