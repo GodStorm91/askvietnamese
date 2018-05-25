@@ -2,15 +2,20 @@ title = "whoweare"
 url = "/whoweare"
 layout = "default"
 is_hidden = 0
-
-[blogPost]
-slug = "{{ :slug }}"
-categoryPage = "blog/category"
+robot_index = "index"
+robot_follow = "follow"
 
 [googleTracker]
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 1000
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
 ==
 {% component 'googleTracker' %}
-{% set posts = __SELF__.posts %}
 <div class="ask-main">
     <div class="container">
         <div class="ask-ftn-body">
@@ -18,8 +23,8 @@ categoryPage = "blog/category"
                 <div class="title-gel"><span>general information</span></div>
                 <ul>
                     <li><p class="titin">Brand name</p><p>Ask Vietnamese</p></li>
-                    <li><p class="titin">Stories</p><p>{{posts.count}}</p></li>
-                    <li><p class="titin">Bloger</p><p>75.790</p></li>
+                    <li><p class="titin">Stories</p><p>{{ posts|length }}</p></li>
+                    <li><p class="titin">Bloger</p><p>100</p></li>
                     <li><p class="titin">Established</p><p>01 - Nov - 2017</p></li>
                     <li><p class="titin">Members</p><p>15</p></li>
                     <li><p class="titin"></p><p></p></li>
