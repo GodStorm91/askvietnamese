@@ -5,10 +5,10 @@ description = "ask main"
     <div class="container">
         <div class="row">
             <div class="list-art-home">
-             <ul class="listone">
+               <ul class="listone">
                 {% for post in posts %}
                 {% if post.published == 1 %}
-                <li data-wow-delay="0.1s" class="wow fadeInUp animated">
+                <li data-wow-delay="0.1s" class="wow fadeInUp animated" >
                     <div class="ask-item-art-home">
                         <div class="thumb-art-home"><a href="/blog/post/{{ post.slug }}" title="">
                             {% if post.featured_images.count %}
@@ -29,90 +29,121 @@ description = "ask main"
 
                                     <!-- Button trigger modal -->
                                     <button type="button" class="bntmark btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
-                                     <i class="fa fa-bookmark-o" aria-hidden="true"></i>
-                                 </button>
+                                       <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                                   </button>
 
-                                 <!-- Modal -->
-                                 <div class="modal fade popcheck" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                  <div class="modal-dialog popcheck" role="document">
-                                    <div class="modal-content ">
+                                   <!-- Modal -->
+                                   <div class="modal fade popcheck" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog popcheck" role="document">
+                                        <div class="modal-content ">
 
 
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <div class="title-place">Save to story list</div>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <div class="title-place">Save to story list</div>
 
-                                        <div class="modal-body">
-                                            <a class="createnew" href="#" title="">Create new list</a>
-                                            <div class="input-story">
-                                                <input type="text" name="name" class="form-control" placeholder="Food" />
-                                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                                                
+                                            <div class="modal-body">
+                                                <a class="createnew" href="#" title="">Create new list</a>
+                                                <div class="input-story">
+                                                    <input type="text" name="name" class="form-control" placeholder="Food" />
+                                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+
+                                                </div>
+                                                <div class="input-story">
+                                                    <input type="text" name="name" class="form-control" placeholder="Saigon" />
+                                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+
+                                                </div>
+                                                <div class="input-story">
+                                                    <input type="text" name="name" class="form-control" placeholder="Hanoi" />
+                                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+
+                                                </div>
+
                                             </div>
-                                            <div class="input-story">
-                                                <input type="text" name="name" class="form-control" placeholder="Saigon" />
-                                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                                                
+                                            <div class="option-story">
+                                              <div class="thum-pop-story">
+                                                <a href="#" title=""><img src="images/stori.jpg" class="img-responsive" alt=""/></a>
+                                            </div> 
+                                            <div class="info-pop-story">
+                                                <div class="sub-pop"><span>where to visit?</span>
+                                                    <time>10 nov 2017</time></div>
+                                                    <h3><a href="#" title="">Old house in Saigon (200 years old) will be repealed this month.</a></h3>
+                                                </div>
                                             </div>
-                                            <div class="input-story">
-                                                <input type="text" name="name" class="form-control" placeholder="Hanoi" />
-                                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                                                
-                                            </div>
-                                            
                                         </div>
-                                        <div class="option-story">
-                                          <div class="thum-pop-story">
-                                            <a href="#" title=""><img src="images/stori.jpg" class="img-responsive" alt=""/></a>
-                                        </div> 
-                                        <div class="info-pop-story">
-                                            <div class="sub-pop"><span>where to visit?</span>
-                                                <time>10 nov 2017</time></div>
-                                                <h3><a href="#" title="">Old house in Saigon (200 years old) will be repealed this month.</a></h3>
-                                            </div>
-                                        </div>
+
                                     </div>
-
                                 </div>
+                            </div><!--bookmark-->
+                            <div class="rate">
+                                <span class="color_1"></span>
+                                <span class="color_2"></span>
+                                <span class="color_3"></span>
+                                <span class="color_4"></span>
+                                <span class="color_5"></span>
                             </div>
-                        </div><!--bookmark-->
-                        <div class="rate">
-                            <span class="color_1"></span>
-                            <span class="color_2"></span>
-                            <span class="color_3"></span>
-                            <span class="color_4"></span>
-                            <span class="color_5"></span>
                         </div>
                     </div>
-                </div>
-            </li>
-            {% endif %}
-            {% endfor %}
-        </ul><!--listone-->
-    </div><!--list-art-home-->
-    <div class="clearfix"></div>
-    {% if posts.lastPage > 1 %}
-    <div class="page-fil">
-        <ul>
-            {% if posts.currentPage > 1 %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&lt; Previous</a></li>
-            {% endif %}
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul><!--listone-->
+        </div><!--list-art-home-->
+        <div class="clearfix"></div>
+        {% if posts.lastPage > 1 %}
+        <div class="page-fil">
+            <ul>
+                {% if posts.currentPage > 1 %}
+                <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&lt; Previous</a></li>
+                {% endif %}
 
-            {% for page in 1..posts.lastPage %}
-            <li class="{{ posts.currentPage == page ? 'active' : null }}">
-                <a class="{{ posts.currentPage == page ? 'onClick' : null }}" href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
-            </li>
-            {% endfor %}
+                {% for page in 1..posts.lastPage %}
+                <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                    <a class="{{ posts.currentPage == page ? 'onClick' : null }}" href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                </li>
+                {% endfor %}
 
-            {% if posts.lastPage > posts.currentPage %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &gt;</a></li>
-            {% endif %}
-        </ul>
+                {% if posts.lastPage > posts.currentPage %}
+                <li><a class="pagination_next" href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &gt;</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        {% endif %}
+        <div class="more-art-home">
+            <p>lastest artical</p>
+            <a href="#" title="">explore ask vietnamese</a>
+        </div>
     </div>
-    {% endif %}
-    <div class="more-art-home">
-        <p>lastest artical</p>
-        <a href="#" title="">explore ask vietnamese</a>
-    </div>
-</div>
 </div>
 </div><!--ask-main-->
+<script type="text/javascript">
+    function detectmob() { 
+       if( navigator.userAgent.match(/Android/i)
+           || navigator.userAgent.match(/webOS/i)
+           || navigator.userAgent.match(/iPhone/i)
+           || navigator.userAgent.match(/iPad/i)
+           || navigator.userAgent.match(/iPod/i)
+           || navigator.userAgent.match(/BlackBerry/i)
+           || navigator.userAgent.match(/Windows Phone/i)
+           )
+       {
+        return true;
+        }
+    else {
+        return false;
+    }
+    }
+$(document).ready(function(){
+    var pathToLoad = detectmob() ? '/home_infinite/' : '/home/';
+
+    $('.listone').infiniteScroll({
+        path: function() {
+            return pathToLoad + (this.loadCount + 2);
+        },
+        append: '.listone',
+        checkLastPage: '.pagination_next',
+        history: false
+            // options...
+        });
+});
+</script>
