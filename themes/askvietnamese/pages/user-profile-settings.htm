@@ -1,0 +1,18 @@
+title = "User Profile Settings" 
+url = "/user/profile" 
+layout = "default"
+description = "User profile settings pages"
+is_hidden = 0 
+robot_index = "index" 
+robot_follow = "follow" 
+
+[session]
+security = "user"
+redirect = "home"
+
+[account]
+
+[googleTracker]
+==
+{% component 'googleTracker' %}
+{% component 'account' %}
