@@ -1592,16 +1592,16 @@
         },
         {
             "name": "laravel/socialite",
-            "version": "v3.0.9",
+            "version": "v3.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/socialite.git",
-                "reference": "fc1c8d415699e502f3e61cbc61e3250d5bd942eb"
+                "reference": "b5f465847b1d637efa86bbfe2fc1c9d2bd12f60f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/socialite/zipball/fc1c8d415699e502f3e61cbc61e3250d5bd942eb",
-                "reference": "fc1c8d415699e502f3e61cbc61e3250d5bd942eb",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/b5f465847b1d637efa86bbfe2fc1c9d2bd12f60f",
+                "reference": "b5f465847b1d637efa86bbfe2fc1c9d2bd12f60f",
                 "shasum": ""
             },
             "require": {
@@ -1650,7 +1650,7 @@
                 "laravel",
                 "oauth"
             ],
-            "time": "2017-11-06T16:02:48+00:00"
+            "time": "2018-06-01T15:06:47+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -3218,6 +3218,50 @@
                 "swift"
             ],
             "time": "2016-01-29T10:34:57+00:00"
+        },
+        {
+            "name": "rainlab/blog-plugin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rainlab/blog-plugin.git",
+                "reference": "326afeb3a51882ccd8f68a21aa65337d08fcf84e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rainlab/blog-plugin/zipball/326afeb3a51882ccd8f68a21aa65337d08fcf84e",
+                "reference": "326afeb3a51882ccd8f68a21aa65337d08fcf84e",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=7.0"
+            },
+            "type": "october-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexey Bobkov",
+                    "email": "aleksey.bobkov@gmail.com",
+                    "role": "Co-founder"
+                },
+                {
+                    "name": "Samuel Georges",
+                    "email": "daftspunky@gmail.com",
+                    "role": "Co-founder"
+                }
+            ],
+            "description": "Blog plugin for October CMS",
+            "homepage": "https://octobercms.com/plugin/rainlab-blog",
+            "keywords": [
+                "blog",
+                "october",
+                "octobercms"
+            ],
+            "time": "2018-04-28T21:27:46+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -5816,7 +5860,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "wikimedia/composer-merge-plugin": 20
+        "wikimedia/composer-merge-plugin": 20,
+        "rainlab/blog-plugin": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

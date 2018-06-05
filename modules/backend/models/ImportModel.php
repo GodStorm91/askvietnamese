@@ -26,7 +26,7 @@ abstract class ImportModel extends Model
      * Relations
      */
     public $attachOne = [
-        'import_file' => [\System\Models\File::class, 'public' => false],
+        'import_file' => \System\Models\File::class
     ];
 
     /**
@@ -142,7 +142,7 @@ abstract class ImportModel extends Model
         }
 
         $result = [];
-        $contents = $reader->fetch();
+        $contents = $reader->fetchAll();
         foreach ($contents as $row) {
             $result[] = $this->processImportRow($row, $matches);
         }

@@ -19,3 +19,6 @@
 1.0.7:
   - Update collections table to add new posts column
   - add_postids_column_to_collections.php
+1.0.8:
+  - Update collections table to add new posts column
+  - add_postids_column_to_collections.php

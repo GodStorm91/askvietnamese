@@ -56,9 +56,6 @@ return [
         'weekdays' => ['یکشنبه', 'دوشنبه', 'سه شنبه', 'چهارشنبه', 'پنج شنبه', 'جمعه', 'شنبه'],
         'weekdaysShort' => ['ی', 'د', 'س', 'چ', 'پ', 'ج', 'ش']
     ],
-    'colorpicker' => [
-        'choose' => 'تایید',
-    ],
     'filter' => [
         'group' => [
             'all' => 'همه'
@@ -70,15 +67,7 @@ return [
             'date_placeholder' => 'تاریخ',
             'after_placeholder' => 'بعد از',
             'before_placeholder' => 'قبل از'
-        ],
-        'numbers' => [
-            'all' => 'همه',
-            'filter_button_text' => 'فیلتر',
-            'reset_button_text'  => 'بازنشانی',
-            'min_placeholder' => 'کم',
-            'max_placeholder' => 'زیاد'
         ]
-
     ],
     'eventlog' => [
         'show_stacktrace' => 'نمایش روند اجرا',

@@ -1,7 +1,6 @@
 <?php namespace System\ReportWidgets;
 
 use Lang;
-use Config;
 use BackendAuth;
 use System\Models\Parameter;
 use System\Classes\UpdateManager;
@@ -79,6 +78,7 @@ class Status extends ReportWidgetBase
 
         $writablePaths = [
             temp_path(),
+            themes_path(),
             storage_path(),
             storage_path('app'),
             storage_path('logs'),
@@ -88,10 +88,6 @@ class Status extends ReportWidgetBase
             storage_path('cms/twig'),
             storage_path('cms/combiner'),
         ];
-        
-        if (in_array('Cms', Config::get('cms.loadModules', []))) {
-            $writablePaths[] = themes_path();
-        }
 
         $requiredExtensions = [
             'GD' => extension_loaded('gd'),
