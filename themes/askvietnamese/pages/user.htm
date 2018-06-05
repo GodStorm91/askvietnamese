@@ -17,7 +17,11 @@ redirect = "home"
     <div class="container">
         <div class="title-member">
             <span>{{user.name}}</span>
-            <img src="{{user.avatar_social}}" class="img-responsive" alt=""/>
+            {% if user.avatar.path != '' %}
+                <img src="{{user.avatar.path}}" class="img-responsive" alt=""/>
+            {% else %}
+                <img src="{{user.avatar_social}}" class="img-responsive" alt=""/>
+            {% endif%}
         </div>
         <ul class="flowing">
             <li>{{user.godstorm_userfollowings.count}} following</li>
