@@ -31,49 +31,7 @@ description = "ask main"
                                     <button type="button" class="bntmark btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
                                        <i class="fa fa-bookmark-o" aria-hidden="true"></i>
                                    </button>
-
-                                   <!-- Modal -->
-                                   <div class="modal fade popcheck" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                      <div class="modal-dialog popcheck" role="document">
-                                        <div class="modal-content ">
-
-
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <div class="title-place">Save to story list</div>
-
-                                            <div class="modal-body">
-                                                <a class="createnew" href="#" title="">Create new list</a>
-                                                <div class="input-story">
-                                                    <input type="text" name="name" class="form-control" placeholder="Food" />
-                                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
-
-                                                </div>
-                                                <div class="input-story">
-                                                    <input type="text" name="name" class="form-control" placeholder="Saigon" />
-                                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
-
-                                                </div>
-                                                <div class="input-story">
-                                                    <input type="text" name="name" class="form-control" placeholder="Hanoi" />
-                                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
-
-                                                </div>
-
-                                            </div>
-                                            <div class="option-story">
-                                              <div class="thum-pop-story">
-                                                <a href="#" title=""><img src="images/stori.jpg" class="img-responsive" alt=""/></a>
-                                            </div> 
-                                            <div class="info-pop-story">
-                                                <div class="sub-pop"><span>where to visit?</span>
-                                                    <time>10 nov 2017</time></div>
-                                                    <h3><a href="#" title="">Old house in Saigon (200 years old) will be repealed this month.</a></h3>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
+                                   {% partial "add_to_story_popup" %}
                             </div><!--bookmark-->
                             <div class="rate">
                                 <span class="color_1"></span>

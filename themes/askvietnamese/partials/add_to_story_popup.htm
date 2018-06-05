@@ -1,0 +1,38 @@
+description = "add a story to user's page"
+==
+<!-- Modal -->
+<div class="modal fade popcheck" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog popcheck" role="document">
+    <div class="modal-content ">
+
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="title-place">Save to story collection</div>
+
+        <div class="modal-body">
+        {% if followings.count > 0 %}
+            <a class="createnew" href="#" title="">Create new collection</a>
+            {% for collection in collections %}
+                <div class="input-story">
+                    <input type="text" name="name" class="form-control" placeholder="{{collection.collection_name}}" />
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                </div>
+            {% endfor %}
+        {% else %}
+            You don't have any collections yet. Create <a href="#">new collection</a> now ? 
+        {% endif %}       
+        </div>
+        <!-- <div class="option-story">
+            <div class="thum-pop-story">
+            <a href="#" title=""><img src="images/stori.jpg" class="img-responsive" alt=""/></a>
+        </div> 
+        <div class="info-pop-story">
+            <div class="sub-pop"><span>where to visit?</span>
+                <time>10 nov 2017</time></div>
+                <h3><a href="#" title="">Old house in Saigon (200 years old) will be repealed this month.</a></h3>
+            </div>
+        </div> -->
+    </div>
+
+</div>
+</div>
