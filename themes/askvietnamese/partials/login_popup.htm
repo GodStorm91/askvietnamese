@@ -18,8 +18,7 @@ description = "Login popup pages"
 							<button type="submit" class="sentlogin">Login</button>
 						</div>
 						<div class="ab-fot">
-							<p><input type="checkbox" name="" value=""/>Remember me</p>
-							<a href="#" title="">Forgot password?</a>  
+							<a href="/user/forgot-password" title="">Forgot password?</a>  
 						</div>
 					</form>
 				</div><!--bg-form-->    
@@ -28,8 +27,6 @@ description = "Login popup pages"
 			        {% for name, link in social_login_links %}
 			            <a href="{{ link }}?s={{ 'home'|page }}&f={{ 'login'|page }}" class='login {{ name|lower }}'><i class="fa fa-2 fa-{{ name|lower }}"></i></a>
 			        {% endfor %}
-<!-- 					<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-					<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>  -->
 				</div>
 
 
