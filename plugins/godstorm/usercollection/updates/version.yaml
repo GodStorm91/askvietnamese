@@ -16,12 +16,3 @@
 1.0.6:
   - Add like table for users
   - create_user_likes_table.php
-1.0.7:
-  - Update collections table to add new posts column
-  - add_postids_column_to_collections.php
-1.0.8:
-  - Update collections table to add new posts column
-  - add_postids_column_to_collections_new.php
-1.1:
-  - Update collections table to add new posts column
-  - add_postids_column_to_collections_new.php
