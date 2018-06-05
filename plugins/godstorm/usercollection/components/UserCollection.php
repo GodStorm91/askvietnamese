@@ -53,6 +53,32 @@ class UserCollection extends ComponentBase
 
         $postId = input('post_id');
 
+        return
+        UserLike::updateOrCreate(
+            [
+                'user_id' => $user->id,
+                'post_id' => $postId
+            ]
+        );
+    }
+
+    /**
+     * User like a specific posts
+     *
+     * Usage:
+     *   <a data-request="onAddStoryToCollections">Like Post</a>
+     *
+     */
+    public function onAddStoryToCollections()
+    {
+        $user = Auth::getUser();
+
+        if (empty($user)){
+            return false;
+        }
+
+        $postId = input('post_id');
+
         return 
         UserLike::updateOrCreate(
             [

@@ -10,11 +10,11 @@ description = "add a story to user's page"
         <div class="title-place">Save to story collection</div>
 
         <div class="modal-body">
-        {% if followings.count > 0 %}
+        {% if user.godstorm_usercollections.count > 0 %}
             <a class="createnew" href="#" title="">Create new collection</a>
-            {% for collection in collections %}
+            {% for collection in user.godstorm_usercollections %}
                 <div class="input-story">
-                    <input type="text" name="name" class="form-control" placeholder="{{collection.collection_name}}" />
+                    <input type="text" name="name" class="form-control" value="{{collection.collection_name}}" placeholder="New collection" />
                     <i class="fa fa-heart-o" aria-hidden="true"></i>
                 </div>
             {% endfor %}
