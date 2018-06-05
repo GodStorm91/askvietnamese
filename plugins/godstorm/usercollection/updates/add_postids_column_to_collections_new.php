@@ -6,7 +6,7 @@ use Schema;
 use October\Rain\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
 
-class AddAvatarColumnToUser extends Migration
+class AddPostIdsToCollections extends Migration
 {
     public function up()
     {

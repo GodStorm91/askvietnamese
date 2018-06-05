@@ -5,7 +5,7 @@ use Schema;
 use October\Rain\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
 
-class CreateUserCollectionsTable extends Migration
+class CreateUserLikesTable extends Migration
 {
     public function up()
     {
