@@ -97,6 +97,32 @@ class UserCollection extends ComponentBase
 
         $collection->posts = implode(',', $arrPostsInCollection);
         $collection->save();
-        return $collection->posts;
+        return $collection;
+    }
+    /**
+     * User like a specific posts
+     *
+     * Usage:
+     *   <a data-request="onAddStoryToCollections">Like Post</a>
+     *
+     */
+    public function onCreateNewCollectionAndAddPost()
+    {
+        $user = Auth::getUser();
+
+        if (empty($user)){
+            return false;
+        }
+
+        $postId = input('post_id');
+        $collectionName = input('collection_name');
+        //Add or Remove the current postID 
+        $collection = new \Godstorm\UserCollection\Models\UserCollection;
+        // 
+        $collection->user_id = $user->id;
+        $collection->collection_name = $collectionName;
+        $collection->posts = implode(',', array($postId));
+        $collection->save();
+        return $collection;
     }
 }

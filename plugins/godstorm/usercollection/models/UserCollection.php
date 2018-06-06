@@ -22,13 +22,21 @@ class UserCollection extends Model
      */
     protected $fillable = ['user_id', 'collection_name'];
 
-    /**
-     * @var array Relations
-     */
+    // /**
+    //  * @var array Relations
+    //  */
+    // public $hasMany = [
+    //     'posts' => ['RainLab\Blog\Models\Post']
+    // ];
     /**
      * @var array Relations
      */
     public $belongsTo = [
         'user' => ['RainLab\User\Models\User']
     ];
+
+    public function getPosts(){
+        $arrPostIds = explode(',', $this->posts);
+        return \RainLab\Blog\Models\Post::whereIn('id', $arrPostIds)->get();
+    }
 }

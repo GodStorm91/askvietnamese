@@ -4,11 +4,13 @@ description = "collection panel"
 	{% for collection in collections %}
 		<div class="item-colection col-md-6 col-sm-6 col-xs-6">
 			<div class="sub-colect">#{{collection.collection_name}}</div>
-			<img src="images/collection.jpg" class="img-responsive" alt=""/>
-			<div class="info-collection">
-				<h3><a href="#" title="">Laure chevalier</a></h3>
-				<p><i class="fa fa-heart-o" aria-hidden="true"></i> 20</p>
-			</div>
+			{% for post in collection.getPosts %}
+				<img src="{{post.featured_images[0].path}}" class="img-responsive" alt=""/>
+				<div class="info-collection">
+					<h3><a href="#" title="">{{post.title}}</a></h3>
+					<p><i class="fa fa-heart-o" aria-hidden="true"></i> 20</p>
+				</div>
+			{% endfor %}
 		</div><!--item-colection-->
 	{% endfor %}
 </div>
