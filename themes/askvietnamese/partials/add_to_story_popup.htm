@@ -11,7 +11,7 @@ description = "add a story to user's page"
 
         <div class="modal-body">
         {% if user.godstorm_usercollections.count > 0 %}
-            <a class="createnew" href="#" title="">Create new collection</a><br>
+            <a class="createnew" data-toggle="modal" data-target="#newCollectionModal{{ post_data }}" title="">Create new collection</a><br>
             {% for collection in user.godstorm_usercollections %}
                 <div class="input-story">
                     <input type="text" name="name" class="form-control" value="{{collection.collection_name}}" placeholder="New collection" />
