@@ -28,7 +28,6 @@ function onEnd()
 ?>
 ==
 {% component 'googleTracker' %}
-{% component 'blogPost' %}
 {% set post = blogPost.post %}
 {% if post.id in usercollection.likedPosts %}
     {% set likedClass = "post_span_active" %}
