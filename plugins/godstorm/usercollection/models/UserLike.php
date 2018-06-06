@@ -1,4 +1,5 @@
-<?php namespace Godstorm\UserCollection\Models;
+<?php 
+namespace Godstorm\UserCollection\Models;
 
 use Model;
 

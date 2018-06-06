@@ -1,5 +1,7 @@
 description = "update profile"
 ==
+<h3>Update Profile</h3>
+<div>
 {{ form_ajax('onUpdate', { model: user }) }}
 
     <div class="form-group">
@@ -23,5 +25,8 @@ description = "update profile"
     </div>
 
     <button type="submit" class="btn btn-default">Save</button>
+    <a class="btn btn-default" onclick="window.location.href='/user'">Cancel</a>
+
 
 {{ form_close() }}
+</div>

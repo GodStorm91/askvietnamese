@@ -28,10 +28,10 @@ description = "ask main"
                                 <div class="bookmark">
 
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="bntmark btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
+                                    <button type="button" class="bntmark btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal{{ post.id }}">
                                        <i class="fa fa-bookmark-o" aria-hidden="true"></i>
                                    </button>
-                                   {% partial "add_to_story_popup" %}
+                                   {% partial "add_to_story_popup" post_data=post.id %}
                             </div><!--bookmark-->
                             <div class="rate">
                                 <span class="color_1"></span>

@@ -1,7 +1,7 @@
 description = "add a story to user's page"
 ==
 <!-- Modal -->
-<div class="modal fade popcheck" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade popcheck" id="myModal{{post_data}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog popcheck" role="document">
     <div class="modal-content ">
 
@@ -11,15 +11,16 @@ description = "add a story to user's page"
 
         <div class="modal-body">
         {% if user.godstorm_usercollections.count > 0 %}
-            <a class="createnew" href="#" title="">Create new collection</a>
+            <a class="createnew" href="#" title="">Create new collection</a><br>
             {% for collection in user.godstorm_usercollections %}
                 <div class="input-story">
                     <input type="text" name="name" class="form-control" value="{{collection.collection_name}}" placeholder="New collection" />
-                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    <a class="fa fa-heart-o" data-request="onAddPostsToCollection" data-request-data="post_id:{{post_data}},collection_id:{{collection.id}}" aria-hidden="true"></a>
                 </div>
             {% endfor %}
         {% else %}
-            You don't have any collections yet. Create <a href="#">new collection</a> now ? 
+            <a class="createnew" href="#" title="">Create new collection</a><br>
+            You don't have any collections yet. Create <a class="createnew" href="#">new collection</a> now ? 
         {% endif %}       
         </div>
         <!-- <div class="option-story">

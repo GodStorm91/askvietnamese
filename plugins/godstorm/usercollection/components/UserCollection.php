@@ -3,6 +3,7 @@ namespace Godstorm\UserCollection\Components;
 
 use Cms\Classes\ComponentBase;
 use Godstorm\UserCollection\Models\UserLike;
+
 use Auth;
 
 class UserCollection extends ComponentBase
@@ -69,7 +70,7 @@ class UserCollection extends ComponentBase
      *   <a data-request="onAddStoryToCollections">Like Post</a>
      *
      */
-    public function onAddStoryToCollections()
+    public function onAddPostsToCollection()
     {
         $user = Auth::getUser();
 
@@ -78,13 +79,24 @@ class UserCollection extends ComponentBase
         }
 
         $postId = input('post_id');
+        $collectionId = input('collection_id');
+        //Check if the collection_id belongs to this user
+        if (!$user->godstorm_usercollections->contains('id', $collectionId)){
+            return false;
+        }
+        //Add or Remove the current postID 
+        $collection = \Godstorm\UserCollection\Models\UserCollection::find($collectionId);
+        //Convert to array then 
+        $arrPostsInCollection = explode(',',$collection->posts);
+        if (in_array($postId, $arrPostsInCollection)){
+            $index = array_search($postId, $arrPostsInCollection);
+            unset($arrPostsInCollection[$index]);
+        }else{
+            $arrPostsInCollection[] = $postId;
+        }
 
-        return 
-        UserLike::updateOrCreate(
-            [
-                'user_id' => $user->id,
-                'post_id' => $postId
-            ]
-        );
+        $collection->posts = implode(',', $arrPostsInCollection);
+        $collection->save();
+        return $collection->posts;
     }
 }
