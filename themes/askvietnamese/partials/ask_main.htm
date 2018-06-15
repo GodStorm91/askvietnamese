@@ -8,7 +8,7 @@ description = "ask main"
                <ul class="listone">
                 {% for post in posts %}
                 {% if post.published == 1 %}
-                <li data-wow-delay="0.1s" class="wow fadeInUp animated" >
+                <li data-wow-delay="0.1s" class="wow fadeInUp" >
                     <div class="ask-item-art-home">
                         <div class="thumb-art-home"><a href="/blog/post/{{ post.slug }}" title="">
                             {% if post.featured_images.count %}

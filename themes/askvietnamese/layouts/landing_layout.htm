@@ -45,9 +45,19 @@ description = "layout for landing pages"
 			$(".icon-search").click(function(){
 				$(".form_moblie_search").slideToggle(300);
 			});
+
 		});
 		$(document).ready(function(){
-
+			wow = new WOW(
+			{
+				animateClass: 'animated',
+				offset:       100,
+				callback:     function(box) {
+					console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+				}
+			}
+			);
+			wow.init();  
 			$(".godown").click(function(){
 				$(".firstpage").slideToggle(1000);
 				$("html, body").animate({ scrollTop: 0 }, 0);
@@ -117,16 +127,6 @@ description = "layout for landing pages"
 			}
 		}
       // WOW effect loading
-      wow = new WOW(
-      {
-      	animateClass: 'animated',
-      	offset:       100,
-      	callback:     function(box) {
-      		console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
-      	}
-      }
-      );
-      wow.init();  
   </script>
 </body>
 </html>
