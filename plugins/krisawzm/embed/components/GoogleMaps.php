@@ -61,6 +61,15 @@ class GoogleMaps extends ComponentBase
                 'validationMessage' => Lang::get('krisawzm.embed::common.properties.height.validationMessage'),
             ],
 
+            'mid' => [
+                'title'             => 'krisawzm.embed::common.properties.height.title',
+                'description'       => 'krisawzm.embed::common.properties.height.description',
+                'default'           => '1V0UDdprHNaFYBaN5exvCCyMPwkLPd_F3',
+                'type'              => 'string',
+                'validationPattern' => '^(auto|0)$|^\d+(\.\d+)?(%|'.$css_units.')?$',
+                'validationMessage' => Lang::get('krisawzm.embed::common.properties.height.validationMessage'),
+            ],
+
             'responsive' => [
                 'title'             => 'krisawzm.embed::common.properties.responsive.title',
                 'description'       => 'krisawzm.embed::common.properties.responsive.description',
@@ -81,6 +90,18 @@ class GoogleMaps extends ComponentBase
         return 'https://www.google.com/maps/embed/v1/place?key=' .
                 Settings::get('googlemaps_api_key', '') .
                 '&amp;q=' . rawurlencode($this->property('q')) .
+                '&amp;maptype=' . $this->property('mapType');
+    }
+
+    /**
+     * Returns the full src.
+     *
+     * @return string
+     */
+    public function modifiedSrc()
+    {
+        return 'https://www.google.com/maps/d/u/0/embed?' .
+                '&amp;mid=' . rawurlencode($this->property('mid')) .
                 '&amp;maptype=' . $this->property('mapType');
     }
 }
