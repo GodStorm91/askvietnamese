@@ -65,9 +65,7 @@ class GoogleMaps extends ComponentBase
                 'title'             => 'krisawzm.embed::common.properties.height.title',
                 'description'       => 'krisawzm.embed::common.properties.height.description',
                 'default'           => '1V0UDdprHNaFYBaN5exvCCyMPwkLPd_F3',
-                'type'              => 'string',
-                'validationPattern' => '^(auto|0)$|^\d+(\.\d+)?(%|'.$css_units.')?$',
-                'validationMessage' => Lang::get('krisawzm.embed::common.properties.height.validationMessage'),
+                'type'              => 'string'            
             ],
 
             'responsive' => [
