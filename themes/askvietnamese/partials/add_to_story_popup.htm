@@ -15,7 +15,7 @@ description = "add a story to user's page"
             {% for collection in user.godstorm_usercollections %}
                 <div class="input-story">
                     <input type="text" name="name" class="form-control" value="{{collection.collection_name}}" placeholder="New collection" />
-                    <a class="fa fa-heart-o" data-request="onAddPostsToCollection" data-request-data="post_id:{{post_data}},collection_id:{{collection.id}}" aria-hidden="true"></a>
+                    <a class="fa fa-heart-o" data-request="onAddPostsToCollection" data-request-success="$('#myModal{{post_data}}').modal('toggle')" data-request-data="post_id:{{post_data}},collection_id:{{collection.id}}" aria-hidden="true"></a>
                 </div>
             {% endfor %}
         {% else %}

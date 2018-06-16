@@ -10,11 +10,11 @@ description = "add a story to user's page"
         <div class="title-place">Create New Collection</div>
 
         <div class="modal-body">
-            <form data-request="onCreateNewCollectionAndAddPost">
+            <form data-request="onCreateNewCollectionAndAddPost" data-request-success="$('#newCollectionModal{{post_data}}').modal('toggle')">
                 <div class="input-story">
                     <input type="text" name="collection_name" class="form-control" value="" placeholder="New collection" />
                     <input type="hidden" name="post_id" value={{post_data}}/>
-                    <button class="fa fa-heart-o" type="submit " data-dismiss="modal"></button>
+                    <button class="fa fa-heart-o" type="submit"></button>
                 </div>    
             </form> 
         </div>
