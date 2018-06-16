@@ -5,7 +5,10 @@ description = "User profile pages  -- Must require that user is validated"
 is_hidden = 0
 
 [session]
-security = "all"
+security = "user"
+redirect = "home"
+
+[usercollection]
 
 [googleTracker]
 ==
@@ -16,14 +19,18 @@ security = "all"
     <div class="container">
         <div class="title-member">
             <span>{{user.name}}</span>
-            <img src="{{user.avatar_social}}" class="img-responsive" alt=""/>
+            {% if user.avatar.path != '' %}
+                <img src="{{user.avatar.path}}" class="img-responsive" alt=""/>
+            {% else %}
+                <img src="{{user.avatar_social}}" class="img-responsive" alt=""/>
+            {% endif%}
         </div>
         <ul class="flowing">
             <li>{{user.godstorm_userfollowings.count}} following</li>
             <li>{{user.godstorm_usercollections.count}} collections</li>
         </ul>
         <div class="profile-edit">
-            <a href="#" title=""><i class="fa fa-cog" aria-hidden="true"></i> Edit Profile</a>
+            <a href="/user/profile" title=""><i class="fa fa-cog" aria-hidden="true"></i> Edit Profile</a>
             <a href="#" title=""><i class="fa fa-pencil" aria-hidden="true"></i> Contribute</a>
         </div>
         <div class="clearfix"></div>

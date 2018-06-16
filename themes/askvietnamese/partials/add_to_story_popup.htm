@@ -1,0 +1,45 @@
+description = "add a story to user's page"
+==
+<!-- Modal -->
+<div class="modal fade popcheck" id="myModal{{post_data}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog popcheck" role="document">
+    <div class="modal-content ">
+
+
+        <button type="button" id="btnCloseModal{{post_data}}" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="title-place">Save to story collection</div>
+
+        <div class="modal-body">
+        {% if user.godstorm_usercollections.count > 0 %}
+            <a class="createnew" id="createNewCollection{{post_data}}" href="#" data-target="#newCollectionModal{{ post_data }}" title="">Create new collection</a><br>
+            {% for collection in user.godstorm_usercollections %}
+                <div class="input-story">
+                    <input type="text" name="name" class="form-control" value="{{collection.collection_name}}" placeholder="New collection" />
+                    <a class="fa fa-heart-o" data-request="onAddPostsToCollection" data-request-success="$('#myModal{{post_data}}').modal('toggle')" data-request-data="post_id:{{post_data}},collection_id:{{collection.id}}" aria-hidden="true"></a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <a class="createnew" href="#" title="">Create new collection</a><br>
+            You don't have any collections yet. Create <a class="createnew" href="#">new collection</a> now ? 
+        {% endif %}       
+        </div>
+        <!-- <div class="option-story">
+            <div class="thum-pop-story">
+            <a href="#" title=""><img src="images/stori.jpg" class="img-responsive" alt=""/></a>
+        </div> 
+        <div class="info-pop-story">
+            <div class="sub-pop"><span>where to visit?</span>
+                <time>10 nov 2017</time></div>
+                <h3><a href="#" title="">Old house in Saigon (200 years old) will be repealed this month.</a></h3>
+            </div>
+        </div> -->
+    </div>
+    <script type="text/javascript">
+        $('#createNewCollection{{post_data}}').click(function(e){
+            $('#myModal{{post_data}}').modal('toggle');
+            $('#newCollectionModal{{post_data}}').modal('toggle');
+        });
+    </script>
+
+</div>
+</div>

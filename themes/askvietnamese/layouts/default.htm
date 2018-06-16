@@ -76,20 +76,16 @@ function onStart() {
 	{% scripts %}
 	<script type="text/javascript">
 		$(document).ready(function(){
-
 			$(".icon-search").click(function(){
 				$(".form_moblie_search").slideToggle(300);
 			});
-		});
-		$(document).ready(function(){
-
 			$(".godown").click(function(){
 				$(".firstpage").slideToggle(1000);
 				$("html, body").animate({ scrollTop: 0 }, 0);
 			});
 			$('.btnlogin').click(function(){
 				$('body').addClass('blend');
-			});       
+			});      
 		});
 		$(window).scroll(function(){
 			if ($(this).scrollTop() > 100) {
@@ -151,17 +147,6 @@ function onStart() {
 				document.getElementById('mainHideMenu').style.display= 'none';
 			}
 		}
-      // WOW effect loading
-      wow = new WOW(
-      {
-      	animateClass: 'animated',
-      	offset:       100,
-      	callback:     function(box) {
-      		console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
-      	}
-      }
-      );
-      wow.init();  
   </script>
 </body>
 </html>

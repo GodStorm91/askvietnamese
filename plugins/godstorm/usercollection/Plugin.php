@@ -5,6 +5,7 @@ use System\Classes\PluginBase;
 use Godstorm\UserCollection\Listener\FrontendSocialLoginEventListener;
 use Event;
 use RainLab\User\Models\User;
+use RainLab\Blog\Models\Post;
 use RainLab\User\Controllers\Users as UsersController;
 
 /**
@@ -50,6 +51,10 @@ class Plugin extends PluginBase
         User::extend(function($model) {
             $model->hasMany['godstorm_usercollections'] = ['Godstorm\UserCollection\Models\UserCollection'];
             $model->hasMany['godstorm_userfollowings'] = ['Godstorm\UserCollection\Models\UserFollowing'];
+        });
+        //Post extends
+        Post::extend(function($model){
+            $model->hasMany["godstorm_userlikes"] = ['Godstorm\UserCollection\Models\UserLike'];
         });
         //Event Listener goes here
         Event::listen('flynsarmy.sociallogin.registerUser', 'Godstorm\\UserCollection\\Listener\\FrontendSocialLoginEventListener');

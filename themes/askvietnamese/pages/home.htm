@@ -6,6 +6,10 @@ is_hidden = 0
 [session]
 security = "all"
 
+[account]
+
+[usercollection]
+
 [blogPosts]
 pageNumber = "{{ :page }}"
 postsPerPage = 5
@@ -20,10 +24,9 @@ category = 0
 postPerPage = 1
 postPage = "blog/post"
 slug = "{{ :slug }}"
-
+[usercollection]
 [googleTracker]
 ==
-{% component 'account' %}
 {% set posts = __SELF__.posts %}
 {% set mostVisitedPosts = __SELF__.mostVisitedPosts %}
 {% partial "ask_main" %}

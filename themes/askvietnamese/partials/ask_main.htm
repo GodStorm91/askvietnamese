@@ -8,7 +8,7 @@ description = "ask main"
                <ul class="listone">
                 {% for post in posts %}
                 {% if post.published == 1 %}
-                <li data-wow-delay="0.1s" class="wow fadeInUp animated" >
+                <li data-wow-delay="0.1s" class="wow fadeInUp" >
                     <div class="ask-item-art-home">
                         <div class="thumb-art-home"><a href="/blog/post/{{ post.slug }}" title="">
                             {% if post.featured_images.count %}
@@ -24,56 +24,15 @@ description = "ask main"
                                     <time>{{ post.published_at|date('M d, Y') }}</time>
                                 </div>
                                 <h3><a href="/blog/post/{{ post.slug }}" title="">{{ post.title }}</a></h3>
-                                <p class="heart"><span><i class="fa fa-heart" aria-hidden="true"></i> {{ random(100) }} </span></p>
+                                <p class="heart"><span><i class="fa fa-heart" aria-hidden="true"></i> {{ post.godstorm_userlikes.count }} </span></p>
                                 <div class="bookmark">
 
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="bntmark btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
+                                    <button type="button" class="bntmark btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal{{ post.id }}">
                                        <i class="fa fa-bookmark-o" aria-hidden="true"></i>
                                    </button>
-
-                                   <!-- Modal -->
-                                   <div class="modal fade popcheck" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                      <div class="modal-dialog popcheck" role="document">
-                                        <div class="modal-content ">
-
-
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <div class="title-place">Save to story list</div>
-
-                                            <div class="modal-body">
-                                                <a class="createnew" href="#" title="">Create new list</a>
-                                                <div class="input-story">
-                                                    <input type="text" name="name" class="form-control" placeholder="Food" />
-                                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
-
-                                                </div>
-                                                <div class="input-story">
-                                                    <input type="text" name="name" class="form-control" placeholder="Saigon" />
-                                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
-
-                                                </div>
-                                                <div class="input-story">
-                                                    <input type="text" name="name" class="form-control" placeholder="Hanoi" />
-                                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
-
-                                                </div>
-
-                                            </div>
-                                            <div class="option-story">
-                                              <div class="thum-pop-story">
-                                                <a href="#" title=""><img src="images/stori.jpg" class="img-responsive" alt=""/></a>
-                                            </div> 
-                                            <div class="info-pop-story">
-                                                <div class="sub-pop"><span>where to visit?</span>
-                                                    <time>10 nov 2017</time></div>
-                                                    <h3><a href="#" title="">Old house in Saigon (200 years old) will be repealed this month.</a></h3>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
+                                   {% partial "add_to_story_popup" post_data=post.id %}
+                                   {% partial "create_new_collection_popup" post_data=post.id %}
                             </div><!--bookmark-->
                             <div class="rate">
                                 <span class="color_1"></span>

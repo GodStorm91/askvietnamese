@@ -29,16 +29,22 @@ security = "all"
 
 				<div class="logintop col-md-3 col-sm-3 col-xs-12">
 					{% if user %}
-						<!-- <button type="button" class="btnlogin btn btn-primary btn-lg" > -->
-						<a class="btnlogin btn btn-primary btn-lg" data-request="onLogout" data-request-data="redirect: '/home'">Logout</a>
+					<!-- <button type="button" class="btnlogin btn btn-primary btn-lg" > -->
+						<!-- <div class="dropdown"> -->
+						  <a class="btnlogin btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown">User Menu</a>
+						  <ul class="btnlogin btn btn-primary btn-lg dropdown-menu">
+							<li><a class="btnlogin btn btn-primary btn-lg" href="/user">Profile</a></li> 
+							<li><a class="btnlogin btn btn-primary btn-lg" data-request="onLogout" data-request-data="redirect: '/home'">Logout</a></li>
+						  </ul>
+<!-- 						</div> -->
 						<!-- </button> -->
-					{% else %}
+						{% else %}
 						<!-- Button trigger modal -->
 						<button type="button" class="btnlogin btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal-home">
 							Login
 						</button>
 						{% partial "login_popup" modalId="myModal-home" %}	
-					{% endif %}										
+						{% endif %}										
 					</div>			
 					<div class="menu">
 						<nav class="menutop">

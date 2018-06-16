@@ -21,6 +21,9 @@ class AddAvatarColumnToUser extends Migration
     {
         Schema::table('users', function($table)
         {
-            $table->dropColumn(['avatar']);
-        });    }
+            if (Schema::hasColumn('users','avatar')){
+                $table->dropColumn(['avatar']);
+            }
+        });    
+    }
 }
