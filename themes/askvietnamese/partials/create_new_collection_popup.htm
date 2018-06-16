@@ -10,10 +10,13 @@ description = "add a story to user's page"
         <div class="title-place">Create New Collection</div>
 
         <div class="modal-body">
-            <div class="input-story">
-                <input type="text" name="name" class="form-control" value="" placeholder="New collection" />
-                <a class="fa fa-heart-o" data-request="onAddPostsToCollection" data-request-data="post_id:{{post_data}},collection_id:{{collection.id}}" aria-hidden="true"></a>
-            </div>     
+            <form data-request="onCreateNewCollectionAndAddPost">
+                <div class="input-story">
+                    <input type="text" name="collection_name" class="form-control" value="" placeholder="New collection" />
+                    <input type="hidden" name="post_id" value={{post_data}}/>
+                    <button class="fa fa-heart-o" type="submit "></button>
+                </div>    
+            </form> 
         </div>
     </div>
 
