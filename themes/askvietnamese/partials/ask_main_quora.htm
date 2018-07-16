@@ -10,7 +10,7 @@ description = "ask main"
                             <div class="FeedStory AnswerFeedStory feed_item" id="__w2_l9wBZX4_item">
                                 <div class="EventHeader pass_color_to_child_links many_faces ImplicitFollowTopicReason FeedReason">
                                     <div class="reason_main">
-                                        Answer<span class="bullet"> · </span>
+                                        Topic <span class="bullet"> · </span>
                                         <div class="TopicListItem" id="__w2_hYXtMoO_topic_list_item">
                                             <div class="u-inline-block">
                                                 <div id="MczowH">
@@ -18,12 +18,12 @@ description = "ask main"
                                                         <div class="hover_menu_contents" id="__w2_KXrMiIu_menu_contents"> </div>
                                                     </div>
                                                     {% for category in post.categories %}
-                                                    <a class="TopicNameLink HoverMenu topic_name" href="/categories/{{ category.slug }}" action_mousedown="TopicLinkClickthrough" id="__w2_KXrMiIu_link"><span class="name_text">{{ category.name }}<span id="oMSEYS"><span class="TopicNameSpan TopicName" id="__w2_Jedqjya_card"></span></span></span></a>
+                                                    <a class="TopicNameLink HoverMenu topic_name" href="/categories/{{ category.slug }}" action_mousedown="TopicLinkClickthrough" id="__w2_KXrMiIu_link"><span class="name_text">{{ category.name }}<span id="oMSEYS">{% if not loop.last %}, {% endif %}<span class="TopicNameSpan TopicName" id="__w2_Jedqjya_card"></span></span></span></a>
                                                     {% endfor %}
                                                 </div>
                                             </div>
                                         </div>
-                                        <span class="bullet"> · </span>Topic you might like
+                                        <span class="bullet"> · </span>
                                     </div>
                                     <div class="reason_overflow">
                                         <div class="u-absolute u-absolute--center" id="__w2_YpsbqZp_close">

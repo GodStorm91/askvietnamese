@@ -2890,7 +2890,7 @@ a .ui_story_title:hover{text-decoration:underline!important;}
 @media screen and (max-width:320px){
 .ui_icon_button--horizontal_base .ui_icon_button_icon svg{width:22px;height:22px;}
 }
-.feed_item{position:relative;border-bottom:1px solid #e2e2e2;padding:0 0 16px 0;margin-bottom:16px;}
+.feed_item{position:relative;border-bottom:1px solid #e2e2e2;padding:0 16px 0;margin-bottom:32px;background-color: #ffffff;border-radius: 5px;}
 .feed_item .ContentHeader{margin-top:10px;}
 .EventHeader,.HomeMultifeed .Bundle .FeedReason{margin-bottom:4px;color:#999;font-size:13px;}
 .EventHeader .TopicListItem,.HomeMultifeed .Bundle .FeedReason .TopicListItem{display:inline-block;}
