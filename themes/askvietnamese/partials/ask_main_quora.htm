@@ -165,7 +165,7 @@ description = "ask main"
                                                                                 <div class="ui_qtext_truncated_text">
                                                                                     {{post.summary | raw}}
                                                                                 </div>
-                                                                                <a class="ui_qtext_more_link" href="#" id="__w2_Hc6ocvC_more"><span>(more)</span></a><span class="hidden" id="__w2_Hc6ocvC_loading"><span class="loading">Loading…</span></span>
+                                                                                <a class="ui_qtext_more_link" href="/blog/post/{{ post.slug }}" id="__w2_Hc6ocvC_more"><span>(more)</span></a><span class="hidden" id="__w2_Hc6ocvC_loading"><span class="loading">Loading…</span></span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -232,7 +232,7 @@ description = "ask main"
             }
             }
             $(document).ready(function(){
-            var pathToLoad = detectmob() ? '/home_infinite/' : '/home/';
+            var pathToLoad = detectmob() ? '/home/' : '/home/';
             $('.listone').infiniteScroll({
             path: function() {
             return pathToLoad + (this.loadCount + 2);
