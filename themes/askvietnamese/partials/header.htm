@@ -7,6 +7,7 @@ security = "all"
 
 <div class="header pagehome">
 	<div class="container contentmenu">
+		{% partial "ask_a_question_popup" %}    
 		<div class="row">
 
 			<div class="logo col-lg-2 col-md-2 col-sm-2 col-xs-12">
@@ -14,15 +15,16 @@ security = "all"
 			</div>
 			<div class="search-login col-md-8 col-sm-8 col-xs-12">
 				<div class="searh col-md-9 col-sm-9 col-xs-12">
-					<span class="icon-search"><i class="fa fa-search" aria-hidden="true"></i></span>
+					<span class="icon-search"><i class="fa fa-question" aria-hidden="true"></i></span>
 					<div class="form_moblie_search">
 						<form method="get" id="idf" action="/blog/search" name="form_timkiem_sp">
 							<div class="artseed-search">
 								<input value="" class="top_input" type="text" placeholder="It's time to AskVietnamese" name="search" />
 
 							</div>
-
-							<a href="javascript:void()" class="nut_searh" onclick="javascript:$('#idf').submit();">  <i class="fa animated fa-search search-icon"></i></a>
+                            <button type="button" class="bntmark btn btn-primary btn-lg" style="float:right; margin-top: -30px;" data-toggle="modal" data-target="#newQuestionModal">
+                               <i class="fa animated fa-question question-icon" aria-hidden="true"></i>
+                           </button>
 						</form>
 					</div>
 				</div>

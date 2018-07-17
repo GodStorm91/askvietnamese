@@ -1,0 +1,25 @@
+description = "ask a question form"
+==
+<!-- Modal -->
+<div class="modal fade popcheck" id="newQuestionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog popcheck" role="document">
+    <div class="modal-content ">
+
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="title-place">Ask a question - Ask vietnamese</div>
+
+        <div class="modal-body">
+            <form data-request="onCreateNewQuestion" data-request-success="$('#newQuestionModal').modal('toggle')">
+                <div class="input-story">
+                    <input type="text" name="question_text" class="form-control" value="" placeholder="Start your question with 'What', 'How', 'Why', etc." />
+                    <button type="button" class="bntmark btn btn-primary btn-lg" style="float:right;" data-toggle="modal" data-target="#newQuestionModal">
+                       Add question
+                   </button>
+                </div>    
+            </form> 
+        </div>
+    </div>
+
+</div>
+</div>
