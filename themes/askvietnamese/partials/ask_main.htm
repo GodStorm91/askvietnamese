@@ -1,108 +1,155 @@
 description = "ask main"
 ==
 
-<div class="ask-main">
+<section id="main">
     <div class="container">
         <div class="row">
-            <div class="list-art-home">
-               <ul class="listone">
-                {% for post in posts %}
-                {% if post.published == 1 %}
-                <li data-wow-delay="0.1s" class="wow fadeInUp" >
-                    <div class="ask-item-art-home">
-                        <div class="thumb-art-home"><a href="/blog/post/{{ post.slug }}" title="">
-                            {% if post.featured_images.count %}
-                            <img src="{{ post.featured_images[0].path }}" class="img-responsive" alt=""/></a></div>
-                            {% endif %}
-                            <div class="info-art-home">
-                                <div class="sub-cat-stories">
-                                    <span>                
-                                        {% for category in post.categories %}
-                                        <a href="/categories/{{ category.slug }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
-                                        {% endfor %}
-                                    </span>
-                                    <time>{{ post.published_at|date('M d, Y') }}</time>
-                                </div>
-                                <h3><a href="/blog/post/{{ post.slug }}" title="">{{ post.title }}</a></h3>
-                                <p class="heart"><span><i class="fa fa-heart" aria-hidden="true"></i> {{ post.godstorm_userlikes.count }} </span></p>
-                                <div class="bookmark">
+            <div class="left-mn col-md-3 col-sm-3 hidden-xs">
+                <ul>
+                    <li><a href="#"><img src="{{ 'assets/images/Map.png'|theme }}" alt=""/>AV MAP</a></li>
+                    <li><a href="#"><img src="{{ 'assets/images/Food.png'|theme }}" alt=""/>Food</a></li>
+                    <li><a href="#"><img src="{{ 'assets/images/Places.png'|theme }}" alt=""/>Places</a></li>
+                    <li><a href="#"><img src="{{ 'assets/images/Event.png'|theme }}" alt=""/>Festival/Event</a></li>
+                    <li><a href="#"><img src="{{ 'assets/images/Travel.png'|theme }}" alt=""/>Travel Tips</a></li>
+                    <li><a href="#"><img src="{{ 'assets/images/Culture.png'|theme }}" alt=""/>Art/Culture</a></li>
+                    <li><a href="#"><img src="{{ 'assets/images/Personal.png'|theme }}" alt=""/>Personal Experience</a></li>
+                </ul>
+            </div>
+            <div class="f-body-center col-md-6 col-sm-6 col-xs-12">
+                <div class="box-ques">
+                    <div class="thumb-per">
+                        <img src="images/team-3.jpg" alt="" class="img-responsive"/>
+                        <p><span>"Xin chào, </span>
+                           <span>Any questions to ask?"</span></p>
+                       </div>
+                       <!-- Button trigger modal -->
+                       <button type="button" class="btnask btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                          ASK VIETNAMESE
+                      </button>
 
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="bntmark btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal{{ post.id }}">
-                                       <i class="fa fa-bookmark-o" aria-hidden="true"></i>
-                                   </button>
-                                   {% partial "add_to_story_popup" post_data=post.id %}
-                                   {% partial "create_new_collection_popup" post_data=post.id %}
-                            </div><!--bookmark-->
-                            <div class="rate">
-                                <span class="color_1"></span>
-                                <span class="color_2"></span>
-                                <span class="color_3"></span>
-                                <span class="color_4"></span>
-                                <span class="color_5"></span>
+                      <!-- Modal -->
+                      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-body">
+                                <div class="into-modal">
+                                    <p>Tuyệt! Please type your question here.</p>
+                                    <p>Your question will be sent to our email. AskVietnamese Team will get back to you as soon as possible.</p>
+
+                                    <p>Start with “Wh-question”: Why, What, When, Where, How…</p>
+                                </div>
+                                <div class="text-modal">
+                                    <img src="images/team-3.jpg" alt="" class="img-responsive"/>
+                                    <textarea placeholder="|Start your question with “What”, “How”, “Why”, etc..."></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">ADD QUESTION</button>
                             </div>
                         </div>
                     </div>
-                </li>
-                {% endif %}
-                {% endfor %}
-            </ul><!--listone-->
-        </div><!--list-art-home-->
-        <div class="clearfix"></div>
-        {% if posts.lastPage > 1 %}
-        <div class="page-fil">
-            <ul>
-                {% if posts.currentPage > 1 %}
-                <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&lt; Previous</a></li>
-                {% endif %}
+                </div>
+            </div><!--box-ques-->
+            <div class="clearfix"></div>
+            <div class="content-list-item">
+                <ul >
+                    {% for post in posts %}
+                    {% if post.published == 1 %}
+                    <li class="{{ post.categories[0].slug }}" >
+                        <div class="list-item">
+                            <div class="sub-tit">
+                                <span>
+                                    {% for category in post.categories %}
+                                    <a href="/categories/{{ category.slug }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                                    {% endfor %}
+                                </span>
+                            </div>
+                            <div class="tit-top-info">
+                                <img src="{{ post.user.avatar.path }}" alt=""/>
+                                <div class="info-title-item">
+                                    <div class="name">{{ post.user.first_name }}</div>
+                                    <p>Content Executive - {{ post.published_at|date('M d, Y') }}</p>
+                                </div>
+                                <div class="share-info-title">
+                                    <p>Share on</p>
+                                    <ul>
+                                        <li><a href="" title=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="" title=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                                        <li><a href="#" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <h3><a href="/blog/post/{{ post.slug }}" title="">{{ post.title }}</a></h3>
+                            <div class="short-new">
+                                {{post.summary|raw}}
+                                <a href="/blog/post/{{ post.slug }}" title="">See more</a>
+                            </div>
+                            <div class="img-new">
+                                <a href="/blog/post/{{ post.slug }}" title=""><img src="{{ post.featured_images[0].path }}" alt="" class="img-responsive"/></a>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul><!--listone-->
+                </div><!--list-art-home-->
+                <div class="clearfix"></div>
+                {% if posts.lastPage > 1 %}
+                <div class="page-fil">
+                    <ul>
+                        {% if posts.currentPage > 1 %}
+                        <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&lt; Previous</a></li>
+                        {% endif %}
 
-                {% for page in 1..posts.lastPage %}
-                <li class="{{ posts.currentPage == page ? 'active' : null }}">
-                    <a class="{{ posts.currentPage == page ? 'onClick' : null }}" href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
-                </li>
-                {% endfor %}
+                        {% for page in 1..posts.lastPage %}
+                        <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                            <a class="{{ posts.currentPage == page ? 'onClick' : null }}" href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                        </li>
+                        {% endfor %}
 
-                {% if posts.lastPage > posts.currentPage %}
-                <li><a class="pagination_next" href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &gt;</a></li>
+                        {% if posts.lastPage > posts.currentPage %}
+                        <li><a class="pagination_next" href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &gt;</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
                 {% endif %}
-            </ul>
+                <div class="more-art-home">
+                    <p>lastest artical</p>
+                    <a href="#" title="">explore ask vietnamese</a>
+                </div>
+            </div>
         </div>
-        {% endif %}
-        <div class="more-art-home">
-            <p>lastest artical</p>
-            <a href="#" title="">explore ask vietnamese</a>
-        </div>
-    </div>
-</div>
-</div><!--ask-main-->
-<script type="text/javascript">
-    function detectmob() { 
-       if( navigator.userAgent.match(/Android/i)
-           || navigator.userAgent.match(/webOS/i)
-           || navigator.userAgent.match(/iPhone/i)
-           || navigator.userAgent.match(/iPad/i)
-           || navigator.userAgent.match(/iPod/i)
-           || navigator.userAgent.match(/BlackBerry/i)
-           || navigator.userAgent.match(/Windows Phone/i)
-           )
-       {
-        return true;
+    </section><!--ask-main-->
+    <script type="text/javascript">
+        function detectmob() { 
+           if( navigator.userAgent.match(/Android/i)
+               || navigator.userAgent.match(/webOS/i)
+               || navigator.userAgent.match(/iPhone/i)
+               || navigator.userAgent.match(/iPad/i)
+               || navigator.userAgent.match(/iPod/i)
+               || navigator.userAgent.match(/BlackBerry/i)
+               || navigator.userAgent.match(/Windows Phone/i)
+               )
+           {
+            return true;
         }
-    else {
-        return false;
+        else {
+            return false;
+        }
     }
-    }
-$(document).ready(function(){
-    var pathToLoad = detectmob() ? '/home_infinite/' : '/home/';
+    $(document).ready(function(){
+        var pathToLoad = detectmob() ? '/home_infinite/' : '/home/';
 
-    $('.listone').infiniteScroll({
-        path: function() {
-            return pathToLoad + (this.loadCount + 2);
-        },
-        append: '.listone',
-        checkLastPage: '.pagination_next',
-        history: false
+        $('.listone').infiniteScroll({
+            path: function() {
+                return pathToLoad + (this.loadCount + 2);
+            },
+            append: '.listone',
+            checkLastPage: '.pagination_next',
+            history: false
             // options...
         });
-});
+    });
 </script>

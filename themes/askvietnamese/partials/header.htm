@@ -5,87 +5,123 @@ security = "all"
 ==
 {% set posts = __SELF__.posts %}
 
-<div class="header pagehome">
-	<div class="container contentmenu">
-		<div class="row">
-
-			<div class="logo col-lg-2 col-md-2 col-sm-2 col-xs-12">
-				<a href="/home" title=""><img src="{{ 'assets/images/logohome.png'|theme }}" class="img-responsive" alt=""/></a>
-			</div>
-			<div class="search-login col-md-8 col-sm-8 col-xs-12">
-				<div class="searh col-md-9 col-sm-9 col-xs-12">
-					<span class="icon-search"><i class="fa fa-search" aria-hidden="true"></i></span>
-					<div class="form_moblie_search">
-						<form method="get" id="idf" action="/blog/search" name="form_timkiem_sp">
-							<div class="artseed-search">
-								<input value="" class="top_input" type="text" placeholder="It's time to AskVietnamese" name="search" />
-
-							</div>
-
-							<a href="javascript:void()" class="nut_searh" onclick="javascript:$('#idf').submit();">  <i class="fa animated fa-search search-icon"></i></a>
-						</form>
-					</div>
-				</div>
-
-				<div class="logintop col-md-3 col-sm-3 col-xs-12">
-					{% if user %}
-					<!-- <button type="button" class="btnlogin btn btn-primary btn-lg" > -->
-						<!-- <div class="dropdown"> -->
-						  <a class="btnlogin btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown">User Menu</a>
-						  <ul class="btnlogin btn btn-primary btn-lg dropdown-menu">
-							<li><a class="btnlogin btn btn-primary btn-lg" href="/user">Profile</a></li> 
-							<li><a class="btnlogin btn btn-primary btn-lg" data-request="onLogout" data-request-data="redirect: '/home'">Logout</a></li>
-						  </ul>
-<!-- 						</div> -->
-						<!-- </button> -->
-						{% else %}
-						<!-- Button trigger modal -->
-						<button type="button" class="btnlogin btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal-home">
-							Login
-						</button>
-						{% partial "login_popup" modalId="myModal-home" %}	
-						{% endif %}										
-					</div>			
-					<div class="menu">
-						<nav class="menutop">
-							<input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle mobile-menu-toggle-button">
-							<ul class="sky-mega-menu scale-effect mobile-toggleable-menu mobile-left">
-								<li><a class="active" href="#" >wh-question</a>
-									<div class="submenu">
-
-										<div class="list_mn">
-											<ul>
-												{% partial "what-pages" title="where to visit" category="Places" %}
-												{% partial "what-pages" title="what to eat" category="Food" %}
-												{% partial "what-pages" title="which festival/event" category="Festival/Event" %}	
-												{% partial "what-pages" title="how about culture" category="Culture" %}
-												{% partial "what-pages" title="how to get ready" category="Travel tips" %}
-											</ul>
-											<a class="menuall" href="#" title="">all</a>
-										</div><!--list_mn-->
-
-
-									</div><!--sub-menu-->
-									<i class="fa fa-plus"></i>
-								</li>
-								<li><a href="/whoweare">who are we</a></li>
-								<li><a href="/support">Support center</a></li>
-
-								<li><a href="/askv_map">askvietnamese</a></li>
-
-							</ul>
-							<label class="mobile-left mobmenu-toggle" for="mobile-menu-toggle" onClick="menuLeft();"></label>
-						</nav>
-						<a href="javascript:void(0)" onClick="menuLeft();" id="mainHideMenu"></a>
-					</div><!--Menu-->
-
-				</div><!--search-login-->    
-				<div class="social-share col-md-2 col-sm-2 col-xs-12">
-					<a href="{{ facebook_link }}" title="" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-					<a href="{{ instagram_link }}" title="" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-					<a href="{{ youtube_link }}" title=""><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-					<a href="{{ twitter_link }}" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-				</div>
-			</div><!--row-->
-		</div><!--container-->
-	</div>
+<div class="header">
+   
+        <div class="container">
+            <div class="row">
+                  <div class="button_menu_mobile">
+                        <i class="fa fa-bars"></i>
+                    </div>
+                <div class="logo col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <a href="#" title=""><img src="{{ 'assets/images/logo.png'|theme }}" class="img-responsive" alt=""/></a>
+                </div><!--logo-->
+                <div class="menutop col-md-6 col-sm-6 col-xs-12">
+                  
+                    <nav class="push-menu-left">
+                        <ul>
+                            <li><a href="#"><span>Trending Searches</span></a>
+                                <div class="sub-level-menu">
+                                    <div class="container">
+                                        <ul>
+                                            <li><a href="#" title="">Transport tickets</a></li>
+                                            <li><a href="#" title="">Vegetarians</a></li>
+                                            <li><a href="#" title="">Safety</a></li>
+                                            <li>
+                                                <a href="#" title="">Ho Chi Minh City</a>
+                                                <ul class="sub-menu-level3">
+                                                    <li class="col-md-4 col-sm-4 col-xs-12">
+                                                        <div class="item-men">
+                                                            <div class="thumb-mn-level3">
+                                                                <a href="#" title=""><img src="images/img1.jpg" alt="" class="img-responsive"/></a>
+                                                            </div>
+                                                            <h3><a href="#" title="">Where to find the best Cha Ca La Vong in Hanoi?</a></h3>
+                                                            <p class="sub-ob culture"><a href="#" title="">Culture</a></p>
+                                                            <time> Jul 03, 2018 | <i class="fa fa-eye"></i> 194</time>
+                                                        </div>
+                                                    </li>
+                                                    <li class="col-md-4 col-sm-4 col-xs-12">
+                                                        <div class="item-men">
+                                                            <div class="thumb-mn-level3">
+                                                                <a href="#" title=""><img src="images/img1.jpg" alt="" class="img-responsive"/></a>
+                                                            </div>
+                                                            <h3><a href="#" title="">Where to find the best Cha Ca La Vong in Hanoi?</a></h3>
+                                                            <p class="sub-ob places"><a href="#" title="">Places</a></p>
+                                                            <time> Jul 03, 2018 | <i class="fa fa-eye"></i> 194</time>
+                                                        </div>
+                                                    </li>
+                                                    <li class="col-md-4 col-sm-4 col-xs-12">
+                                                        <div class="item-men">
+                                                            <div class="thumb-mn-level3">
+                                                                <a href="#" title=""><img src="images/img1.jpg" alt="" class="img-responsive"/></a>
+                                                            </div>
+                                                            <h3><a href="#" title="">Where to find the best Cha Ca La Vong in Hanoi?</a></h3>
+                                                            <p class="sub-ob food"><a href="#" title="">Foods</a></p>
+                                                            <time> Jul 03, 2018 | <i class="fa fa-eye"></i> 194</time>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#" title="">Mekong Delta</a></li>
+                                            <li><a href="#" title="">Hanoi</a></li>
+                                        </ul>
+                                    </div>
+                                </div><!--sub-level-menu-->
+                            </li>
+                            <li><a href="#"><span>Who are we</span></a></li>
+                            <li><a href="#"><span>Support Center</span></a></li>
+                        </ul>
+                    </nav>
+                <script>
+                // Menu mobile
+                    $(document).ready(function() {
+                        $menuLeft = $('.push-menu-left');
+                        $nav_list = $('.button_menu_mobile');
+                        
+                        $nav_list.click(function(e) {
+                            $(this).toggleClass('active');
+                            $('body').toggleClass('pushmenu-push-toright');
+                            $menuLeft.toggleClass('pushmenu-open');
+                        });
+                    
+                        $('.navbar-nav').find('.parent').append('<span></span>');
+                    
+                        $('.navbar-nav .parent span').on("click", function() {
+                            if ($(this).attr('class') == 'opened') {
+                                $(this).removeClass().parent('.parent').find('ul').slideToggle();
+                            } else {
+                                $(this).addClass('opened').parent('.parent').find('ul').slideToggle();
+                            }
+                        });
+                    });
+                </script>
+                    <div class="form_moblie_search">
+                        <span class="icon-search"><i class="fa fa-search"></i></span>
+                        <div class="fr-search">
+                            <form method="post" id="idf" action="" name="form_timkiem_sp">
+                                <div class="artseed-search">
+                                    <span class="btn-sr"><i class="fa fa-search"></i></span>
+                                    <input value="" type="text" placeholder="It's time to AskVietnamese" name="block_name_search" />
+                                </div>
+                            </form>
+                        </div>
+                    </div><!--form_moblie_search--> 
+               <script>
+              	 $(document).ready(function(){
+                    $(".icon-search").click(function(){
+                			  $(".fr-search").slideToggle(300);
+                		});
+                	});
+               </script>
+               </div><!--menutop--> 
+               <div class="btn-top col-md-3 col-sm-3 col-xs-12">
+                    <p><img src="images/per.png" class="img-responsive" alt=""/></p>
+                    <ul>
+                        <li><a href="" title=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="" title=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                        <li><a href="#" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    </ul>
+               </div><!--btn-top-->
+        </div><!--row-->
+  </div><!--container-->
+</div><!--Header-->   
