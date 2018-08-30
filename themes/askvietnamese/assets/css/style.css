@@ -3339,6 +3339,19 @@ section#main {
 .content-list-item ul li.festival  .sub-tit span:before {
     background: #ed3550;
 }
+
+.content-list-item ul li.places .sub-tit span:before {
+ 
+    color: #fcb940;
+}
+.content-list-item ul li.food .sub-tit span:before {
+
+    color: #0055b2;
+}
+.content-list-item ul li.recommend-you .sub-tit span:before {
+
+    color: #ed3550;
+}
 .content-list-item ul li .sub-tit span {
     position: relative;
  
