@@ -185,7 +185,7 @@ a.scrollup:hover{
     padding-left: 0;
     width: 100%;
 }
-.form_moblie_search {
+/*.form_moblie_search {
     text-align: left;
     position: relative;
     float: left;
@@ -200,7 +200,7 @@ a.scrollup:hover{
     color: #000;
     padding: 10px 0px;
     background: none;
-}
+}*/
 .menu-hotline-mail {
     margin-top: 10px;
 }
@@ -3253,10 +3253,13 @@ section#main {
 .content-list-item ul li.culture {
     border: 1px solid #ff5e33;
 }
-.content-list-item ul li.traveltrip {
+.content-list-item ul li.travel-tips {
     border: 1px solid #309a50;
 }
 .content-list-item ul li.festival {
+    border: 1px solid #ed3550;
+}
+.content-list-item ul li.event {
     border: 1px solid #ed3550;
 }
 .content-list-item ul li.places {
@@ -3277,7 +3280,7 @@ section#main {
 {
     color:#ff5e33
 }
-.content-list-item ul li.traveltrip .list-item h3 a, .content-list-item ul li.traveltrip .list-item .short-new a
+.content-list-item ul li.travel-tips .list-item h3 a, .content-list-item ul li.travel-tips .list-item .short-new a
 {
     color:#309a50
 }
@@ -3297,6 +3300,15 @@ section#main {
     color:#ed3550;
 }
 
+.content-list-item ul li.recommend-you  .list-item h3 a, .content-list-item ul li.festival  .list-item .short-new a
+{
+    color:#ed3550;
+}
+
+.content-list-item ul li.recommend-you  .list-item h3 a, .content-list-item ul li.event  .list-item .short-new a
+{
+    color:#ed3550;
+}
 
 .content-list-item {
     margin-top: 30px;
@@ -3306,11 +3318,16 @@ section#main {
  
     color: #ff5e33;
 }
-.content-list-item ul li.traveltrip .sub-tit span {
+.content-list-item ul li.travel-tips .sub-tit span {
 
     color: #309a50;
 }
 .content-list-item ul li.festival .sub-tit span {
+
+    color: #ed3550;
+}
+
+.content-list-item ul li.event .sub-tit span {
 
     color: #ed3550;
 }
@@ -3333,7 +3350,7 @@ section#main {
 .content-list-item ul li.culture .sub-tit span:before {
     background: #ff5e33;
 }
-.content-list-item ul li.traveltrip .sub-tit span:before {
+.content-list-item ul li.travel-tips .sub-tit span:before {
     background: #309a50;
 }
 .content-list-item ul li.festival  .sub-tit span:before {
@@ -3342,15 +3359,15 @@ section#main {
 
 .content-list-item ul li.places .sub-tit span:before {
  
-    color: #fcb940;
+    background: #fcb940;
 }
 .content-list-item ul li.food .sub-tit span:before {
 
-    color: #0055b2;
+    background: #0055b2;
 }
 .content-list-item ul li.recommend-you .sub-tit span:before {
 
-    color: #ed3550;
+    background: #ed3550;
 }
 .content-list-item ul li .sub-tit span {
     position: relative;

@@ -1,0 +1,41 @@
+<div class="box-ques">
+  <div class="thumb-per">
+    <img src="images/team-3.jpg" alt="" class="img-responsive"/>
+    <p><span>"Xin chào, </span>
+     <span>Any questions to ask?"</span></p>
+   </div>
+   <!-- Button trigger modal -->
+   <button type="button" class="btnask btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    ASK VIETNAMESE
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+    <div class="modal-dialog" role="document">
+      {{ form_open(__SELF__.getFormAttributes)}}
+      <div class="modal-content">
+
+        <div class="modal-body">
+          
+          <div class="into-modal">
+            <p>Tuyệt! Please type your question here.</p>
+            <p>Your question will be sent to our email. AskVietnamese Team will get back to you as soon as possible.</p>
+
+            <p>Start with “Wh-question”: Why, What, When, Where, How…</p>
+          </div>
+          <div class="text-modal">
+            <img src="images/team-3.jpg" alt="" class="img-responsive"/>
+
+            <textarea placeholder="Start your question with “What”, “How”, “Why”, etc..." id="contactForm-question" name="question" class="form-control" type="text" required=""></textarea>
+            <input style="border: none;" placeholder="Your email" id="contactForm-email" name="email" class="form-control" type="text" required=""></textarea>
+          </div>
+        </div>
+        <div id="submit-wrapper-contactForm" class="modal-footer">
+          <button type="submit" data-attach-loading class="btn btn-primary">ADD QUESTION</button>
+        </div>
+      </div>
+      {{ form_close() }}
+    </div>
+  </div>
+</div><!--box-ques-->

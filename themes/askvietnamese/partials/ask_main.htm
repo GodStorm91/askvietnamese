@@ -1,6 +1,13 @@
 description = "ask main"
-==
 
+[topPosts]
+period = 2
+category = 0
+postPerPage = 5
+postPage = 404
+slug = "{{ :slug }}"
+
+==
 <section id="main">
     <div class="container">
         <div class="row">
@@ -16,44 +23,10 @@ description = "ask main"
                 </ul>
             </div>
             <div class="f-body-center col-md-6 col-sm-6 col-xs-12">
-                <div class="box-ques">
-                    <div class="thumb-per">
-                        <img src="images/team-3.jpg" alt="" class="img-responsive"/>
-                        <p><span>"Xin chào, </span>
-                           <span>Any questions to ask?"</span></p>
-                       </div>
-                       <!-- Button trigger modal -->
-                       <button type="button" class="btnask btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                          ASK VIETNAMESE
-                      </button>
-
-                      <!-- Modal -->
-                      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-
-                              <div class="modal-body">
-                                <div class="into-modal">
-                                    <p>Tuyệt! Please type your question here.</p>
-                                    <p>Your question will be sent to our email. AskVietnamese Team will get back to you as soon as possible.</p>
-
-                                    <p>Start with “Wh-question”: Why, What, When, Where, How…</p>
-                                </div>
-                                <div class="text-modal">
-                                    <img src="images/team-3.jpg" alt="" class="img-responsive"/>
-                                    <textarea placeholder="|Start your question with “What”, “How”, “Why”, etc..."></textarea>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary">ADD QUESTION</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--box-ques-->
+            {% component 'contactForm' %}
             <div class="clearfix"></div>
             <div class="content-list-item">
-                <ul >
+                <ul id="listone" >
                     {% for post in posts %}
                     {% if post.published == 1 %}
                     <li class="{{ post.categories[0].slug }}" >
@@ -76,8 +49,8 @@ description = "ask main"
                                     <ul>
                                         <li><a href="" title=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                         <li><a href="" title=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                                        <li><a href="#" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href=""><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                                        <li><a href="" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -120,6 +93,34 @@ description = "ask main"
                     <a href="#" title="">explore ask vietnamese</a>
                 </div>
             </div>
+            <div class="right-ctn col-md-3 col-sm-3 hidden-xs">
+                <div class="f-right-bl">
+                    <div class="f-title-right"><h2><span>Popular on AskVietnamese</span></h2></div>
+                    <div class="content-bl">
+                        <ul>
+                            {% for post in mostVisitedPosts %}
+                            <li>
+                                <div class="item-bl">
+                                    <a class="thumb-bl-img" href="" title=""><img src="{{ post.featured_images[0].path }}" alt="" class="img-responsive"/></a>
+                                    <div class="info-bl-new">
+                                        <h3><a href="{{ post.url }}" title="">{{ post.title }}</a></h3>
+                                        <p class="sub-ob places">                        
+                                            {% for category in post.categories %}
+                                                <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                                            {% endfor %}
+                                        </p>
+                                        <time>{{ post.published_at|date('M d, Y') }} | <i class="fa fa-eye"></i> 194</time>
+                                    </div>   
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="more-right-ctn">
+                    <p>Privacy · Terms · Advertise · AdChoices · Cookies   |   Ask Vietnames © 2018</p>
+                </div>
+            </div><!--right-ctn-->
         </div>
     </section><!--ask-main-->
     <script type="text/javascript">
@@ -141,15 +142,17 @@ description = "ask main"
     }
     $(document).ready(function(){
         var pathToLoad = detectmob() ? '/home_infinite/' : '/home/';
-
-        $('.listone').infiniteScroll({
+        if (window.location.href.indexOf("/home") > -1){
+            //Only allow infinite scroll when we are on home
+            $('#listone').infiniteScroll({
             path: function() {
                 return pathToLoad + (this.loadCount + 2);
             },
-            append: '.listone',
+            append: '#listone',
             checkLastPage: '.pagination_next',
             history: false
             // options...
         });
+        }
     });
 </script>

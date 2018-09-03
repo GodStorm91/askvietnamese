@@ -92,26 +92,31 @@ security = "all"
                                 $(this).addClass('opened').parent('.parent').find('ul').slideToggle();
                             }
                         });
+
+                        $('#search_box').on('keyup', function(e){
+                        	if (e.keyCode == 13){
+                        		$('#idf').submit();
+                        	}
+                        })
+
+                        $(document).on('keyup', function(e)){
+                        	if (e.keyCode == 13){
+                        		$('#idf').submit();
+                        	}
+                        }
                     });
                 </script>
                     <div class="form_moblie_search">
                         <span class="icon-search"><i class="fa fa-search"></i></span>
                         <div class="fr-search">
-                            <form method="post" id="idf" action="" name="form_timkiem_sp">
+                            <form method="post" id="idf" action="/blog/search" name="form_timkiem_sp">
                                 <div class="artseed-search">
                                     <span class="btn-sr"><i class="fa fa-search"></i></span>
-                                    <input value="" type="text" placeholder="It's time to AskVietnamese" name="block_name_search" />
+                                    <input value="" type="text" placeholder="It's time to AskVietnamese" name="search" id="search_box"/>
                                 </div>
                             </form>
                         </div>
                     </div><!--form_moblie_search--> 
-               <script>
-              	 $(document).ready(function(){
-                    $(".icon-search").click(function(){
-                			  $(".fr-search").slideToggle(300);
-                		});
-                	});
-               </script>
                </div><!--menutop--> 
                <div class="btn-top col-md-3 col-sm-3 col-xs-12">
                     <p><img src="images/per.png" class="img-responsive" alt=""/></p>
