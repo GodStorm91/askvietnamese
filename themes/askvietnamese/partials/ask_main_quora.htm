@@ -1,0 +1,246 @@
+description = "ask main"
+==
+<div class="ask-main">
+    <div class="container">
+        <div class="row">
+            <div class="list-art-home">
+                <ul class="listone">
+                    {% for post in posts %}
+                        {% if post.published == 1 %}
+                            <div class="FeedStory AnswerFeedStory feed_item" id="__w2_l9wBZX4_item">
+                                <div class="EventHeader pass_color_to_child_links many_faces ImplicitFollowTopicReason FeedReason">
+                                    <div class="reason_main">
+                                        Topic <span class="bullet"> · </span>
+                                        <div class="TopicListItem" id="__w2_hYXtMoO_topic_list_item">
+                                            <div class="u-inline-block">
+                                                <div id="MczowH">
+                                                    <div class="hover_menu hidden white_bg show_nub" id="__w2_KXrMiIu_menu">
+                                                        <div class="hover_menu_contents" id="__w2_KXrMiIu_menu_contents"> </div>
+                                                    </div>
+                                                    {% for category in post.categories %}
+                                                    <a class="TopicNameLink HoverMenu topic_name" href="/categories/{{ category.slug }}" action_mousedown="TopicLinkClickthrough" id="__w2_KXrMiIu_link"><span class="name_text">{{ category.name }}<span id="oMSEYS">{% if not loop.last %}, {% endif %}<span class="TopicNameSpan TopicName" id="__w2_Jedqjya_card"></span></span></span></a>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span class="bullet"> · </span>
+                                    </div>
+                                    <div class="reason_overflow">
+                                        <div class="u-absolute u-absolute--center" id="__w2_YpsbqZp_close">
+                                            <a class="ui_icon_button--base ui_icon_button--horizontal_base ui_icon_button--icon_only_base ui_icon_button--no_outline_base ui_icon_button--icon_text_gray" href="#" id="__w2_vcp433W_button">
+                                                <div class="ui_icon_button_inner" id="__w2_vcp433W_inner">
+                                                    <div id="__w2_vcp433W_icon"><span class="ui_icon_button_icon"></span></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span id="__w2_N3qDamr_answer_story">
+                                    <div class="story_title_container">
+                                        <div class="pass_color_to_child_links">
+                                            <div id="LTPFNO"><a class="question_link" href="/blog/post/{{ post.slug }}" target="_top" action_mousedown="QuestionLinkClickthrough" id="__w2_DgG5ldi_link"><span class="ui_story_title ui_story_title_medium "><span class="ui_qtext_rendered_qtext">{{ post.title }}</span></span></a></div>
+                                        </div>
+                                        <div id="RhRrlM"></div>
+                                    </div>
+                                    <div class="Answer" id="__w2_vXh7toe_answer">
+                                        <div class="inline_editor_content" id="__w2_J1yWeTw_content">
+                                            <div id="RrXvvi">
+                                                <div id="NGJwfh">
+                                                    <div class="feed_item_answer answer_text" id="__w2_PmWr81k_content">
+                                                        <div class="feed_item_answer_content answer_content">
+                                                            <div class="answer_user answer_user_inline">
+                                                                <div id="qHUWdZ">
+                                                                    <div class="ContentHeader AnswerHeader">
+                                                                        <div class="ui_layout_photo_text u-flex ui_layout_size--small">
+                                                                            <div class="ui_layout_photo_wrapper">
+                                                                                <div class="ui_layout_photo u-relative">
+                                                                                    <div id="hnPHik">
+                                                                                        <div class="hover_menu hidden white_bg show_nub" id="__w2_h8rIwpB_menu">
+                                                                                            <div class="hover_menu_contents" id="__w2_h8rIwpB_menu_contents"> </div>
+                                                                                        </div>
+                                                                                        <span class="photo_tooltip Photo IdentityPhoto HoverMenu" id="__w2_h8rIwpB_link"><a href="#" id="__w2_Hm5gbXg_link"><img class="profile_photo_img" src="{{post.user.avatar.path}}" alt="Mark Gossage" height="50" width="50"></a><span id="pWhwCN"></span></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="ui_layout_text u-flex-auto u-flex-align-self--center">
+                                                                                <div class="u-flex u-flex-justify--between">
+                                                                                    <div class="u-margin-right--sm">
+                                                                                        <div class="feed_item_answer_user">
+                                                                                            <span id="fpEfKU">
+                                                                                                <span id="exLHPb">
+                                                                                                    <div class="hover_menu hidden white_bg show_nub" id="__w2_A35XK3N_menu">
+                                                                                                        <div class="hover_menu_contents" id="__w2_A35XK3N_menu_contents">
+                                                                                                            <div id="cyMLQQ">
+                                                                                                                <div class="BetterUserHoverMenuContents ObjectCard">
+                                                                                                                    <div class="ObjectCard-header">
+                                                                                                                        <div id="xjwQLT">
+                                                                                                                            <div class="hover_menu hidden white_bg show_nub" id="__w2_qdNIQhj_menu">
+                                                                                                                                <div class="hover_menu_contents" id="__w2_qdNIQhj_menu_contents"> </div>
+                                                                                                                            </div>
+                                                                                                                            <span class="photo_tooltip IdentityPhoto Photo HoverMenu" id="__w2_qdNIQhj_link"><a href="/profile/Mark-Gossage" id="__w2_V61a7TO_link"><img class="profile_photo_img" src="https://qph.ec.quoracdn.net/main-thumb-15914336-50-eveapwvbnkgbzqylksbetuovrcpybrbj.jpeg" alt="Mark Gossage" height="50" width="50"></a><span id="URqjxJ"></span></span>
+                                                                                                                        </div>
+                                                                                                                        <div class="header_wrapper"><span id="vHxTMp"><span id="__w2_f5EyGQ0_link"><a class="user" href="/profile/Mark-Gossage" action_mousedown="UserLinkClickthrough" id="__w2_f5EyGQ0_name_link">{{ post.user.firstname }}</a></span></span><span id="WOGnRm"><span class="UserCredential IdentityCredential">AskVietnamese Staff</span></span></div>
+                                                                                                                    </div>
+                                                                                                                    <div class="ObjectCard-body">
+                                                                                                                        <div class="hovercard_section">
+                                                                                                                            <div id="yrMvdW">
+                                                                                                                                <div class="AboutSection">
+                                                                                                                                    <div class="contents">
+                                                                                                                                        <div id="YRmIVs">
+                                                                                                                                            <div class="AboutListItem AnswerViewsAboutListItem">
+                                                                                                                                                <div class="list_item_icon"></div>
+                                                                                                                                                <span class="main_text">123.3k answer views</span><span class="detail_text">8.5k this month</span>
+                                                                                                                                            </div>
+                                                                                                                                        </div>
+                                                                                                                                        <div id="yxsNrQ">
+                                                                                                                                            <div class="AboutListItem TopWriterAboutListItem">
+                                                                                                                                                <div class="list_item_icon"></div>
+                                                                                                                                                <span class="main_text">Top Writer</span><span class="detail_text">2018</span>
+                                                                                                                                            </div>
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    <div class="ObjectCard-footer">
+                                                                                                                        <div id="dlXssm">
+                                                                                                                            <div class="icon_action_bar" id="__w2_uL3nSu2_action_bar">
+                                                                                                                                <div class="action_bar_inner u-flex">
+                                                                                                                                    <div class="ItemComponent FollowPrimaryActionItem primary_item">
+                                                                                                                                        <span id="XaBBYp">
+                                                                                                                                            <a class="icon_action_bar-button blue_icon" href="#" action_click="UserFollow" action_target="{&quot;type&quot;: &quot;user&quot;, &quot;uid&quot;: 15914336}" id="__w2_HnuxasR_button">
+                                                                                                                                                <div class="icon_action_bar-icon icon_action_bar-icon_offset"><span class="action_bar-inline_icon"></span></div>
+                                                                                                                                                <div class="icon_action_bar-label"><span class="u-font-weight--medium u-margin-left--xs" id="__w2_HnuxasR_text">Follow</span><span class="icon_action_bar-count" id="__w2_HnuxasR_count_wrapper"><span class="bullet"> · </span><span id="__w2_HnuxasR_count">157</span></span></div>
+                                                                                                                                            </a>
+                                                                                                                                        </span>
+                                                                                                                                    </div>
+                                                                                                                                    <div class="SubscribeActionItem ItemComponent ActionItemComponent action_item">
+                                                                                                                                        <a class="icon_action_bar-button" href="#" action_click="UserSubscribe" action_target="{&quot;type&quot;: &quot;user&quot;, &quot;uid&quot;: 15914336}" id="__w2_rrrnpRR_button">
+                                                                                                                                            <div class="icon_action_bar-icon icon_action_bar-icon_offset"><span class="action_bar-inline_icon"></span></div>
+                                                                                                                                            <div class="icon_action_bar-label"><span class="u-font-weight--medium u-margin-left--xs" id="__w2_rrrnpRR_text">Turn On Notifications</span></div>
+                                                                                                                                        </a>
+                                                                                                                                    </div>
+                                                                                                                                    <div class="action_bar_inner_spacer u-margin-left--auto">&nbsp;</div>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <span id="__w2_A35XK3N_link" class=""><a class="user" href="/profile/Mark-Gossage" action_mousedown="UserLinkClickthrough" id="__w2_A35XK3N_name_link">{{ post.user.first_name}}, </a></span>
+                                                                                                </span>
+                                                                                                <span class="NameCredential IdentityNameCredential">AskVietnamese Staff</span>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                        <span class="credibility_wrapper">
+                                                                                            <div class="u-inline-block" id="EEjPNz">
+                                                                                                <div class="CredibilityFacts pass_color_to_child_links"><span id="HgGNus"><a class="answer_permalink" action_mousedown="AnswerPermalinkClickthrough" href="/What-is-some-non-obfuscated-C-code-that-does-something-unexpected/answer/Mark-Gossage" id="__w2_XaqPZgN_link">Answered on {{ post.published_at|date('M d, Y') }}</a></span></div>
+                                                                                            </div>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div class="u-relative icon_follow_button_wrapper">
+                                                                                        <div class="u-absolute u-absolute--center u-border-radius--100 u-padding-right--xs u-padding-left--xs icon_follow_button hidden fadeIn" id="__w2_NK7jfZj_follow_button">
+                                                                                            <span id="oFtHKq">
+                                                                                                <a class="icon_action_bar-stacked_button blue_icon" href="#" action_click="UserFollow" action_target="{&quot;type&quot;: &quot;user&quot;, &quot;uid&quot;: 15914336}" id="__w2_RzgXj9U_button">
+                                                                                                    <div class="icon_action_bar-stacked_icon u-relative u-inline-block"><span class="action_bar-inline_icon"></span></div>
+                                                                                                    <div class="icon_action_bar-stacked_label"></div>
+                                                                                                </a>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="answer_body_preview">
+                                                                <div id="RpdOSi">
+                                                                    <div class="Expandable SimpleToggle AnswerExpandable Toggle AnswerInFeedExpandable" id="__w2_M6vgd22__truncated">
+                                                                        <div class="u-serif-font-main--regular">
+                                                                            <div class="ui_qtext_truncated ui_qtext_truncated_compact">
+                                                                                <div class="ui_qtext_truncated_text">
+                                                                                    {{post.summary | raw}}
+                                                                                </div>
+                                                                                <a class="ui_qtext_more_link" href="/blog/post/{{ post.slug }}" id="__w2_Hc6ocvC_more"><span>(more)</span></a><span class="hidden" id="__w2_Hc6ocvC_loading"><span class="loading">Loading…</span></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="Expandable SimpleToggle AnswerExpandable Toggle AnswerInFeedExpandable hidden" id="__w2_M6vgd22__expanded"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="hidden" id="__w2_J1yWeTw_loading"><span class="loading">Loading…</span></div>
+                                        </div>
+                                        <div class="hidden" id="__w2_J1yWeTw_editor"></div>
+                                    </div>
+                                </span>
+                                <span class="hidden" id="__w2_N3qDamr_question_answer_story_editable"></span>
+                                <div class="Toggle ToggleAnswerFooterWrapper SimpleToggle" id="__w2_dq2WiTj__truncated"></div>
+                                <div class="Toggle ToggleAnswerFooterWrapper SimpleToggle hidden" id="__w2_dq2WiTj__expanded"></div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    </ul><!--listone-->
+                    </div><!--list-art-home-->
+                    <div class="clearfix"></div>
+                    {% if posts.lastPage > 1 %}
+                        <div class="page-fil">
+                            <ul>
+                                {% if posts.currentPage > 1 %}
+                                    <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&lt; Previous</a></li>
+                                {% endif %}
+                                {% for page in 1..posts.lastPage %}
+                                    <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                                        <a class="{{ posts.currentPage == page ? 'onClick' : null }}" href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                                    </li>
+                                {% endfor %}
+                                {% if posts.lastPage > posts.currentPage %}
+                                    <li><a class="pagination_next" href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &gt;</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                    <div class="more-art-home">
+                        <p>lastest artical</p>
+                        <a href="#" title="">explore ask vietnamese</a>
+                    </div>
+                </div>
+            </div>
+            </div><!--ask-main-->
+            <script type="text/javascript">
+            function detectmob() {
+            if( navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)
+            )
+            {
+            return true;
+            }
+            else {
+            return false;
+            }
+            }
+            $(document).ready(function(){
+            var pathToLoad = detectmob() ? '/home/' : '/home/';
+            $('.listone').infiniteScroll({
+            path: function() {
+            return pathToLoad + (this.loadCount + 2);
+            },
+            append: '.listone',
+            checkLastPage: '.pagination_next',
+            history: false
+            // options...
+            });
+            });
+            </script>
