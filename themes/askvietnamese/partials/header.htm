@@ -109,10 +109,10 @@ security = "all"
                     <div class="form_moblie_search">
                         <span class="icon-search"><i class="fa fa-search"></i></span>
                         <div class="fr-search">
-                            <form method="post" id="idf" action="/blog/search" name="form_timkiem_sp">
+                            <form method="get" id="idf" action="{{ 'search' | page }}" name="form_timkiem_sp">
                                 <div class="artseed-search">
                                     <span class="btn-sr"><i class="fa fa-search"></i></span>
-                                    <input value="" type="text" placeholder="It's time to AskVietnamese" name="search" id="search_box"/>
+                                    <input value="" type="text" placeholder="It's time to AskVietnamese" name="q" id="search_box"/>
                                 </div>
                             </form>
                         </div>

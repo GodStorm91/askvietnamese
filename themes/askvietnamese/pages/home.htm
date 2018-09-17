@@ -28,6 +28,13 @@ postPage = "blog/post"
 slug = "{{ :slug }}"
 [usercollection]
 [googleTracker]
+
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
+searchPage = "search.htm"
 ==
 {% set posts = __SELF__.posts %}
 {% set mostVisitedPosts = __SELF__.mostVisitedPosts %}

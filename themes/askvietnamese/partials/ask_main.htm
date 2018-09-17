@@ -7,7 +7,15 @@ postPerPage = 5
 postPage = 404
 slug = "{{ :slug }}"
 
+[searchResults]
+resultsPerPage = 10
+showProviderBadge = 1
+noResultsMessage = "Your search did not return any results."
+visitPageMessage = "Visit page"
 ==
+{% component 'searchInput' %}
+
+{% component 'searchResults' %}
 <section id="main">
     <div class="container">
         <div class="row">
