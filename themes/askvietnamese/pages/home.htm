@@ -31,6 +31,8 @@ slug = "{{ :slug }}"
 ==
 {% set posts = __SELF__.posts %}
 {% set mostVisitedPosts = __SELF__.mostVisitedPosts %}
+
 {% partial "ask_main" %}
 {% partial "top_articles" %}
+
 <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>

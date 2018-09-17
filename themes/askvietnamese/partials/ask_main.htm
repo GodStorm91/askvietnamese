@@ -8,6 +8,10 @@ postPage = 404
 slug = "{{ :slug }}"
 
 ==
+<?php
+
+?>
+==
 <section id="main">
     <div class="container">
         <div class="row">
@@ -102,15 +106,15 @@ slug = "{{ :slug }}"
                             {% for post in mostVisitedPosts %}
                             <li>
                                 <div class="item-bl">
-                                    <a class="thumb-bl-img" href="" title=""><img src="{{ post.featured_images[0].path }}" alt="" class="img-responsive"/></a>
+                                    <a class="thumb-bl-img" href="/blog/post/{{ post.slug }}" title=""><img src="{{ post.featured_images[0].path }}" alt="" class="img-responsive"/></a>
                                     <div class="info-bl-new">
-                                        <h3><a href="{{ post.url }}" title="">{{ post.title }}</a></h3>
+                                        <h3><a href="/blog/post/{{ post.slug }}" title="">{{ post.title }}</a></h3>
                                         <p class="sub-ob places">                        
                                             {% for category in post.categories %}
                                                 <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
                                             {% endfor %}
                                         </p>
-                                        <time>{{ post.published_at|date('M d, Y') }} | <i class="fa fa-eye"></i> 194</time>
+                                        <time>{{ post.published_at|date('M d, Y') }} | <i class="fa fa-eye"></i> {{ post.totalVisits }}</time>
                                     </div>   
                                 </div>
                             </li>
