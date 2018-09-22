@@ -62,7 +62,7 @@ slug = "{{ :slug }}"
                             <div class="clearfix"></div>
                             <h3><a href="/blog/post/{{ post.slug }}" title="">{{ post.title }}</a></h3>
                             <div class="short-new">
-                                {{post.summary|raw}}
+                                {{str_limit(post.summary|raw,150)}}
                                 <a href="/blog/post/{{ post.slug }}" title="">See more</a>
                             </div>
                             <div class="img-new">
