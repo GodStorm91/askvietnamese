@@ -2470,6 +2470,11 @@ ul.listtwo li:nth-child(4) .ask-item {}
     margin: 30px 0;
 }
 
+.content-suport p{
+  padding-top: 10px;
+  padding-bottom: 8px;
+}
+
 .content-home-artical img {
     display: inline-block;
 }
