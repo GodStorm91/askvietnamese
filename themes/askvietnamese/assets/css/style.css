@@ -2826,10 +2826,12 @@ body {
   background: #fff;
   font-size: 13px;
   font-family: Roboto-Regular;
+  letter-spacing: 0.5px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: relative;
+  line-height: 16pt;
   left: 0;
   overflow-x: hidden;
 }
