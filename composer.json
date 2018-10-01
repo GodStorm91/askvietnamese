@@ -33,7 +33,9 @@
         "october/cms": "~1.0",
         "laravel/framework": "5.5.*",
         "wikimedia/composer-merge-plugin": "dev-master",
-        "laravel/socialite": "^3.0"
+        "laravel/socialite": "^3.0",
+        "sentry/sentry-laravel": "^0.10.0",
+        "carbondate/carbon": "^1.33"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.7",

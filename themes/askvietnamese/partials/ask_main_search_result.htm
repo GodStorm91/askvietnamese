@@ -1,0 +1,166 @@
+description = "ask main search results"
+
+[topPosts]
+period = 2
+category = 0
+postPerPage = 5
+postPage = 404
+slug = "{{ :slug }}"
+
+[searchResults]
+resultsPerPage = 10
+showProviderBadge = 1
+noResultsMessage = "Your search did not return any results."
+visitPageMessage = "Visit page"
+==
+
+{% component 'searchResults' %}
+<section id="main">
+    <div class="container">
+        <div class="row">
+            <div class="left-mn col-md-3 col-sm-3 hidden-xs">
+                <ul>
+                    <li><a href="/askv_map"><img src="{{ 'assets/images/Map.png'|theme }}" alt=""/>AV MAP</a></li>
+                    <li><a href="/categories/food"><img src="{{ 'assets/images/Food.png'|theme }}" alt=""/>Food</a></li>
+                    <li><a href="/categories/places"><img src="{{ 'assets/images/Places.png'|theme }}" alt=""/>Places</a></li>
+                    <li><a href="/categories/Festival/Event"><img src="{{ 'assets/images/Event.png'|theme }}" alt=""/>Festival/Event</a></li>
+                    <li><a href="/categories/Travel%20tips"><img src="{{ 'assets/images/Travel.png'|theme }}" alt=""/>Travel Tips</a></li>
+                    <li><a href="/categories/Culture"><img src="{{ 'assets/images/Culture.png'|theme }}" alt=""/>Art/Culture</a></li>
+                    <li><a href="/categories/recommend-you"><img src="{{ 'assets/images/Personal.png'|theme }}" alt=""/>Personal Experience</a></li>
+                </ul>
+                        <div class="fb-page" data-href="https://www.facebook.com/askvietnamese/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-width="200px" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/askvietnamese/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/askvietnamese/">AskVietnamese</a></blockquote></div>
+            </div>
+            <div class="f-body-center col-md-6 col-sm-6 col-xs-12">
+            {% component 'contactForm' %}
+            <div class="clearfix"></div>
+            <div class="content-list-item">
+                <ul id="listone" >
+                    {% for post in posts %}
+                    {% if post.published == 1 %}
+                    <li class="{{ post.categories[0].slug }}" >
+                        <div class="list-item">
+                            <div class="sub-tit">
+                                <span>
+                                    {% for category in post.categories %}
+                                    <a href="/categories/{{ category.slug }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                                    {% endfor %}
+                                </span>
+                            </div>
+                            <div class="tit-top-info">
+                                <img src="{{ post.user.avatar.path }}" alt=""/>
+                                <div class="info-title-item">
+                                    <div class="name">{{ post.user.first_name }}</div>
+                                    <p>Content Executive - {{ post.published_at|date('M d, Y') }}</p>
+                                </div>
+                                <div class="share-info-title">
+                                    <p>Share on</p>
+                                    <ul>
+                                        <li><a href="" title=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="" title=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li><a href=""><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                                        <li><a href="" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <h3><a href="/blog/post/{{ post.slug }}" title="">{{ post.title }}</a></h3>
+                            <div class="short-new">
+                                {{post.summary|raw}}
+                                <a href="/blog/post/{{ post.slug }}" title="">See more</a>
+                            </div>
+                            <div class="img-new">
+                                <a href="/blog/post/{{ post.slug }}" title=""><img src="{{ post.featured_images[0].path }}" alt="" class="img-responsive"/></a>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul><!--listone-->
+                </div><!--list-art-home-->
+                <div class="clearfix"></div>
+                {% if posts.lastPage > 1 %}
+                <div class="page-fil">
+                    <ul>
+                        {% if posts.currentPage > 1 %}
+                        <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&lt; Previous</a></li>
+                        {% endif %}
+
+                        {% for page in 1..posts.lastPage %}
+                        <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                            <a class="{{ posts.currentPage == page ? 'onClick' : null }}" href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                        </li>
+                        {% endfor %}
+
+                        {% if posts.lastPage > posts.currentPage %}
+                        <li><a class="pagination_next" href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &gt;</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                {% endif %}
+                <div class="more-art-home">
+                    <p>lastest artical</p>
+                    <a href="#" title="">explore ask vietnamese</a>
+                </div>
+            </div>
+            <div class="right-ctn col-md-3 col-sm-3 hidden-xs">
+                <div class="f-right-bl">
+                    <div class="f-title-right"><h2><span>Popular on AskVietnamese</span></h2></div>
+                    <div class="content-bl">
+                        <ul>
+                            {% for post in mostVisitedPosts %}
+                            <li>
+                                <div class="item-bl">
+                                    <a class="thumb-bl-img" href="" title=""><img src="{{ post.featured_images[0].path }}" alt="" class="img-responsive"/></a>
+                                    <div class="info-bl-new">
+                                        <h3><a href="{{ post.url }}" title="">{{ post.title }}</a></h3>
+                                        <p class="sub-ob places">                        
+                                            {% for category in post.categories %}
+                                                <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                                            {% endfor %}
+                                        </p>
+                                        <time>{{ post.published_at|date('M d, Y') }} | <i class="fa fa-eye"></i> 194</time>
+                                    </div>   
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="more-right-ctn">
+                    <p>Privacy · Terms · Advertise · AdChoices · Cookies   |   Ask Vietnames © 2018</p>
+                </div>
+            </div><!--right-ctn-->
+        </div>
+    </section><!--ask-main-->
+    <script type="text/javascript">
+        function detectmob() { 
+           if( navigator.userAgent.match(/Android/i)
+               || navigator.userAgent.match(/webOS/i)
+               || navigator.userAgent.match(/iPhone/i)
+               || navigator.userAgent.match(/iPad/i)
+               || navigator.userAgent.match(/iPod/i)
+               || navigator.userAgent.match(/BlackBerry/i)
+               || navigator.userAgent.match(/Windows Phone/i)
+               )
+           {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    $(document).ready(function(){
+        var pathToLoad = detectmob() ? '/home_infinite/' : '/home/';
+        if (window.location.href.indexOf("/home") > -1){
+            //Only allow infinite scroll when we are on home
+            $('#listone').infiniteScroll({
+            path: function() {
+                return pathToLoad + (this.loadCount + 2);
+            },
+            append: '#listone',
+            checkLastPage: '.pagination_next',
+            history: false
+            // options...
+        });
+        }
+    });
+</script>
