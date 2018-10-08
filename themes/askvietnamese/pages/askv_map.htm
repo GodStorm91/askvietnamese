@@ -93,7 +93,7 @@ responsive = 0
     function geoFindMe() {
 
         if (!navigator.geolocation){
-            output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+            alert("not supported");
             return;
         }
 
@@ -101,19 +101,12 @@ responsive = 0
             var latitude  = position.coords.latitude;
             var longitude = position.coords.longitude;
 
-            output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
-
-            var img = new Image();
-            img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
-
-            output.appendChild(img);
+            // alert(latitude + " " + longitude);
         }
 
         function error() {
-            output.innerHTML = "Unable to retrieve your location";
+            alert("unable to locating");
         }
-
-        output.innerHTML = "<p>Locating…</p>";
 
         navigator.geolocation.getCurrentPosition(success, error);
     }
@@ -122,7 +115,7 @@ responsive = 0
         var map;
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 13,
+                zoom: 16,
                 center: {lat: 10.768314000000016, lng: 106.70682110000007},
                 mapTypeControl: true,
                 mapTypeControlOptions: {
