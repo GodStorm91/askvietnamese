@@ -90,7 +90,7 @@ responsive = 0
         }
     }
 
-    function geoFindMe() {
+    function geoFindMe(map) {
 
         if (!navigator.geolocation){
             alert("not supported");
@@ -100,7 +100,9 @@ responsive = 0
         function success(position) {
             var latitude  = position.coords.latitude;
             var longitude = position.coords.longitude;
-
+            var center = new google.maps.LatLng(latitude, longitude);
+            map.panTo(center);
+            var geoMarker = new GeolocationMarker(map);
             // alert(latitude + " " + longitude);
         }
 
@@ -124,9 +126,16 @@ responsive = 0
                 }
             });
 
+            var fileref=document.createElement('script')
+            fileref.setAttribute("type","text/javascript")
+            fileref.setAttribute("src", "/themes/askvietnamese/assets/js/geolocation-marker.js")
+
+            document.getElementsByTagName("head")[0].appendChild(fileref)
+
             getMarkers(function(data){
                 setMarkers(map,data);
             })
+
 
 
         }
