@@ -1,6 +1,6 @@
 title = "askv_map"
 url = "/askv_map"
-layout = "default"
+layout = ""
 description = "askvietnamese_map"
 is_hidden = 0
 robot_index = "index"
@@ -13,4 +13,167 @@ width = 100%
 height = 450
 responsive = 0
 ==
-{% component 'GoogleMapsEmbed' %}
+<!--{% component 'GoogleMapsEmbed' %}-->
+<script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.0.8/stitch.js"></script>
+<style>
+    /* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+    #map {
+        height: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+</style>
+<div id="map" style="position: relative; overflow: hidden;">
+</div>
+<script>
+    var markers = [];
+    var info_windows = [];
+    const feature_names = ["Entertainment", "Touristic Attractions", "Local's choice - Food Places", "Important contacts", "Nice Viewpoints", "Restaurant and Coffee shops"]
+    const client = stitch.Stitch.initializeDefaultAppClient('askvietnamese-slyvu');
+
+    const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('askvietnamese');
+
+    function getMarkers(callback){
+        client.auth.loginWithCredential(new stitch.AnonymousCredential()).then(
+            // user =>
+            // db.collection('feature_places').updateOne({owner_id: client.auth.user.id}, {$set:{number:42}}, {upsert:true})
+        ).then(() =>
+            db.collection('feature_places').find().asArray()
+        ).then(docs => {
+            console.log("Found docs", docs);
+            callback(docs);
+            console.log("[MongoDB Stitch] Connected to Stitch")
+        }).catch(err => {
+            console.error(err)
+        });
+    }
+
+    function setMarkers(map, docs){
+        for (var i = 0; i < docs.length; i++){
+            if (docs[i].name == feature_names[0]){
+                for (var j = 0; j < docs[i].features.length; j++){
+                    var featured_position = docs[i].features[j];
+                    var lat = featured_position.geometry.coordinates[1];
+                    var lon = featured_position.geometry.coordinates[0];
+                    var info_window = new google.maps.InfoWindow({
+                        content: featured_position.properties.description
+                    });
+                    var marker = new google.maps.Marker({
+                        position: { lat: lat, lng: lon},
+                        title: featured_position.properties.Name,
+                        map: map
+                    });
+
+                    markers.push(marker);
+                    info_windows.push(info_window);
+                    markers.forEach(function(ele, idx){
+                        ele.addListener("click", function(e){
+                            info_windows.forEach(function(info_win){
+                                info_win.close();
+                            })
+                            info_windows[idx].open(map, ele);
+                        })
+                    })
+
+                    geoFindMe(map);
+                    // marker.addListener("click", function () {
+                    //     info_window.open(map, marker);
+                    // })
+                }
+            }
+        }
+    }
+
+    function geoFindMe() {
+
+        if (!navigator.geolocation){
+            output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+            return;
+        }
+
+        function success(position) {
+            var latitude  = position.coords.latitude;
+            var longitude = position.coords.longitude;
+
+            output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+
+            var img = new Image();
+            img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+            output.appendChild(img);
+        }
+
+        function error() {
+            output.innerHTML = "Unable to retrieve your location";
+        }
+
+        output.innerHTML = "<p>Locating…</p>";
+
+        navigator.geolocation.getCurrentPosition(success, error);
+    }
+</script>
+<script type="application/javascript">
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 13,
+                center: {lat: 10.768314000000016, lng: 106.70682110000007},
+                mapTypeControl: true,
+                mapTypeControlOptions: {
+                    style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+                    mapTypeIds: ['roadmap', 'terrain']
+                }
+            });
+
+            getMarkers(function(data){
+                setMarkers(map,data);
+            })
+
+
+        }
+        button.onclick = function() {
+            var startPos;
+            var nudge = document.getElementById("nudge");
+
+            var showNudgeBanner = function() {
+                nudge.style.display = "block";
+            };
+
+            var hideNudgeBanner = function() {
+                nudge.style.display = "none";
+            };
+
+            var nudgeTimeoutId = setTimeout(showNudgeBanner, 5000);
+
+            var geoSuccess = function(position) {
+                hideNudgeBanner();
+                // We have the location, don't display banner
+                clearTimeout(nudgeTimeoutId);
+
+                // Do magic with location
+                startPos = position;
+                document.getElementById('startLat').innerHTML = startPos.coords.latitude;
+                document.getElementById('startLon').innerHTML = startPos.coords.longitude;
+            };
+            var geoError = function(error) {
+                switch(error.code) {
+                    case error.TIMEOUT:
+                        // The user didn't accept the callout
+                        showNudgeBanner();
+                        break;
+                }
+            };
+
+            navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+        };
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5ztk14jVCujAcpcVnD0lgS-0h1_1UdbU&callback=initMap"
+        async defer></script>
