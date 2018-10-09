@@ -61,8 +61,17 @@ responsive = 0
                     var featured_position = docs[i].features[j];
                     var lat = featured_position.geometry.coordinates[1];
                     var lon = featured_position.geometry.coordinates[0];
+                    var contentString = '<div id="content">'+
+                        '<div id="siteNotice">'+
+                        '</div>'+
+                        '<h1 id="firstHeading" class="firstHeading">'+ featured_position.properties.Name  + '</h1>'+
+                        '<div id="bodyContent">'+
+                            featured_position.properties.description +
+                        '</div>'+
+                        '</div>';
                     var info_window = new google.maps.InfoWindow({
-                        content: featured_position.properties.description
+                        content: contentString,
+
                     });
                     var marker = new google.maps.Marker({
                         position: { lat: lat, lng: lon},
