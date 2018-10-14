@@ -16,7 +16,7 @@ security = "all"
         <div class="logo col-lg-2 col-md-2 col-sm-2 col-xs-12">
             <a href="/home" title=""><img src="{{ 'assets/images/logo.png'|theme }}" class="img-responsive" alt=""/></a>
         </div><!--logo-->
-        <div class="menutop col-md-6 col-sm-6 col-xs-12">
+        <div class="menutop col-md-7 col-sm-7 col-xs-12">
 
             <nav class="push-menu-left">
                 <ul>
@@ -71,6 +71,15 @@ security = "all"
                     <li><a href="/whoweare"><span>Who are we</span></a></li>
                     <li><a href="/askv_map"><span>Maps</span></a></li>
                     <li><a href="/support"><span>Support</span></a></li>
+                    {% if user %}
+                    <li><a class="btn " type="button" style="text-transform: none;" href="/user" aria-haspopup="true" aria-expanded="true" style="padding-top: 28px" href=""> 
+                        Profile
+                    </a> </li>
+                    {% else %}
+                    <li><a class="btnlogin btn btn-primary" type="button" style="text-transform: none;" data-toggle="modal" aria-haspopup="true" aria-expanded="true" style="padding-top: 28px" data-target="#myModal-home"> 
+                        Login
+                    </a> </li>
+                    {% endif %}
                 </ul>
             </nav>
             <script>
@@ -129,7 +138,7 @@ security = "all"
                 <li><a href="https://twitter.com/Ask_Vietnamese" target="_blank" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
             </ul>
         </div>
-        <div class="col-md-1 col-sm-1 col-xs-12">
+<!--         <div class="col-md-1 col-sm-1 col-xs-12">
             {% if user %}
                 <button class="btn btn-top dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="padding-top: 28px">
                     User Menu
@@ -145,7 +154,7 @@ security = "all"
             </button> 
             {% endif %}
 
-            </div>
+            </div> -->
         </div><!--row-->
     </div><!--container-->
 </div><!--Header-->   
