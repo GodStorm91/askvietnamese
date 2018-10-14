@@ -96,16 +96,16 @@ security = "all"
                     });
 
                     $('#search_box').on('keyup', function(e){
-                       if (e.keyCode == 13){
-                          $('#idf').submit();
-                      }
-                  })
+                     if (e.keyCode == 13){
+                      $('#idf').submit();
+                  }
+              })
 
                     $(document).on('keyup', function(e){
-                       if (e.keyCode == 13){
-                          $('#idf').submit();
-                      }
-                  });
+                     if (e.keyCode == 13){
+                      $('#idf').submit();
+                  }
+              });
                 });
             </script>
             <div class="form_moblie_search">
@@ -128,37 +128,25 @@ security = "all"
                 <li><a href="https://www.youtube.com/channel/UCUDy8jDlXxAUROJYXlDgeRA" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
                 <li><a href="https://twitter.com/Ask_Vietnamese" target="_blank" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
             </ul>
-        </div><!--btn-top-->
-        <!-- Single button -->
-<!--                 <div class="btn-top col-md-1 col-sm-1 col-xs-12">
-                    <button class="btn btn-top dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="padding-top: 28px">
-                    Text size
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-12">
+            {% if user %}
+                <button class="btn btn-top dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="padding-top: 28px">
+                    User Menu
                     <span class="caret"></span>
-                  </button> 
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="javascript:void(0);" onclick="setActiveStyleSheet('standard'); return false;">Standard</a></li>
-                        <li><a href="javascript:void(0);" onclick="setActiveStyleSheet('large'); return false;">Large</a></li>
-                        <li><a href="javascript:void(0);" onclick="setActiveStyleSheet('small'); return false;">Small</a></li>
-                    </ul>
-                </div> -->
-                <div class="col-md-1 col-sm-1 col-xs-12">
-                    {% if user %}
-                        <button class="btn btn-top dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="padding-top: 28px">
-                            User Menu
-                            <span class="caret"></span>
-                        </button> 
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="/user">Profile</a></li>
-                            <li><a data-request="onLogout" data-request-data="redirect: '/home'">Logout</a></li>
-                        </ul>
-                    {% else %}
-                        <button class="btn btn-top dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="padding-top: 28px">
-                            Login
-                            <span class="caret"></span>
-                        </button> 
-                    {% endif %}
+                </button> 
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="/user">Profile</a></li>
+                    <li><a data-request="onLogout" data-request-data="redirect: '/home'">Logout</a></li>
+                </ul>
+            {% else %}
+            <button class="btnlogin btn btn-primary btn-lg" type="button" data-toggle="modal" aria-haspopup="true" aria-expanded="true" style="padding-top: 28px" data-target="#myModal-home"> 
+                Login
+            </button>
+                {% partial "login_popup" modalId="myModal-home" %}  
+            {% endif %}
 
-                </div>
-            </div><!--row-->
-        </div><!--container-->
-    </div><!--Header-->   
+            </div>
+        </div><!--row-->
+    </div><!--container-->
+</div><!--Header-->   
