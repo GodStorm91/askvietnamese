@@ -132,23 +132,76 @@
   {
     right:5px
   }
+
+.fr-search {
+    position: absolute;
+    top: 150px;
+    left: -120px;
+    margin-right: 20px;
+    border-bottom: 0px transparent;
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    padding-bottom: 7px;
+    width: 100%;
+    text-align: left;
+}
+
+.fr-search form {
+    position: absolute;
+    top: 140px;
+    left: -30px;
+    border-bottom: 1px solid #999;
+    margin-right: 20px;
+    padding-bottom: 7px;
+    width: 300px;
+    text-align: left;
+}
+
   .form_moblie_search
   {
     position:absolute;
+    float: right;
     right:0;
     top: 3px;
     background: #fff;
     padding: 2px 10px;
-    display: none;
+ /*   display:;*/
+/*    position: absolute;
+    top: 19px;
+    background: #000;
+    width: 40px;
+    right: 15px;
+    z-index: 2;
+    height: 40px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 25px;
+    cursor: pointer; */
   }
   .icon-search
   {
     display: block !important;
     position: absolute;
-    right: 0;
-    top: -35px;
+    right: 15px;
+    top: 20px;
     cursor: pointer;
     font-size: 16px;
+  }
+
+  .btn-sr{
+    display: none;
+  }
+
+  .fr-search input {
+    border-left: 1px solid #666;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+    padding-left: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    width: 90%;
   }
   
   .ask-stories:nth-child(5), .ask-stories:nth-child(9), .ask-stories:nth-child(14), .ask-stories:nth-child(18)
