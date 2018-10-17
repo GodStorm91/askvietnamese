@@ -121,8 +121,16 @@
  {
    top: 31px;
  }
+
+  .li-trending{
+    display: none;
+  }
+
+  .li-categories{
+    display: block;
+  }
  
-  footer
+  .footer
   {
     background: url(../images/bg-footer.png) repeat;
     padding: 4px 0;

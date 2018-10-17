@@ -2086,6 +2086,14 @@ p.heart {
     width: 30px;
 }
 
+.li-categories {
+  display: none;
+}
+
+.li-categories {
+  display: block;
+}
+
 .rate span {
     height: 3px;
     float: left;
