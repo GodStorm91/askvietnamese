@@ -2108,6 +2108,8 @@ p.heart {
     font-size: 40px;
     padding-top: 20px;
     color: #999;
+    line-height: 1.1em;
+    letter-spacing: 1.1px;
 }
 .image-stories p {
     font-family: 'FS North Land';
@@ -2118,6 +2120,7 @@ p.heart {
     right: 0;
     margin: auto;
     width: 30%;
+    line-height: 1.1em;
 }
 span.icon-search {
     display: none;
