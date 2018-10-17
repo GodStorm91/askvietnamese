@@ -14,6 +14,10 @@
     width: 70%;
 }
 
+.f-footer{
+  color: #000;
+}
+
 }
 @media (min-width: 768px)
 {
@@ -117,10 +121,18 @@
  {
    top: 31px;
  }
+
+  .li-trending{
+    display: none;
+  }
+
+  .li-categories{
+    display: block;
+  }
  
-  footer
+  .footer
   {
-    background:#fff;
+    background: url(../images/bg-footer.png) repeat;
     padding: 4px 0;
     border-top: none;
   }
