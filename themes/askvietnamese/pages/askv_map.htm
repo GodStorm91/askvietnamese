@@ -86,13 +86,12 @@ responsive = 0
     var info_windows = [];
     var iconBase = "https://s3-ap-southeast-1.amazonaws.com/www.askvietnamese.vn/map_icons/";
     var icons = {
-        "Touristic Attractions" : iconBase + "attactions.png",
+        "Touristic Attractions" : iconBase + "attractions.png",
         "Local's choice - Food Places": iconBase + "local.png",
-        "Nice Viewpoints" :iconBase + "local.png",
-        "Restaurant and Coffee shops": iconBase + "local.png",
-        "Restaurant and Coffee shops": iconBase + "local.png",
+        "Nice Viewpoints" :iconBase + "feature_place.png",
+        "Restaurant and Coffee shops": iconBase + "restaurant.png",
         "Important contacts": iconBase + "local.png",
-        "Entertainment": iconBase + "local.png",
+        "Entertainment": iconBase + "feature_place.png",
     }
     const feature_names = ["Entertainment", "Touristic Attractions", "Local's choice - Food Places", "Important contacts", "Nice Viewpoints", "Restaurant and Coffee shops"]
     const client = stitch.Stitch.initializeDefaultAppClient('askvietnamese-slyvu');
@@ -116,7 +115,7 @@ responsive = 0
 
         function setMarkers(map, docs){
             for (var i = 0; i < docs.length; i++){
-                if (docs[i].name == feature_names[0]){
+                // if (docs[i].name == feature_names[0]){
                     for (var j = 0; j < docs[i].features.length; j++){
                         var featured_position = docs[i].features[j];
                         var lat = featured_position.geometry.coordinates[1];
@@ -157,7 +156,7 @@ responsive = 0
                             })
                         })
                     }
-                }
+                // }
             }
         }
     </script>
