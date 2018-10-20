@@ -64,6 +64,17 @@ tabs:
             hidden: true
             span: left
 
+        position:
+            label: rainlab.user::lang.user.position
+            tab: rainlab.user::lang.user.account
+            span: left
+
+        details:
+            label: rainlab.user::lang.user.details
+            tab: rainlab.user::lang.user.account
+            span: right
+            type: textarea
+
         groups:
             label: rainlab.user::lang.user.groups
             tab: rainlab.user::lang.user.account

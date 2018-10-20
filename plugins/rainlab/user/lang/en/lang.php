@@ -111,6 +111,8 @@ return [
         'create_password_comment' => 'Enter a new password used for signing in.',
         'reset_password' => 'Reset Password',
         'reset_password_comment' => 'To reset this users password, enter a new password here.',
+        'details' => 'Details',
+        'position' => 'Position',
         'confirm_password' => 'Password Confirmation',
         'confirm_password_comment' => 'Enter the password again to confirm it.',
         'groups' => 'Groups',
