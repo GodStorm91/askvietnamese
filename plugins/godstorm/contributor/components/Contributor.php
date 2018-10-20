@@ -40,7 +40,7 @@ class Contributor extends ComponentBase
     {
         $contributors = User::has("groups")->get();
         $contributors = $contributors->filter(function($val, $key){
-            return $val->groups()->where('user_group_id', 3)->get();
+            return count($val->groups()->where('user_group_id', 3)->get());
         });
         return $contributors;
     }
@@ -48,7 +48,7 @@ class Contributor extends ComponentBase
     {
         $contributors = User::has("groups")->get();
         $contributors = $contributors->filter(function($val, $key){
-            return $val->groups()->where('user_group_id', 4)->get();
+            return count($val->groups()->where('user_group_id', 4)->get());
         });
         return $contributors;
     }
@@ -57,7 +57,7 @@ class Contributor extends ComponentBase
     {
         $contributors = User::has("groups")->get();
         $contributors = $contributors->filter(function($val, $key){
-            return $val->groups()->where('user_group_id', 5)->get();
+            return count($val->groups()->where('user_group_id', 5)->get());
         });
         return $contributors;
     }
@@ -66,7 +66,7 @@ class Contributor extends ComponentBase
     {
         $contributors = User::has("groups")->get();
         $contributors = $contributors->filter(function($val, $key){
-            return $val->groups()->where('user_group_id', 6)->get();
+            return count($val->groups()->where('user_group_id', 6)->get());
         });
         return $contributors;
     }
@@ -75,7 +75,7 @@ class Contributor extends ComponentBase
     {
         $contributors = User::has("groups")->get();
         $contributors = $contributors->filter(function($val, $key){
-            return $val->groups()->where('user_group_id', 7)->get();
+            return count($val->groups()->where('user_group_id', 7)->get());
         });
         return $contributors;
     }
@@ -84,7 +84,7 @@ class Contributor extends ComponentBase
     {
         $contributors = User::has("groups")->get();
         $contributors = $contributors->filter(function($val, $key){
-            return $val->groups()->where('user_group_id', 8)->get();
+            return count($val->groups()->where('user_group_id', 8)->get());
         });
         return $contributors;
     }
