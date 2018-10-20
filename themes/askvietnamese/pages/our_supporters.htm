@@ -9,18 +9,14 @@ robot_follow = "follow"
 [contributor]
 ==
 <!--{% set contributors = __SELF__.contributors %}-->
-
 <div class="container">
 	<div class="section-header">
         <h2 class="dark-text">Our Team</h2>
         <h6>Prove that you have real people working for you, with some nice looking profile pictures and links to social media.</h6>
 	</div>
 	<div class="row" data-scrollreveal="enter left after 0s over 2s" data-sr-init="true" data-sr-complete="true">
-		{% for contr in contributor.teams %}
-		{{ contr.avatar }}
+		{% for contr in teams %}
 			<span id="zerif_team-widget-3">
-		}
-		}
 		<div class="col-lg-3 col-sm-3">
 			<div class="team-member" tabindex="0">
 				<figure class="profile-pic">
@@ -66,7 +62,7 @@ robot_follow = "follow"
         <h6>Meet AskVietnamese Supporters :-)</h6>
 	</div>
 	<div class="row" data-scrollreveal="enter left after 0s over 2s" data-sr-init="true" data-sr-complete="true">
-		{% for contr in contributor.supporters %}
+		{% for contr in supporters %}
 			<span id="zerif_team-widget-3">
 		<div class="col-lg-3 col-sm-3">
 			<div class="team-member" tabindex="0">
@@ -78,7 +74,7 @@ robot_follow = "follow"
 					<h5 class="dark-text red-border-bottom">
 					{{ contr.name }}						</h5>
 					<div class="position">
-					{{ contr.description }}</div>
+					{{ contr.position }}</div>
 				</div>
 				<div class="details">
 				{{ contr.details }}						</div>
@@ -104,7 +100,7 @@ robot_follow = "follow"
 					<h5 class="dark-text red-border-bottom">
 					{{ contr.name }}						</h5>
 					<div class="position">
-					{{ contr.description }}</div>
+					{{ contr.position }}</div>
 				</div>
 				<div class="details">
 				{{ contr.details }}						</div>
@@ -119,7 +115,7 @@ robot_follow = "follow"
         <h6>Meet our contributors</h6>
 	</div>
 	<div class="row" data-scrollreveal="enter left after 0s over 2s" data-sr-init="true" data-sr-complete="true">
-		{% for contr in contributor.bloggers %}
+		{% for contr in bloggers %}
 			<span id="zerif_team-widget-3">
 		<div class="col-lg-3 col-sm-3">
 			<div class="team-member" tabindex="0">
@@ -131,7 +127,7 @@ robot_follow = "follow"
 					<h5 class="dark-text red-border-bottom">
 					{{ contr.name }}						</h5>
 					<div class="position">
-					{{ contr.description }}</div>
+					{{ contr.position }}</div>
 				</div>
 				<div class="details">
 				{{ contr.details }}						</div>
@@ -146,7 +142,7 @@ robot_follow = "follow"
         <h6>Meet our artists</h6>
 	</div>
 	<div class="row" data-scrollreveal="enter left after 0s over 2s" data-sr-init="true" data-sr-complete="true">
-		{% for contr in contributor.artists %}
+		{% for contr in artists %}
 			<span id="zerif_team-widget-3">
 		<div class="col-lg-3 col-sm-3">
 			<div class="team-member" tabindex="0">
@@ -158,7 +154,7 @@ robot_follow = "follow"
 					<h5 class="dark-text red-border-bottom">
 					{{ contr.name }}						</h5>
 					<div class="position">
-					{{ contr.description }}</div>
+					{{ contr.position }}</div>
 				</div>
 				<div class="details">
 				{{ contr.details }}						</div>
