@@ -1,0 +1,171 @@
+title = "our_supporters"
+url = "/our_supporters"
+layout = "default"
+description = "Our supporter pages"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[contributor]
+==
+<!--{% set contributors = __SELF__.contributors %}-->
+
+<div class="container">
+	<div class="section-header">
+        <h2 class="dark-text">Our Team</h2>
+        <h6>Prove that you have real people working for you, with some nice looking profile pictures and links to social media.</h6>
+	</div>
+	<div class="row" data-scrollreveal="enter left after 0s over 2s" data-sr-init="true" data-sr-complete="true">
+		{% for contr in contributor.teams %}
+		{{ contr.avatar }}
+			<span id="zerif_team-widget-3">
+		}
+		}
+		<div class="col-lg-3 col-sm-3">
+			<div class="team-member" tabindex="0">
+				<figure class="profile-pic">
+					<img src="{{ contr.avatar.path }}" alt="Profile Picture">
+				</figure>
+				
+				<div class="member-details">
+					<h5 class="dark-text red-border-bottom">
+					{{ contr.name }}						</h5>
+					<div class="position">
+					{{ contr.position }}</div>
+				</div>
+				<!--<div class="social-icons">-->
+					<!--<ul>-->
+						<!--<li id="behance">-->
+							<!--<a target="_blank" title="Behance" href="#">-->
+								<!--<i class="fa fa-behance"></i>-->
+							<!--</a>-->
+						<!--</li>-->
+						<!--<li id="google">-->
+							<!--<a target="_blank" title="Google Plus" href="#">-->
+								<!--<i class="fa fa-google"></i>-->
+							<!--</a>-->
+						<!--</li>-->
+						<!--<li id="tumblr">-->
+							<!--<a target="_blank" title="Tumblr" href="#">-->
+								<!--<i class="fa fa-tumblr"></i>-->
+							<!--</a>-->
+						<!--</li>-->
+						<!---->
+					<!--</ul>-->
+				<!--</div>-->
+				<div class="details">
+				{{ contr.details }}						</div>
+				
+			</div>
+		</div>
+		{% endfor %}
+	</div> 
+
+	<div class="section-header">
+        <h2 class="dark-text">Our Supporters</h2>
+        <h6>Meet AskVietnamese Supporters :-)</h6>
+	</div>
+	<div class="row" data-scrollreveal="enter left after 0s over 2s" data-sr-init="true" data-sr-complete="true">
+		{% for contr in contributor.supporters %}
+			<span id="zerif_team-widget-3">
+		<div class="col-lg-3 col-sm-3">
+			<div class="team-member" tabindex="0">
+				<figure class="profile-pic">
+					<img src="{{ contr.avatar.path }}" alt="Profile Picture">
+				</figure>
+				
+				<div class="member-details">
+					<h5 class="dark-text red-border-bottom">
+					{{ contr.name }}						</h5>
+					<div class="position">
+					{{ contr.description }}</div>
+				</div>
+				<div class="details">
+				{{ contr.details }}						</div>
+				
+			</div>
+		</div>
+		{% endfor %}
+	</div> 
+	<div class="section-header">
+        <h2 class="dark-text">Our Contributors</h2>
+        <h6>Meet our contributors</h6>
+	</div>
+	<div class="row" data-scrollreveal="enter left after 0s over 2s" data-sr-init="true" data-sr-complete="true">
+		{% for contr in contributor.contributors %}
+			<span id="zerif_team-widget-3">
+		<div class="col-lg-3 col-sm-3">
+			<div class="team-member" tabindex="0">
+				<figure class="profile-pic">
+					<img src="{{ contr.avatar.path }}" alt="Profile Picture">
+				</figure>
+				
+				<div class="member-details">
+					<h5 class="dark-text red-border-bottom">
+					{{ contr.name }}						</h5>
+					<div class="position">
+					{{ contr.description }}</div>
+				</div>
+				<div class="details">
+				{{ contr.details }}						</div>
+				
+			</div>
+		</div>
+		{% endfor %}
+	</div> 
+
+	<div class="section-header">
+        <h2 class="dark-text">Our Bloggers</h2>
+        <h6>Meet our contributors</h6>
+	</div>
+	<div class="row" data-scrollreveal="enter left after 0s over 2s" data-sr-init="true" data-sr-complete="true">
+		{% for contr in contributor.bloggers %}
+			<span id="zerif_team-widget-3">
+		<div class="col-lg-3 col-sm-3">
+			<div class="team-member" tabindex="0">
+				<figure class="profile-pic">
+					<img src="{{ contr.avatar.path }}" alt="Profile Picture">
+				</figure>
+				
+				<div class="member-details">
+					<h5 class="dark-text red-border-bottom">
+					{{ contr.name }}						</h5>
+					<div class="position">
+					{{ contr.description }}</div>
+				</div>
+				<div class="details">
+				{{ contr.details }}						</div>
+				
+			</div>
+		</div>
+		{% endfor %}
+	</div> 
+
+	<div class="section-header">
+        <h2 class="dark-text">Our Artists</h2>
+        <h6>Meet our artists</h6>
+	</div>
+	<div class="row" data-scrollreveal="enter left after 0s over 2s" data-sr-init="true" data-sr-complete="true">
+		{% for contr in contributor.artists %}
+			<span id="zerif_team-widget-3">
+		<div class="col-lg-3 col-sm-3">
+			<div class="team-member" tabindex="0">
+				<figure class="profile-pic">
+					<img src="{{ contr.avatar.path }}" alt="Profile Picture">
+				</figure>
+				
+				<div class="member-details">
+					<h5 class="dark-text red-border-bottom">
+					{{ contr.name }}						</h5>
+					<div class="position">
+					{{ contr.description }}</div>
+				</div>
+				<div class="details">
+				{{ contr.details }}						</div>
+				
+			</div>
+		</div>
+		{% endfor %}
+	</div>  
+
+</div>

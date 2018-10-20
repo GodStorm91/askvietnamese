@@ -16,3 +16,6 @@
 1.0.7:
   - Update collections table to add new posts column
   - add_postids_column_to_collections_new.php
+1.0.8:
+  - Add contributor table
+  - create_contributors_table.php

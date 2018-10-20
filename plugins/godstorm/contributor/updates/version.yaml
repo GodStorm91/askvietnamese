@@ -1,0 +1,13 @@
+1.0.1: First version of contributor
+1.0.2:
+  - Second version
+  - create_contributors_table.php
+1.0.3:
+- Third version
+- add_details_to_contributor.php
+1.0.4:
+- Third version
+- add_details_to_users.php
+1.0.5:
+- Fifth version
+- add_position_to_users.php
