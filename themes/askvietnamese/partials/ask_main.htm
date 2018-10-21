@@ -123,6 +123,7 @@ slug = "{{ :slug }}"
                 </div>
             </div><!--right-ctn-->
         </div>
+
     </div>
     </section><!--ask-main-->
     <script type="text/javascript">
@@ -146,11 +147,11 @@ slug = "{{ :slug }}"
         var pathToLoad = detectmob() ? '/home_infinite/' : '/home/';
         if (window.location.href.indexOf("/home") > -1){
             //Only allow infinite scroll when we are on home
-            $('#listone').infiniteScroll({
+            $('.content-list-item').infiniteScroll({
             path: function() {
                 return pathToLoad + (this.loadCount + 2);
             },
-            append: '#listone',
+            append: '.content-list-item',
             checkLastPage: '.pagination_next',
             history: false
             // options...

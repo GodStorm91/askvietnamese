@@ -16,8 +16,6 @@ sortOrder = "published_at desc"
 categoryPage = "blog/category"
 postPage = "blog/post"
 ==
-
-<ul class="listone">
 	{% for post in posts %}
 	{% if post.published == 1 %}
 	<li data-wow-delay="0.1s" class="wow fadeInUp animated" >
@@ -94,7 +92,6 @@ postPage = "blog/post"
 	</li>
 	{% endif %}
 	{% endfor %}
-</ul>
 {% if posts.lastPage > 1 %}
 <div class="page-fil">
 	<ul>
