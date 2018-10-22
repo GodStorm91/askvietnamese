@@ -35,9 +35,14 @@ useAutoComplete = 1
 autoCompleteResultCount = 5
 showProviderBadge = 1
 searchPage = "search.htm"
+
+[contributor]
+
 ==
+
 {% set posts = __SELF__.posts %}
 {% set mostVisitedPosts = __SELF__.mostVisitedPosts %}
+{% set topContributors = __SELF__.topContributors %}
 
 {% partial "ask_main" %}
 {% partial "top_articles" %}

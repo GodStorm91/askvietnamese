@@ -13,6 +13,9 @@ categoryPage = "categories"
 [usercollection]
 [session]
 security = "all"
+
+[contributor]
+slug = "{{ :slug }}"
 ==
 <?php
 function onEnd()
@@ -118,3 +121,33 @@ function onEnd()
         </div><!--f-ctn-body-->
     </div>
 </div><!--ask-main-->
+<div class="ask-related">
+    <div class="container">
+        <div class="title-related"><h2>relevant stories</h2></div>
+        <div class="content-related">
+            <div class="row">
+                {% for related in relatedPosts %}
+                <div class="ask-stories col-md-4 col-sm-4 col-xs-6">
+                    <div class="item-stories-more">
+                        <div class="thumb-stories-more"><a href="#" title=""><img src="{{ related.featured_images[0].path }}" class="img-responsive" alt=""/></a></div>
+                        <div class="item-info-stories">
+                            <div class="sub-cat-stories">
+                                <span>                        
+                                        <a href="{{ category.url }}">{{ related.title }}</a>
+                                </span>
+                                <time>{{ related.published_at|date('M d, Y') }}</time>
+                            </div>
+                            {% for category in related.categories %}
+                            <h3><a href="#" title="">{{ category.name }}</a>{% if not loop.last %}, {% endif %}</h3>
+                            {% endfor %}
+                            <p class="heart"><span><i class="fa fa-heart" aria-hidden="true"></i> 57 </span></p>
+                            <div class="bookmark"><i class="fa fa-bookmark-o" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div><!--ask-stories-->
+                {% endfor %}
+            </div>
+            
+        </div>
+    </div>
+</div><!--ask-related-->
