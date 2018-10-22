@@ -3748,7 +3748,7 @@ h2{font-family:'Montserrat', Helvetica, sans-serif;font-weight:700;line-height:3
 h2{font-size:26px;}
 h5{font-size:17px;}
 h6{font-size:16px;}
-ul{margin:0 0 1.5em 3em;}
+/*ul{margin:0 0 1.5em 3em;}*/
 ul{list-style:disc;}
 img{height:auto;max-width:100%;}
 figure{margin:0;}
