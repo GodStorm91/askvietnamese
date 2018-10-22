@@ -43,6 +43,10 @@ class User extends UserBase
         'avatar' => \System\Models\File::class
     ];
 
+    public $hasMany = [
+        'posts' => \RainLab\Blog\Models\Post::class
+    ];
+
     /**
      * Purge attributes from data set.
      */
@@ -164,5 +168,10 @@ class User extends UserBase
         }
 
         return $result;
+    }
+
+    public function getPosts()
+    {
+        return count($this->posts()->get());
     }
 }

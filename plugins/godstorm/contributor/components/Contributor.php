@@ -2,7 +2,9 @@
 
 use Cms\Classes\ComponentBase;
 use RainLab\User\Models\User;
+use Backend\Models\User as BackendUser;
 use GodStorm\Contributor\Models\Contributor as ContributorModel;
+use RainLab\Blog\Models\Post;
 
 class Contributor extends ComponentBase
 {
@@ -34,6 +36,8 @@ class Contributor extends ComponentBase
         $this->artists = $this->page['artists'] = $this->listArtists();
         $this->photographers = $this->page['photographers'] = $this->listPhotos();
         $this->supporters = $this->page['supporters'] = $this->listSupporters();
+        $this->topContributors = $this->page['topContributors'] = $this->getTopContributors();
+        $this->relatedPosts = $this->page["relatedPosts"] = $this->relatedPosts();
     }
 
     protected function listContributors()
@@ -87,5 +91,50 @@ class Contributor extends ComponentBase
             return count($val->groups()->where('user_group_id', 8)->get());
         });
         return $contributors;
+    }
+
+    protected function getTopContributors(){
+        $users = BackendUser::all();
+        $topUsers = 5;
+        $users = $users->sort(function($a,$b){
+            return count($b->posts()->get()) - count($a->posts()->get());
+        });
+        return $users->take($topUsers);
+    }
+
+    protected function prepareVars()
+    {
+        $this->postParam = $this->page['postParam'] = $this->property('postParam');
+    }
+
+
+    protected function relatedPosts(){
+        //Prepare vars
+        $this->prepareVars();
+
+        // Load the target post
+        $post = Post::where('slug', $this->property('slug'))
+            ->first();
+        // var_dump($post);
+        // die();
+        // Abort if there is no source, or it has no tags
+        if (!$post)
+            return;
+
+        // now we fetch only that post which are related to that category
+        // but we skip current post and sort them and pick 5 posts
+        $firstCategory = $post->categories()->first();
+
+        $posts = $firstCategory->posts()
+            ->where('id', '!=', $post->id)
+            ->orderBy('created_at','desc')
+            ->limit(5) // use limit instead of take()
+            ->get(); 
+
+        // use limit instead of take() as we don't need extra data so 
+        // just put limit in sql rather fetching it from db then 
+        // putting limit by code - limit() is more optimised way
+
+        return $posts;
     }
 }
