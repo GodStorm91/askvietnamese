@@ -129,11 +129,11 @@ function onEnd()
                 {% for related in relatedPosts %}
                 <div class="ask-stories col-md-4 col-sm-4 col-xs-6">
                     <div class="item-stories-more">
-                        <div class="thumb-stories-more"><a href="#" title=""><img src="{{ related.featured_images[0].path }}" class="img-responsive" alt=""/></a></div>
+                        <div class="thumb-stories-more"><a href="/blog/post/{{ related.slug }}" title=""><img src="{{ related.featured_images[0].path }}" class="img-responsive" alt=""/></a></div>
                         <div class="item-info-stories">
                             <div class="sub-cat-stories">
                                 <span>                        
-                                        <a href="{{ category.url }}">{{ related.title }}</a>
+                                        <a href="/blog/post/{{ related.slug }}">{{ related.title }}</a>
                                 </span>
                                 <time>{{ related.published_at|date('M d, Y') }}</time>
                             </div>
