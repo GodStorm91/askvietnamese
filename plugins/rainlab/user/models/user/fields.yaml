@@ -75,6 +75,36 @@ tabs:
             span: right
             type: textarea
 
+        facebook:
+            label: rainlab.user::lang.user.facebook
+            tab: rainlab.user::lang.user.account
+            span: left
+
+        twitter:
+            label: rainlab.user::lang.user.twitter
+            tab: rainlab.user::lang.user.account
+            span: right      
+
+        behance:
+            label: rainlab.user::lang.user.behance
+            tab: rainlab.user::lang.user.account
+            span: left
+
+        tumblr:
+            label: rainlab.user::lang.user.tumblr
+            tab: rainlab.user::lang.user.account
+            span: right
+
+        instagram:
+            label: rainlab.user::lang.user.instagram
+            tab: rainlab.user::lang.user.account
+            span: left
+
+        medium:
+            label: rainlab.user::lang.user.medium
+            tab: rainlab.user::lang.user.account
+            span: right
+
         groups:
             label: rainlab.user::lang.user.groups
             tab: rainlab.user::lang.user.account
