@@ -130,6 +130,9 @@
     display: block;
   }
  
+  .li-support{
+    display: block;
+  }
   .footer
   {
     background: url(../images/bg-footer.png) repeat;
