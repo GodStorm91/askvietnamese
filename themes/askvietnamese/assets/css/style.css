@@ -2091,6 +2091,9 @@ p.heart {
   display: none;
 }
 
+.li-support {
+  display: none;
+}
 
 .rate span {
     height: 3px;
