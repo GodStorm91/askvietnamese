@@ -115,7 +115,7 @@ return [
         'position' => 'Position',
         'facebook' => 'Facebook',
         'twitter' => 'Twitter',
-        'tumblr' => 'Tumblr',
+        'youtube' => 'Youtube',
         'instagram' => 'Instagram',
         'behance' => 'Behance',
         'medium' => 'Medium',

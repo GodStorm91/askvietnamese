@@ -90,8 +90,8 @@ tabs:
             tab: rainlab.user::lang.user.account
             span: left
 
-        tumblr:
-            label: rainlab.user::lang.user.tumblr
+        youtube:
+            label: rainlab.user::lang.user.youtube
             tab: rainlab.user::lang.user.account
             span: right
 
