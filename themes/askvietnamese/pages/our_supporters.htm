@@ -388,4 +388,79 @@ robot_follow = "follow"
 		{% endfor %}
 	</div>  
 
+	<div class="section-header">
+        <h2 class="dark-text">Our Photographers</h2>
+        <h6>Meet our photographers</h6>
+	</div>
+	<div class="row" data-scrollreveal="enter left after 0s over 2s" data-sr-init="true" data-sr-complete="true">
+		{% for contr in photographers %}
+			<span id="zerif_team-widget-3">
+		<div class="col-lg-3 col-sm-3">
+			<div class="team-member" tabindex="0">
+				<figure class="profile-pic">
+					<img src="{{ contr.avatar.path }}" alt="Profile Picture">
+				</figure>
+				
+				<div class="member-details">
+					<h5 class="dark-text red-border-bottom">
+					{{ contr.name }}						</h5>
+					<div class="position">
+					{{ contr.position }}
+					</div>
+									<div class="social-icons">
+					<ul>
+						{% if contr.facebook|length > 0 %}
+							<li id="facebook">
+								<a target="_blank" title="Facebook" href="{{contr.facebook}}">
+									<i class="fa fa-facebook"></i>
+								</a>
+							</li>
+						{% endif %}
+						{% if contr.twitter|length > 0 %}
+							<li id="twitter">
+								<a target="_blank" title="Twitter" href="{{contr.twitter}}">
+									<i class="fa fa-twitter"></i>
+								</a>
+							</li>
+						{% endif %}
+						{% if contr.instagram|length >0 %}
+							<li id="instagram">
+								<a target="_blank" title="Instagram" href="{{contr.instagram}}">
+									<i class="fa fa-instagram"></i>
+								</a>
+							</li>
+						{% endif %}
+						{% if contr.medium|length > 0 %}
+							<li id="medium">
+								<a target="_blank" title="Medium" href="{{contr.medium}}">
+									<i class="fa fa-medium"></i>
+								</a>
+							</li>
+						{% endif %}
+						{% if contr.behance|length > 0 %}
+							<li id="behance">
+								<a target="_blank" title="Behance" href="{{contr.behance}}">
+									<i class="fa fa-behance"></i>
+								</a>
+							</li>
+						{% endif %}
+						{% if contr.tumblr|length > 0 %}
+							<li id="tumblr">
+								<a target="_blank" title="Behance" href="{{contr.tumblr}}">
+									<i class="fa fa-tumblr"></i>
+								</a>
+							</li>
+						{% endif %}
+
+					</ul>
+				</div>
+				</div>
+				<div class="details">
+				{{ contr.details }}						</div>
+				
+			</div>
+		</div>
+		{% endfor %}
+	</div>  
+
 </div>
