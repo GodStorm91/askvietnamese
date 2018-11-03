@@ -14,9 +14,10 @@ robot_follow = "follow"
         <h2 class="dark-text">Our Team</h2>
         <h6>Prove that you have real people working for you, with some nice looking profile pictures and links to social media.</h6>
 	</div>
+	{% for contr in teams %}
+	{% if loop.index0 % 4 == 0%}
 	<div class="row" data-scrollreveal="enter left after 0s over 2s" data-sr-init="true" data-sr-complete="true">
-		{% for contr in teams %}
-			<span id="zerif_team-widget-3">
+	{% endif %}
 		<div class="col-lg-3 col-sm-3">
 			<div class="team-member" tabindex="0">
 				<figure class="profile-pic">
@@ -81,8 +82,10 @@ robot_follow = "follow"
 				
 			</div>
 		</div>
-		{% endfor %}
-	</div> 
+	{% if loop.index0 % 4 == 3%}	
+	</div>
+	{% endif %}
+	{% endfor %} 
 
 	<div class="section-header">
         <h2 class="dark-text">Our Supporters</h2>
@@ -91,8 +94,6 @@ robot_follow = "follow"
 	<div class="row" data-scrollreveal="enter left after 0s over 2s" data-sr-init="true" data-sr-complete="true">
 		{% for contr in supporters %}
 			<!-- {% if loop.index < 16 %} -->
-				<span id="zerif_team-widget-3">
-				
 				<div class="col-lg-3 col-sm-3">
 				<div class="team-member" tabindex="0">
 					<figure class="profile-pic">
@@ -168,7 +169,6 @@ robot_follow = "follow"
 	</div>
 	<div class="row" data-scrollreveal="enter left after 0s over 2s" data-sr-init="true" data-sr-complete="true">
 		{% for contr in contributor.contributors %}
-			<span id="zerif_team-widget-3">
 		<div class="col-lg-3 col-sm-3">
 			<div class="team-member" tabindex="0">
 				<figure class="profile-pic">
@@ -244,7 +244,6 @@ robot_follow = "follow"
 	</div>
 	<div class="row" data-scrollreveal="enter left after 0s over 2s" data-sr-init="true" data-sr-complete="true">
 		{% for contr in bloggers %}
-			<span id="zerif_team-widget-3">
 		<div class="col-lg-3 col-sm-3">
 			<div class="team-member" tabindex="0">
 				<figure class="profile-pic">
@@ -319,7 +318,6 @@ robot_follow = "follow"
 	</div>
 	<div class="row" data-scrollreveal="enter left after 0s over 2s" data-sr-init="true" data-sr-complete="true">
 		{% for contr in artists %}
-			<span id="zerif_team-widget-3">
 		<div class="col-lg-3 col-sm-3">
 			<div class="team-member" tabindex="0">
 				<figure class="profile-pic">
@@ -394,7 +392,6 @@ robot_follow = "follow"
 	</div>
 	<div class="row" data-scrollreveal="enter left after 0s over 2s" data-sr-init="true" data-sr-complete="true">
 		{% for contr in photographers %}
-			<span id="zerif_team-widget-3">
 		<div class="col-lg-3 col-sm-3">
 			<div class="team-member" tabindex="0">
 				<figure class="profile-pic">
