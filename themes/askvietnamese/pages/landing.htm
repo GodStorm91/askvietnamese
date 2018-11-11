@@ -5,18 +5,39 @@ description = "landing page"
 is_hidden = 0
 
 [googleTracker]
+
+[contributor]
 ==
 {% component 'googleTracker' %}
 <section class="firstpage">
-		<div class="left-page">
-			<div class="tit-top">Xin chào, <br>
-				Our website is currently updated,
-				But no worries, you can still get access to our posts and stories.
-			</div>
-			<div class="list-choose">
-				{% partial "five_wh_questions" %}
-			</div>
-		</div>
+    <div class="left-page">
+        <div class="bg-lg">
+            <div class="content-lg">
+                <div class="intro-lg">
+                    <p>Hey, I'm Bao</p>
+                    <p>We are trying to build a <span>Supper-network Community</span>. No matter who you are: a Travel Blogger, a Food Blogger, a Photographer, a Video Maker, a Artist, a Student, or simple a travel lover, as long as you love to share about Vietnam, <span>ASKVIETNAMESE</span> is the place to be !</p>
+                </div>
+               
+             	<form data-request="onJoin">
+	                <div class="form-lg">
+	                    <input type="text" name="email" placeholder="Your Email">
+	                    <button type="submit">I'm in</button>
+	                </div>
+            	</form>
+                <div class="join-lg">
+                    <div class="title-lg">Join the commnunity</div>
+                    <ul>
+                        <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" title=""><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" title=""><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="#" title=""><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#" title=""><i class="fa fa-rss"></i></a></li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 		<div data-wow-delay="0.1s" class="right-page wow fadeInRight animated">
 			<div class="logohome"><a href="#" title=""><img src="{{ 'assets/images/logohome.png'|theme }}" class="img-responsive" alt=""/></a></div>
 			<div class="ask-non"><img src="{{ 'assets/images/non.png'|theme }}" class="img-responsive" alt=""/></div>
@@ -39,3 +60,4 @@ is_hidden = 0
 
 		</script>
 </section><!--firstpage-->
+

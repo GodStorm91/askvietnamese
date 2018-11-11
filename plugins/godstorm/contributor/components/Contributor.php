@@ -1,5 +1,6 @@
 <?php namespace Godstorm\Contributor\Components;
 
+use Mail;
 use Cms\Classes\ComponentBase;
 use RainLab\User\Models\User;
 use Backend\Models\User as BackendUser;
@@ -38,6 +39,20 @@ class Contributor extends ComponentBase
         $this->supporters = $this->page['supporters'] = $this->listSupporters();
         $this->topContributors = $this->page['topContributors'] = $this->getTopContributors();
         $this->relatedPosts = $this->page["relatedPosts"] = $this->relatedPosts();
+    }
+
+    public function onJoin(){
+        //Send an email to all members
+        Mail::queue('contributor.welcome', array(), function($message){
+            $message->to(input('email')); 
+        });
+
+        $data = array('email' => input('email'));
+        Mail::queue('contributor.welcome_notification', $data, function($message){
+            $message->to('askvietnamese-all@googlegroups.com'); 
+        });
+        return redirect('/home');
+        
     }
 
     protected function listContributors()

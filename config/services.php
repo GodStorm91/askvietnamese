@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => '',
-        'secret' => '',
+        'domain' => 'askvietnamese.vn',
+        'secret' => 'key-e0832d6fbbb607f9870237f7a4684c78',
     ],
 
     'mandrill' => [
