@@ -186,7 +186,8 @@
     width:100%;
     position: absolute;
     bottom: 0;
-    min-height: 159px;
+    max-height: 120px;
+    min-height: 100px;
     padding: 10px;
     height: auto;
   }
