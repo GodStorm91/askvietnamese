@@ -40,93 +40,42 @@ description = "layout for landing pages"
 	{% framework extras %}
 	{% scripts %}
 	<script type="text/javascript">
-		$(document).ready(function(){
-
-			$(".icon-search").click(function(){
-				$(".form_moblie_search").slideToggle(300);
-			});
-
-		});
-		$(document).ready(function(){
-			wow = new WOW(
-			{
-				animateClass: 'animated',
-				offset:       100,
-				callback:     function(box) {
-					console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
-				}
-			}
-			);
-			wow.init();  
-			$(".godown").click(function(){
-				$(".firstpage").slideToggle(1000);
-				$("html, body").animate({ scrollTop: 0 }, 0);
-			});
-			$('.btnlogin').click(function(){
-				$('body').addClass('blend');
-			});       
-		});
-		$(window).scroll(function(){
-			if ($(this).scrollTop() > 100) {
-				$('.scrollup').fadeIn();
-
-			} else {
-				$('.scrollup').fadeOut();
-			}
-		}); 
-
-		$('.scrollup').click(function(){
-			$("html, body").animate({ scrollTop: 0 }, 600);
-			return false;
-		});
-		$(window).bind('scroll', function() {
-			if ($(window).scrollTop() >0) {
-				$('.header').addClass('fixed');
-			}
-			else {
-				$('.header').removeClass('fixed');
-			}
-		});  
-		$("ul.mobile-left>li>i").click(function(){	
-			if($(this).hasClass("fa-plus")){
-				$(this).removeClass("fa-plus");
-				$(this).addClass("fa-minus");
-			}else{
-				$(this).removeClass("fa-minus");
-				$(this).addClass("fa-plus");
-			}		
-			$(this).parent().children(".submenu").slideToggle();
-		});
-		$("ul.mobile-left li ul li i").click(function(){	
-			if($(this).hasClass("fa-plus")){
-				$(this).removeClass("fa-plus");
-				$(this).addClass("fa-minus");
-			}else{
-				$(this).removeClass("fa-minus");
-				$(this).addClass("fa-plus");
-			}		
-			$(this).parent().children(".list-dm-thumb").slideToggle();
-		});
-
-		menuLeftOnload();
-		function menuLeftOnload(){
-			var checkMneu = document.getElementById("mobile-menu-toggle").checked;
-			if(checkMneu == true){
-				document.getElementById("mobile-menu-toggle").checked=false;
-				document.getElementById('mainHideMenu').style.display= 'none';
-			}	
-		}
-		function menuLeft(){
-			var checkMneu = document.getElementById("mobile-menu-toggle").checked;
-			if(checkMneu == false){
-				document.getElementById('mainHideMenu').style.display= 'block';
-			}
-			else{
-				document.getElementById("mobile-menu-toggle").checked=false;
-				document.getElementById('mainHideMenu').style.display= 'none';
-			}
-		}
       // WOW effect loading
-  </script>
+        wow = new WOW(
+        {
+        animateClass: 'animated',
+        offset:       100,
+        callback:     function(box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+          }
+        );
+        wow.init();  
+	  $(window).bind('scroll', function() {
+	         if ($(window).scrollTop() >0) {
+	             $('.header').addClass('fixed');
+	         }
+	         else {
+	             $('.header').removeClass('fixed');
+	         }
+	    });  
+	        
+	</script>
+	<script type="text/javascript">
+	   
+	      $(window).scroll(function(){
+	            if ($(this).scrollTop() > 100) {
+	                $('.scrollup').fadeIn();
+	                
+	            } else {
+	                $('.scrollup').fadeOut();
+	            }
+	        }); 
+	 
+	        $('.scrollup').click(function(){
+	            $("html, body").animate({ scrollTop: 0 }, 600);
+	            return false;
+	        });
+	</script>
 </body>
 </html>

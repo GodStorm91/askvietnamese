@@ -3881,6 +3881,7 @@ a:link:after,a:visited:after{content:"";}
 .intro-lg:before
 {
   position:absolute;
+  display: none;
   left: 23%;
   top: -29px;
   content:"";
@@ -3950,4 +3951,88 @@ a:link:after,a:visited:after{content:"";}
 }
 .join-lg {
     padding-left: 20px;
+}
+.m-per {
+    display: none;
+}
+.content-lg {
+    position: relative;
+}
+
+.m-per .img1 {
+    right: 10px;
+    max-width: 66px;
+    top: 104px;
+}
+
+.m-per img {
+    position: absolute;
+}
+
+.m-per .img2 {
+    max-width: 61px;
+    top: 106px;
+    right: 100px;
+}
+
+.m-per .img3 {
+    top: 12px;
+    right: 100px;
+    max-width: 50px;
+}
+
+.m-per .img4 {
+    max-width: 126px;
+    left: 42%;
+    top: 5%;
+}
+
+.m-per .img5 {
+    left: 26%;
+    top: 5%;
+    max-width: 60px;
+}
+
+img.img12.img-responsive {}
+
+.m-per .img12 {
+    top: 26%;
+    max-width: 60px;
+    left: 26%;
+}
+
+.m-per .img6 {
+    top: 19%;
+    max-width: 54px;
+    left: 11%;
+}
+
+.m-per .img10 {
+    bottom: 0;
+    max-width: 68px;
+    left: 10%;
+}
+
+.m-per .img11 {
+    right: 25px;
+    max-width: 65px;
+    bottom: 0px;
+}
+
+.m-per .img7 {
+    left: 5%;
+    top: 35%;
+    max-width: 48px;
+}
+
+.m-per .img8 {
+    left: 3%;
+    top: 52%;
+    max-width: 66px;
+}
+
+.m-per .img9 {
+    top: 68%;
+    left: 2%;
+    max-width: 73px;
 }
