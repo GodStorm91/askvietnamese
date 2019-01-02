@@ -446,7 +446,7 @@ button.onclick = function() {
                 var latitude  = position.coords.latitude;
                 var longitude = position.coords.longitude;
                 var center = new google.maps.LatLng(latitude, longitude);
-                // map.panTo(center);
+                map.panTo(center);
                 var geoMarker = new GeolocationMarker(map);
                 // document.getElementById('startLat').innerHTML = startPos.coords.latitude;
                 // document.getElementById('startLon').innerHTML = startPos.coords.longitude;
