@@ -75,7 +75,6 @@ responsive = 0
     }
     /*Cookie Consent End*/
 </style>
-<a class="typeform-share button" href="https://godstorm91gmailcom.typeform.com/to/X4PaZd" data-mode="drawer_left" style="display:inline-block;text-decoration:none;background-color:#267DDD;color:white;cursor:pointer;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:50px;text-align:center;margin:0;height:50px;padding:0px 33px;border-radius:25px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;" data-submit-close-delay="5" target="_blank">Launch me </a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
 <div id="map" style="position: relative; overflow: hidden;">
 </div>
 <div id="nudge">
@@ -88,13 +87,13 @@ responsive = 0
     var iconBase = "https://s3-ap-southeast-1.amazonaws.com/www.askvietnamese.vn/map_icons/";
     var icons = {
         "Touristic Attractions" : iconBase + "attractions.png",
-        "Local's choice - Food Places": iconBase + "food.png",
-        "Nice Viewpoints" :iconBase + "feature_place.png",
-        "Restaurant and Coffee shops": iconBase + "restaurant.png",
-        "Important contacts": iconBase + "local.png",
-        "Entertainment": iconBase + "local.png",
+        "Wandering": iconBase + "wandering.png",
+        "Local choices - F&B Under 100,000VND" :iconBase + "cheap.png",
+        "F&B Above 100,000VND": iconBase + "luxury.png",
+        "Important contacts": iconBase + "contacts.png",
+        "Entertainment": iconBase + "entertainment.png",
     }
-    const feature_names = ["Entertainment", "Touristic Attractions", "Local's choice - Food Places", "Important contacts", "Nice Viewpoints", "Restaurant and Coffee shops"]
+    const feature_names = ["Entertainment", "Touristic Attractions", "Local choices - F&B Under 100,000VND", "Important contacts", "Wandering", "F&B Above 100,000VND"]
     const client = stitch.Stitch.initializeDefaultAppClient('askvietnamese-slyvu');
 
     const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('askvietnamese');
@@ -133,9 +132,16 @@ responsive = 0
                             content: contentString,
 
                         });
+                        if (docs[i].name == "Touristic Attractions"){
+                            width = 32;
+                            height = 30;
+                        }else{
+                            width = 25;
+                            height = 32;
+                        }
                         var icon = {
                             url: icons[docs[i].name],
-                            scaledSize: new google.maps.Size(35,50),
+                            scaledSize: new google.maps.Size(width,height),
                             origin : new google.maps.Point(0,0),
                             anchor : new google.maps.Point(0,0)
                         }
@@ -440,7 +446,7 @@ button.onclick = function() {
                 var latitude  = position.coords.latitude;
                 var longitude = position.coords.longitude;
                 var center = new google.maps.LatLng(latitude, longitude);
-                map.panTo(center);
+                // map.panTo(center);
                 var geoMarker = new GeolocationMarker(map);
                 // document.getElementById('startLat').innerHTML = startPos.coords.latitude;
                 // document.getElementById('startLon').innerHTML = startPos.coords.longitude;
