@@ -29,7 +29,7 @@ responsive = 0
         padding: 0;
     }
     /*Cookie Consent Begin*/
-    #nudge {
+    .nudge {
         background-color: rgba(20,20,20,0.8);
         min-height: 26px;
         font-size: 14px;
@@ -44,11 +44,11 @@ responsive = 0
         display: none;
         z-index: 9999;
     }
-    #nudge a {
+    .nudge a {
         color: #4B8EE7;
         text-decoration: none;
     }
-    #closenudge {
+    .closenudge {
         float: right;
         display: inline-block;
         cursor: pointer;
@@ -57,10 +57,10 @@ responsive = 0
         margin: -15px 0 0 0;
         font-weight: bold;
     }
-    #closenudge:hover {
+    .closenudge:hover {
         color: #FFF;
     }
-    #nudge a.nudgeOK {
+    .nudge a.nudgeOK {
         background-color: #F1D600;
         color: #000;
         display: inline-block;
@@ -70,16 +70,25 @@ responsive = 0
         float: right;
         margin: 0 60px 0 10px;
     }
-    #nudge a.nudgeOK:hover {
+    .nudge a.nudgeOK:hover {
+        background-color: #E0C91F;
+    }
+
+    .nudge a.nudgeCancel:hover {
         background-color: #E0C91F;
     }
     /*Cookie Consent End*/
 </style>
 <div id="map" style="position: relative; overflow: hidden;">
 </div>
-<div id="nudge">
-    <div id="closeNudge">x</div>
+<div id="nudge" class="nudge">
+    <div id="closeNudge" class="closeNudge">x</div>
     Would you like AskVietnamese shows you your current location on our Map?  <a href="#" target="_blank">More info</a>. <a id="button" class="nudgeOK">That's Fine</a>
+</div>
+
+<div id="survey" class="nudge">
+    <div id="closeSurvey" class="closeNudge">x</div>
+    If you have used our Printed Sai Gon Map, could you please help to write some feedback to us?<a href="https://4screens.net/e/5c29acb9ea892f010007825e" target="_blank" class="nudgeOK">YES</a>. <a id="no" class="nudgeOK">NO</a>
 </div>
 <script>
     var markers = [];
@@ -469,7 +478,13 @@ button.onclick = function() {
                 }, 4000);
                 $("#closeNudge, .nudgeOK").click(function() {
                     $("#nudge").fadeOut(200);
+                    $("#survey").fadeIn(200);
+                });
+
+                $("#closeSurvey").click(function() {
+                    $("#survey").fadeOut(200);
                 }); 
+
             }); 
 
         </script>
