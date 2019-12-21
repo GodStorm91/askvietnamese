@@ -1,0 +1,131 @@
+/*!
+ * jQuery ClassyScroll
+ * http://www.class.pm/projects/jquery/classyscroll
+ *
+ * Copyright 2011 - 2013, Class.PM www.class.pm
+ * Written by Marius Stanciu - Sergiu <marius@picozu.net>
+ * Licensed under the GPL Version 3 license.
+ * Version 1.1.0
+ *
+*/
+#scrollbar1{
+    width:100%;
+    height:600px;
+    margin:10px 0;
+}
+.scrollbar-path-vertical, .scrollbar-path-horizontal {
+    position: absolute;
+    background-color: #fff;
+    z-index: 100;
+}
+.scrollbar-path-horizontal {
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+}
+.scrollbar-path-vertical {
+    right: 0;
+    top: 0; 
+    height: 100%; 
+    width: 8px;
+}
+.scrollbar-path-vertical {
+    /*box-shadow: inset 1px 0px 1 rgba(0,0,0,0.1);*/
+    /*-moz-box-shadow: inset 1px 0px 1 rgba(0,0,0,0.1);*/
+    /*-webkit-box-shadow: inset 1px 0px 0 rgba(0,0,0,0.1);*/
+}
+.scrollbar-path-horizontal {
+    box-shadow: inset 0px 1px 1 rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 0px 1px 1 rgba(0,0,0,0.1);
+    -webkit-box-shadow: inset 0px 1px 0 rgba(0,0,0,0.1);
+}
+.scrollbar-handle{
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #fb9616;
+}
+.scrollbar-path-vertical .scrollbar-handle {
+    height: 20%;
+    width: 100%;
+}
+.scrollbar-path-horizontal .scrollbar-handle {
+    width: 20%;
+    height: 100%;
+}
+.scrollbar-path-vertical{
+    background-image: url("../imgs/scrollTop.jpg"), url("../imgs/scrollBottom.jpg");
+    background-position: center 3px, bottom 3px center;
+    background-repeat: no-repeat, no-repeat;
+}
+.scrollbar-path-vertical, .scrollbar-path-horizontal, .scrollbar-handle {
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.scrollbar-content {
+    width:100%;
+    padding: 0 14px 0 0;
+}
+#scrollbar1 .viewport .overview div.listResult{
+    display: flex;
+    background:#fff url("../imgs/bg_list_result.png") no-repeat bottom right;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    margin-bottom:5px;
+    cursor: pointer;
+}
+#scrollbar1 .overview .listResult .innerList{
+    display:block;
+    margin:0 10px;
+    width:100%;
+}
+#scrollbar1 .overview .listResult .innerList .hours{
+    display: flex;
+    color:#b0a685
+}
+#scrollbar1 .overview .listResult .innerList .hours img{
+    width:15px;
+    height:15px;
+    margin:5px 10px 0 4px;
+}
+#scrollbar1 .overview .listResult .innerList .voteStar{
+    float:left;
+    display: flex;
+}
+#scrollbar1 .overview .listResult .innerList .voteStar img{
+    margin:3px;
+}
+#scrollbar1 .overview .listResult .innerList .vote{
+    margin:5px 0;
+    display:block;
+    text-align: right;
+}
+#scrollbar1 .overview .listResult .innerList .address{
+    display: flex;
+    margin:5px 0;
+    font-size:16px
+}
+#scrollbar1 .overview .listResult .innerList .address img{
+    width:13px;
+    height:18px;
+    margin:3px 10px 0 5px;
+}
+#scrollbar1 .overview .listResult .innerList table{
+    font-size:13px;
+    width:100%;
+}
+#scrollbar1 .overview .listResult .innerList h3{
+    font-size:18px;
+    font-weight: bold;
+    margin-top:5px;
+}
+#scrollbar1 .overview img.imgStore{
+    min-height:250px;
+    float:left;
+    border-radius: 10px 0px 0px 10px;
+    -webkit-border-radius: 10px 0px 0px 10px;
+    -moz-border-radius: 10px 0px 0px 10px;
+}

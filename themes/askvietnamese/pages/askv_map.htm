@@ -16,6 +16,12 @@ responsive = 0
 <!--{% component 'GoogleMapsEmbed' %}-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.0.8/stitch.js"></script>
+<link rel="stylesheet" href="/themes/askvietnamese/assets/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="/themes/askvietnamese/assets/css/jquery-ui.min.css" type="text/css">
+<link rel="stylesheet" href="/themes/askvietnamese/assets/css/slicknav.min.css" type="text/css">
+<link rel="stylesheet" href="/themes/askvietnamese/assets/css/jquery.classyscroll.css" type="text/css">
+<link rel="stylesheet" href="/themes/askvietnamese/assets/css/fonts.css" type="text/css">
+<link rel="stylesheet" href="/themes/askvietnamese/assets/css/style.css" type="text/css">
 <style>
     /* Always set the map height explicitly to define the size of the div
     * element that contains the map. */
@@ -79,6 +85,137 @@ responsive = 0
     }
     /*Cookie Consent End*/
 </style>
+    <header class="header-section header-not-logged">
+        <div class="container-fluid">
+            <div class="inner-header">
+                <div class="logo">
+                    <a class="logo_web" href="index.html"><img src="imgs/logo.png" alt=""></a>
+                    <a class="logo_mobile" href="index.html"><img src="imgs/logo_mobile.png" alt=""></a>
+                </div>
+                <div class="nav-right">
+                    <a href="#" class="primary-btn">SIGN IN</a>
+                    <a href="#" class="primary-btn">SIGN UP</a>
+                </div>
+                <nav class="main-menu mobile-menu">
+                    <ul>
+                        <li class="active"><a href="favourite.html">Trending</a></li>
+                        <li><a href="#">Who we are</a></li>
+<!--                        <li><a href="#">Pages</a>-->
+<!--                            <ul class="drop-menu">-->
+<!--                                <li><a href="about-us.html">About Us</a></li>-->
+<!--                                <li><a href="rooms.html">Rooms</a></li>-->
+<!--                                <li><a href="services.html">Services</a></li>-->
+<!--                            </ul>-->
+<!--                        </li>-->
+                        <li><a href="#">The 100</a></li>
+                        <li><a href="#">Maps</a></li>
+                        <li class="mobile-menu-btn">
+                            <div class="nav-right">
+                                <a href="#" class="primary-btn">SIGN IN</a>
+                                <a href="#" class="primary-btn">SIGN UP</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+        </div>
+    </header>
+    <section class="hero-area set-bg" >
+        <div class="container-fluid">
+            <div class="row wrapGgMap">
+                <div class="ggFilterResult col-12 col-xl-4 col-lg-5 col-md-12">
+                    <div class="ggGroupFilter">
+                        <form>
+                            <select class="ggCity">
+                                <option>Ho Chi Minh</option>
+                                <option>Ha Noi</option>
+                            </select>
+                            <select class="ggSortType">
+                                <option>Sort by: Best Match</option>
+                                <option>Sort by: Lastest</option>
+                            </select>
+                            <div class="keyWord">
+                                <input type="text" class="ggKeyWord" name="" value="" placeholder="City, bulding, street, ..." />
+                                <input type="button" class="btnGgSearch">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="ggMapGrid col-12 col-xl-8 col-lg-7 col-md-12">
+                    <div class="tags">
+                        <ul>
+                            <li class="tag_p">
+                                <a class="a_tag_p" href="#" id="reloadMarkers"><img src="/themes/askvietnamese/assets/imgs/ggIcon01.png" />Type of food</img></a>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="" /><img src="/themes/askvietnamese/assets/imgs/ggChildIcon01.png" />Vegeterian</a>
+                                        </li>
+                                        <li>
+                                            <a href="" /><img src="/themes/askvietnamese/assets/imgs/ggChildIcon02.png" />Drinks</a>
+                                        </li>
+                                        <li>
+                                            <a href="" /><img src="/themes/askvietnamese/assets/imgs/ggChildIcon03.png" />Foreign Food</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="tag_p">
+                                <a class="a_tag_p" href="#" id="reloadMarkers2"><img src="/themes/askvietnamese/assets/imgs/ggIcon02.png" />Sportlights</img></a>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="" /><img src="/themes/askvietnamese/assets/imgs/ggChildIcon01.png" />Vegeterian</a>
+                                        </li>
+                                        <li>
+                                            <a href="" /><img src="/themes/askvietnamese/assets/imgs/ggChildIcon02.png" />Drinks</a>
+                                        </li>
+                                        <li>
+                                            <a href="" /><img src="/themes/askvietnamese/assets/imgs/ggChildIcon03.png" />Foreign Food</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="tag_p">
+                                <a class="a_tag_p" href=""><img src="/themes/askvietnamese/assets/imgs/ggIcon03.png" />Popular Attractions</img></a>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="" /><img src="/themes/askvietnamese/assets/imgs/ggChildIcon01.png" />Vegeterian</a>
+                                        </li>
+                                        <li>
+                                            <a href="" /><img src="/themes/askvietnamese/assets/imgs/ggChildIcon02.png" />Drinks</a>
+                                        </li>
+                                        <li>
+                                            <a href="" /><img src="/themes/askvietnamese/assets/imgs/ggChildIcon03.png" />Foreign Food</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="tag_p">
+                                <a class="a_tag_p" href=""><img src="/themes/askvietnamese/assets/imgs/ggIcon04.png" />Cultural Activities</img></a>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="" /><img src="/themes/askvietnamese/assets/imgs/ggChildIcon01.png" />Vegeterian</a>
+                                        </li>
+                                        <li>
+                                            <a href="" /><img src="/themes/askvietnamese/assets/imgs/ggChildIcon02.png" />Drinks</a>
+                                        </li>
+                                        <li>
+                                            <a href="" /><img src="/themes/askvietnamese/assets/imgs/ggChildIcon03.png" />Foreign Food</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 <div id="map" style="position: relative; overflow: hidden;">
 </div>
 <div id="nudge" class="nudge">
@@ -112,7 +249,7 @@ responsive = 0
             // user =>
             // db.collection('feature_places').updateOne({owner_id: client.auth.user.id}, {$set:{number:42}}, {upsert:true})
             ).then(() =>
-            db.collection('feature_places').find().asArray()
+            db.collection('feature_places').find({ name: "sg_hem" }).asArray()
             ).then(docs => {
                 console.log("Found docs", docs);
                 callback(docs);
